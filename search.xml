@@ -9,8 +9,8 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
+    <title><![CDATA[关于我]]></title>
     <url>%2Fabout%2Findex.html</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[#我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 #这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 #怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
   </entry>
 </search>
