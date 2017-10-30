@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Wed Sep 13 2017 20:46:25 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 30 2017 01:58:25 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Oct 30 2017 11:49:46 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/09/13/Oracle数据库备份被删除oracle initialization or shutdown in progress/index.html",
     "headline": "Linux误删除了备份的数据库",
     "datePublished": "Wed Sep 13 2017 20:46:25 GMT+0800",
-    "dateModified": "Mon Oct 30 2017 01:58:25 GMT+0800",
+    "dateModified": "Mon Oct 30 2017 11:49:46 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -342,15 +342,6 @@
 
     <!-- Left aligned menu below button -->
     
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决sora-01033-oracle-initialization-or-shutdown-in-progress问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">####解决sora-01033:oracle initialization or shutdown in progress问题</span></a></li></ol>
-    </ul>
     
 
 
@@ -490,8 +481,9 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="解决sora-01033-oracle-initialization-or-shutdown-in-progress问题"><a href="#解决sora-01033-oracle-initialization-or-shutdown-in-progress问题" class="headerlink" title="####解决sora-01033:oracle initialization or shutdown in progress问题"></a>####解决sora-01033:oracle initialization or shutdown in progress问题</h2><p>###reason：误删除了备份的数据库</p>
-<p>###resolve：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">sqlplus /nolog</div><div class="line">//使用数据库命令模式</div><div class="line">connect system/root as sysdba</div><div class="line">//连接数据库</div><div class="line">SQL&gt;shutdown normal</div><div class="line">//关闭数据库oracle服务</div><div class="line">SQL&gt;startup mount</div><div class="line">//重新启动Oracle服务</div><div class="line">SQL&gt;alter database open;</div><div class="line">//打开数据库</div><div class="line"></div><div class="line">//SQL&gt;alter database datafile 5 offline drop 若出现错误</div><div class="line"></div><div class="line">SQL&gt;alter database open;</div><div class="line">//重新更改数据库的open</div><div class="line">SQL&gt;startup</div></pre></td></tr></table></figure></p>
+        <p>延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session</p>
+<p>##reason：误删除了备份的数据库</p>
+<p>##resolve：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">sqlplus /nolog</div><div class="line">//使用数据库命令模式</div><div class="line">connect system/root as sysdba</div><div class="line">//连接数据库</div><div class="line">SQL&gt;shutdown normal</div><div class="line">//关闭数据库oracle服务</div><div class="line">SQL&gt;startup mount</div><div class="line">//重新启动Oracle服务</div><div class="line">SQL&gt;alter database open;</div><div class="line">//打开数据库</div><div class="line"></div><div class="line">//SQL&gt;alter database datafile 5 offline drop 若出现错误</div><div class="line"></div><div class="line">SQL&gt;alter database open;</div><div class="line">//重新更改数据库的open</div><div class="line">SQL&gt;startup</div></pre></td></tr></table></figure></p>
 
         
     
@@ -638,7 +630,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/介绍/">介绍<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作问题/">操作问题<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/框架小结/">框架小结<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/程序异常/">程序异常<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Demo/">Demo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
