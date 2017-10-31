@@ -41,6 +41,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[Lucene和solr]]></title>
+    <url>%2F2017%2F04%2F27%2F%E6%A3%80%E7%B4%A2%E5%B7%A5%E5%85%B7Lucene%E5%92%8Csolr%2F</url>
+    <content type="text"><![CDATA[SQL语句的like会搜索大量不相关的内容，不走索引，且，存在资源浪费。这时我们就需要用到全文检索。 Lucene和solr全文检索了解Lucene之前，我们需要清楚全文检索的概念。 生活中的数据分为三种。 结构化数据：具有固定格式或有限长度的数据，如数据库，元数据等。 非结构化数据：不定长度或无固定格式的数据，如邮件，word文档等。 半结构化数据：根据需要可以按结构化数据处理，也可抽取出纯文本按非结构化数据来处理。 对应的搜索分为两种。 对结构化数据的搜索：sql语句、windows搜索文件名、类型、修改时间等 对非结构化数据的搜索：windwos搜索文件内容、linux的grep,搜索引擎的搜索等 对非结构化数据搜索即对全文数据的搜索分为两种： 顺序扫描法：假设寻找某个字符串的文件，就是一个文档一个文档读，然后每个文档从头读到尾，Linux下的grep就是这种方式，小数据量可以使用，但对于大量数据，就很慢了。 全文检索：将非结构化数据中的一部分信息提取出来，重新组织，使其变为结构化数据，我们称之为索引，而这种先建立索引，再搜索的过程就叫全文检索。 对应的创建索引方式分三种。 索引：加快数据搜索的一种数据结构 I/O流：对于本地文件创建索引。 爬虫：模拟访问URL，获取网页数据，搜索引擎使用。 SQL搜索：对于存放在数据库的数据使用。 ####如何创建索引。 源文档Document 文档中包括一个一个域(Field)[file_name,file_path,file_size,file_content等] 分词组件Tokenizer得到词元Token 将源文档分词 去除标点 去除停词 处理组件LinguisticProcessor得到词Term 变为小写 缩减位词根 转变为词根 索引组件Indexer 用词Term创建字典 对字典按字母顺序排序 合并相同的词Term成为倒排索引(Posting List) 倒排索引：从字符串到文件的映射是文件到字符串映射的反向过程，所以这种索引称为倒排索引 ###Lucene]]></content>
+      <categories>
+        <category>分享集</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2013%2F07%2F13%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new postMore info: Writing Run serverMore info: Server Generate static filesMore info: Generating Deploy to remote sitesMore info: Deployment]]></content>

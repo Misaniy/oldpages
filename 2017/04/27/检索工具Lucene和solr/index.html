@@ -37,7 +37,7 @@
     
     <title>
         
-            MyBatis框架小结 | 
+            Lucene和solr | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="MyBatis框架小结 | Misaniy | Note">
+    <meta property="og:title" content="Lucene和solr | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Tue Oct 31 2017 21:46:25 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 30 2017 12:05:20 GMT+0800" />
+        <meta property="article:published_time" content="Thu Apr 27 2017 21:02:25 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Oct 31 2017 20:12:46 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="MyBatis框架小结 | Misaniy | Note">
+    <meta name="twitter:title" content="Lucene和solr | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/10/31/MyBatis/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/10/31/MyBatis/index.html",
-    "headline": "MyBatis框架小结",
-    "datePublished": "Tue Oct 31 2017 21:46:25 GMT+0800",
-    "dateModified": "Mon Oct 30 2017 12:05:20 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html",
+    "headline": "Lucene和solr",
+    "datePublished": "Thu Apr 27 2017 21:02:25 GMT+0800",
+    "dateModified": "Tue Oct 31 2017 20:12:46 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MyBatis"><span class="post-toc-number">1.</span> <span class="post-toc-text">MyBatis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#环境配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">环境配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mybatis解决jdbc的问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">Mybatis解决jdbc的问题</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lucene和solr"><span class="post-toc-number">1.</span> <span class="post-toc-text">Lucene和solr</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全文检索"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">全文检索</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                MyBatis框架小结
+                Lucene和solr
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>10月 31, 2017</span>
+        <span>4月 27, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=MyBatis框架小结&url=http://misaniy.cc/2017/10/31/MyBatis/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Lucene和solr&url=http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=MyBatis框架小结&url=http://misaniy.cc/2017/10/31/MyBatis/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Lucene和solr&url=http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/10/31/MyBatis/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/10/31/MyBatis/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=MyBatis框架小结&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/10/31/MyBatis/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Lucene和solr&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/04/27/检索工具Lucene和solr/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,26 +490,63 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>学习MyBatis的一些个人总结</p>
-<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p> 1 导入jar包<br> 2 log4j.properties<br> 3 sqlMapConfig.xml<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">&lt;!-- </div><div class="line">	先加载property，再加载properties,后加载覆盖</div><div class="line">--&gt;</div><div class="line">&lt;properties resource=&quot;db.properties&quot;&gt;</div><div class="line">	&lt;property name=&quot;jdbc.driver&quot; value=&quot;AAA&quot;/&gt;</div><div class="line">&lt;/properties&gt;</div><div class="line">&lt;!--</div><div class="line">	配置pojo别名</div><div class="line">--&gt;	</div><div class="line">&lt;typeAliases&gt;</div><div class="line">	&lt;!--&lt;typeAlias type=&quot;com.misaniy.po.User&quot; alias=&quot;user&quot; /&gt;--&gt;</div><div class="line">	&lt;!-- 单个配置typeAlias 扫描包package，不区分大小写 --&gt;</div><div class="line">	&lt;package name=&quot;com.misaniy.po&quot; /&gt;</div><div class="line">&lt;/typeAliases&gt;</div><div class="line">&lt;enviroments default=&quot;development&quot;&gt;</div><div class="line">	&lt;enviroment id=&quot;development&quot;&gt;</div><div class="line">		&lt;transactionManager type=&quot;JDBC&quot; /&gt;</div><div class="line">		&lt;dataSource type=&quot;POOLED&quot;&gt;</div><div class="line">		&lt;/dataSource&gt;</div><div class="line">	&lt;/enviroment&gt;</div><div class="line">&lt;/enviroments&gt;</div><div class="line">&lt;mappers&gt;</div><div class="line">	&lt;!--</div><div class="line">		resource根据classpath查找，url绝对路径,class，接口全限定名（目录相同、名称一致、）、package扫描包</div><div class="line">		--&gt;</div><div class="line">	&lt;mapper class=&quot;com.misaniy.mapper.UserMapper&quot; /&gt;</div><div class="line">	&lt;mapper resource=&quot;XXX.xml&quot;&gt;</div><div class="line">	&lt;package name=&quot;com.misaniy.mapper&quot; /&gt;</div><div class="line">	&lt;mappers&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
-<p>####Config.xml配置内容和顺序</p>
+        <p>SQL语句的like会搜索大量不相关的内容，不走索引，且，存在资源浪费。这时我们就需要用到全文检索。</p>
+<h2 id="Lucene和solr"><a href="#Lucene和solr" class="headerlink" title="Lucene和solr"></a>Lucene和solr</h2><h3 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h3><p>了解Lucene之前，我们需要清楚全文检索的概念。</p>
+<p>生活中的数据分为三种。</p>
 <ul>
-<li>properties(属性)</li>
-<li>settings(全局配置参数)</li>
-<li>typeAliases(类型别名)</li>
-<li>typeHandlers(类型处理器)</li>
-<li>objectFactory(对象工厂)</li>
-<li>plugins(插件)</li>
-<li>enviroments（环境集合属性对象）<ul>
-<li>enviroments(环境子属性对象)<br>  -transactionManager<br>  -dataSource</li>
+<li><strong>结构化数据</strong>：具有固定格式或有限长度的数据，如数据库，元数据等。</li>
+<li><strong>非结构化数据</strong>：不定长度或无固定格式的数据，如邮件，word文档等。</li>
+<li>半结构化数据：根据需要可以按结构化数据处理，也可抽取出纯文本按非结构化数据来处理。</li>
+</ul>
+<p>对应的搜索分为两种。</p>
+<ul>
+<li><strong>对结构化数据的搜索</strong>：sql语句、windows搜索文件名、类型、修改时间等</li>
+<li><strong>对非结构化数据的搜索</strong>：windwos搜索文件内容、linux的grep,搜索引擎的搜索等</li>
+</ul>
+<p>对非结构化数据搜索即对<strong>全文数据的搜索</strong>分为两种：</p>
+<ul>
+<li><strong>顺序扫描法</strong>：假设寻找某个字符串的文件，就是一个文档一个文档读，然后每个文档从头读到尾，Linux下的grep就是这种方式，小数据量可以使用，但对于大量数据，就很慢了。</li>
+<li><strong>全文检索</strong>：将非结构化数据中的一部分信息提取出来，重新组织，使其变为结构化数据，我们称之为索引，而这种<strong>先建立索引，再搜索的过程就叫全文检索</strong>。</li>
+</ul>
+<p>对应的创建<strong>索引</strong>方式分三种。</p>
+<blockquote>
+<p>索引：加快数据搜索的一种数据结构</p>
+</blockquote>
+<ul>
+<li><strong>I/O流</strong>：对于本地文件创建索引。</li>
+<li><strong>爬虫</strong>：模拟访问URL，获取网页数据，搜索引擎使用。</li>
+<li><strong>SQL搜索</strong>：对于存放在数据库的数据使用。</li>
+</ul>
+<p>####如何创建索引。</p>
+<ol>
+<li>源文档Document<ul>
+<li>文档中包括一个一个域(Field)[file_name,file_path,file_size,file_content等]</li>
 </ul>
 </li>
-<li><p>mappers（映射器）</p>
-<p>4 PO类<br>5 映射文件xxx.xml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!-- &lt;mapper namespace=&quot;test&quot;&gt; 传统--&gt;</div><div class="line">&lt;mapper namespace=&quot;com.misaniy.UserMapper&quot;/&gt;</div><div class="line">&lt;!-- 使用Mapper不需要DaoImpl --&gt;</div><div class="line">&lt;!-- 这里的Type使用的别名，类型由mybatis内部定制，pojo由config配置文件定制--&gt;</div><div class="line">&lt;select id=&quot;findUserByName&quot; parameterType=&quot;String&quot; resultType=&quot;user&quot;&gt;</div><div class="line">	select * from user where name like &apos;%$&#123;value&#125;%&apos;</div><div class="line">&lt;/select&gt;</div><div class="line">&lt;insert id=&quot;insertUser&quot; parameterType=&quot;user&quot;&gt;</div><div class="line">	&lt;selectKey keyProperty=&quot;id&quot; order=&quot;After&quot; resultType=&quot;Integer&quot;&gt;</div><div class="line">		select LAST_INSERT_ID()</div><div class="line">	&lt;/selectKey&gt;</div><div class="line">	insert into user(name) values(#&#123;name&#125;)</div><div class="line">&lt;/insert&gt;</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure>
-</li>
+<li>分词组件Tokenizer得到词元Token<ul>
+<li>将源文档分词</li>
+<li>去除标点</li>
+<li>去除停词</li>
 </ul>
-<h2 id="Mybatis解决jdbc的问题"><a href="#Mybatis解决jdbc的问题" class="headerlink" title="Mybatis解决jdbc的问题"></a>Mybatis解决jdbc的问题</h2><p>数据库链接和创建的频繁操作、sql硬编码、结果集封装到pojo、parameterType对输入参数的规范</p>
+</li>
+<li>处理组件LinguisticProcessor得到词Term<ul>
+<li>变为小写</li>
+<li>缩减位词根</li>
+<li>转变为词根 </li>
+</ul>
+</li>
+<li>索引组件Indexer<ul>
+<li>用词Term创建字典</li>
+<li>对字典按字母顺序排序</li>
+<li>合并相同的词Term成为倒排索引(Posting List)</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/4HCyRk6.jpg" alt="倒排索引"></p>
+<blockquote>
+<p>倒排索引：从字符串到文件的映射是文件到字符串映射的反向过程，所以这种索引称为倒排索引</p>
+</blockquote>
+<p>###Lucene</p>
 
         
     
@@ -530,13 +567,21 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2017/09/12/oracle与tomcat端口冲突/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/13/SpringWebMvc/" id="post_nav-older" class="next-content">
+        <a href="/2013/07/13/hello-world/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
