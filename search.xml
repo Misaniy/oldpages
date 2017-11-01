@@ -25,17 +25,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Linux误删除了备份的数据库]]></title>
-    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
-    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
+    <title><![CDATA[could not initialize proxy - noSession]]></title>
+    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
+    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
       <categories>
         <category>报错集</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[could not initialize proxy - noSession]]></title>
-    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
-    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
+    <title><![CDATA[Linux误删除了备份的数据库]]></title>
+    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
+    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
       <categories>
         <category>报错集</category>
       </categories>
