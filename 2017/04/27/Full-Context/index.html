@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Thu Apr 27 2017 21:02:25 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Nov 01 2017 09:37:04 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Nov 02 2017 13:17:50 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://misaniy.cc/2017/04/27/Full-Context/index.html",
     "headline": "Lucene和solr",
     "datePublished": "Thu Apr 27 2017 21:02:25 GMT+0800",
-    "dateModified": "Wed Nov 01 2017 09:37:04 GMT+0800",
+    "dateModified": "Thu Nov 02 2017 13:17:50 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lucene和solr"><span class="post-toc-number">1.</span> <span class="post-toc-text">Lucene和solr</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全文检索"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">全文检索</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何创建索引"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">如何创建索引</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何对索引进行搜索"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">如何对索引进行搜索</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Lucene"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Lucene</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全文检索和Lucene"><span class="post-toc-number">1.</span> <span class="post-toc-text">全文检索和Lucene</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全文检索"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">全文检索</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何创建索引"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">如何创建索引</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何对索引进行搜索"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">如何对索引进行搜索</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Lucene"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Lucene</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Lucene实现全文检索"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Lucene实现全文检索</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用域Field"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">常用域Field</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建索引库"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">创建索引库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引库的维护"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">索引库的维护</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#索引库的添加"><span class="post-toc-number">1.2.4.1.</span> <span class="post-toc-text">索引库的添加</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#索引库的删除"><span class="post-toc-number">1.2.4.2.</span> <span class="post-toc-text">索引库的删除</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#索引库的修改"><span class="post-toc-number">1.2.4.3.</span> <span class="post-toc-text">索引库的修改</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查询索引"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">查询索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Query的子类查询"><span class="post-toc-number">1.2.5.1.</span> <span class="post-toc-text">Query的子类查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#TermQuery-精确查找"><span class="post-toc-number">1.2.5.1.1.</span> <span class="post-toc-text">TermQuery 精确查找</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#MatchAllDocsQuery-所有文档"><span class="post-toc-number">1.2.5.1.2.</span> <span class="post-toc-text">MatchAllDocsQuery 所有文档</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#NumericRangeQuery-数值范围查找"><span class="post-toc-number">1.2.5.1.3.</span> <span class="post-toc-text">NumericRangeQuery 数值范围查找</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#BooleanQuery-组合条件查找"><span class="post-toc-number">1.2.5.1.4.</span> <span class="post-toc-text">BooleanQuery 组合条件查找</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#IndexSearcher搜索方法"><span class="post-toc-number">1.2.5.1.5.</span> <span class="post-toc-text">IndexSearcher搜索方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#queryparser-查询"><span class="post-toc-number">1.2.5.2.</span> <span class="post-toc-text">queryparser 查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#QueryParser"><span class="post-toc-number">1.2.5.2.1.</span> <span class="post-toc-text">QueryParser</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#MulitFieldQueryParser"><span class="post-toc-number">1.2.5.2.2.</span> <span class="post-toc-text">MulitFieldQueryParser</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TopDocs"><span class="post-toc-number">1.2.5.3.</span> <span class="post-toc-text">TopDocs</span></a></li></ol></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -491,7 +491,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>SQL语句的like会搜索大量不相关的内容，不走索引，且，存在资源浪费。这时我们就需要用到全文检索。</p>
-<h2 id="Lucene和solr"><a href="#Lucene和solr" class="headerlink" title="Lucene和solr"></a>Lucene和solr</h2><h3 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h3><p>了解Lucene之前，我们需要清楚全文检索的概念。</p>
+<h2 id="全文检索和Lucene"><a href="#全文检索和Lucene" class="headerlink" title="全文检索和Lucene"></a>全文检索和Lucene</h2><h3 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h3><p>了解Lucene之前，我们需要清楚全文检索的概念。</p>
 <p>生活中的数据分为三种。</p>
 <ul>
 <li><strong>结构化数据</strong>：具有固定格式或有限长度的数据，如数据库，元数据等。</li>
@@ -551,7 +551,29 @@
 <li>搜索索引，得到符合语法树的文档</li>
 <li>根据得到的文档和查询语句的相关性排序</li>
 </ol>
-<h3 id="Lucene"><a href="#Lucene" class="headerlink" title="Lucene"></a>Lucene</h3>
+<h3 id="Lucene"><a href="#Lucene" class="headerlink" title="Lucene"></a>Lucene</h3><h4 id="Lucene实现全文检索"><a href="#Lucene实现全文检索" class="headerlink" title="Lucene实现全文检索"></a>Lucene实现全文检索</h4><ul>
+<li>获得原始文档</li>
+<li>创建文档对象</li>
+<li>分析文档</li>
+<li>创建索引</li>
+<li>查询索引库</li>
+</ul>
+<h4 id="常用域Field"><a href="#常用域Field" class="headerlink" title="常用域Field"></a>常用域Field</h4><p><img src="https://i.imgur.com/oodzETd.png" alt="常用域"></p>
+<h4 id="创建索引库"><a href="#创建索引库" class="headerlink" title="创建索引库"></a>创建索引库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="索引库的维护"><a href="#索引库的维护" class="headerlink" title="索引库的维护"></a>索引库的维护</h4><h5 id="索引库的添加"><a href="#索引库的添加" class="headerlink" title="索引库的添加"></a>索引库的添加</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//IndexWriter</div><div class="line">IndexWriter indexWriter = new IndexWriter(FSDirectory.open(new File(Path)),new IndexWriterConfig(Version.LATEST,new IKAnalyzer()));</div><div class="line">//Document.add(Field)</div><div class="line">Document document = new Document();</div><div class="line">document.add(new TextField(&quot;name&quot;,&quot;文档&quot;.Store.YES));</div><div class="line">document.add(new TextFiled(&quot;content&quot;,&quot;内容&quot;,Store.YES));</div><div class="line"></div><div class="line">IndexWriter.addDocument(document);</div><div class="line">IndexWriter.close();</div></pre></td></tr></table></figure>
+<h5 id="索引库的删除"><a href="#索引库的删除" class="headerlink" title="索引库的删除"></a>索引库的删除</h5><ul>
+<li>删除全部</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//IndexWriter</div><div class="line">IndexWriter indexWriter = new IndexWriter(FSDirectory.open(new File(Path)),new IndexWriterConfig(Version.LATEST,new IKAnalyzer()));</div><div class="line">//删除全部索引</div><div class="line">indexWriter.deleteAll();</div><div class="line"></div><div class="line">indexWriter.close();</div></pre></td></tr></table></figure>
+<ul>
+<li>指定条件删除</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//IndexWriter</div><div class="line">IndexWriter indexWriter = new IndexWriter(FSDirectory.open(new File(Path)),new IndexWriterConfig(Version.LATEST,new IKAnalyzer()));</div><div class="line">//Query</div><div class="line">Query query = new TermQuery(new Term(&quot;name&quot;,&quot;文档&quot;));</div><div class="line">//指定条件删除</div><div class="line">indexWriter.deleteDocuments(query);</div><div class="line"></div><div class="line">indexWriter.close();</div></pre></td></tr></table></figure>
+<h5 id="索引库的修改"><a href="#索引库的修改" class="headerlink" title="索引库的修改"></a>索引库的修改</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//IndexWriter</div><div class="line">IndexWriter indexWriter = new IndexWriter(FSDirectory.open(new File(Path)),new IndexWriterConfig(Version.LATEST,new IKAnalyzer()));</div><div class="line">//修改后的Document</div><div class="line">Document document = new Document();</div><div class="line">document.add(new TextField(&quot;name&quot;,&quot;新文档&quot;,Store.YES));</div><div class="line">//updateDocument</div><div class="line">indexWriter.updateDocument(new Term(&quot;content&quot;,&quot;文档&quot;),document);</div><div class="line"></div><div class="line">indexWriter.close();</div></pre></td></tr></table></figure>
+<h4 id="查询索引"><a href="#查询索引" class="headerlink" title="查询索引"></a>查询索引</h4><h5 id="Query的子类查询"><a href="#Query的子类查询" class="headerlink" title="Query的子类查询"></a>Query的子类查询</h5><h6 id="TermQuery-精确查找"><a href="#TermQuery-精确查找" class="headerlink" title="TermQuery 精确查找"></a>TermQuery 精确查找</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//IndexSearcher</div><div class="line">IndexSearcher indexSearcher = new IndexSearcher(Directory.open(FSDirectory.open(new File(Path))));</div><div class="line"></div><div class="line">Query query = new TermQuery(new Term(FieldName,keyStr));</div><div class="line"></div><div class="line">TopDocs topDocs = indexSearcher.searcher(query,100);</div><div class="line">//topDocs.scoreDocs存储了document的id</div><div class="line">for(ScoreDoc scoreDoc : topDocs.scoreDocs)&#123;</div><div class="line">	//scoreDoc.doc就是document的id</div><div class="line">	Document document = indexSearcher.doc(scoreDoc.doc);</div><div class="line">	</div><div class="line">	document.get(keyStr);</div><div class="line">&#125;</div><div class="line"></div><div class="line">indexSearcher.getindexReader.close();</div></pre></td></tr></table></figure>
+<h6 id="MatchAllDocsQuery-所有文档"><a href="#MatchAllDocsQuery-所有文档" class="headerlink" title="MatchAllDocsQuery 所有文档"></a>MatchAllDocsQuery 所有文档</h6><h6 id="NumericRangeQuery-数值范围查找"><a href="#NumericRangeQuery-数值范围查找" class="headerlink" title="NumericRangeQuery 数值范围查找"></a>NumericRangeQuery 数值范围查找</h6><h6 id="BooleanQuery-组合条件查找"><a href="#BooleanQuery-组合条件查找" class="headerlink" title="BooleanQuery 组合条件查找"></a>BooleanQuery 组合条件查找</h6><h6 id="IndexSearcher搜索方法"><a href="#IndexSearcher搜索方法" class="headerlink" title="IndexSearcher搜索方法"></a>IndexSearcher搜索方法</h6><h5 id="queryparser-查询"><a href="#queryparser-查询" class="headerlink" title="queryparser 查询"></a>queryparser 查询</h5><h6 id="QueryParser"><a href="#QueryParser" class="headerlink" title="QueryParser"></a>QueryParser</h6><h6 id="MulitFieldQueryParser"><a href="#MulitFieldQueryParser" class="headerlink" title="MulitFieldQueryParser"></a>MulitFieldQueryParser</h6><p><img src="https://i.imgur.com/SBeqYbE.png" alt="IndexSearcher搜索方法"></p>
+<h5 id="TopDocs"><a href="#TopDocs" class="headerlink" title="TopDocs"></a>TopDocs</h5><p><img src="https://i.imgur.com/GyG3UOS.png" alt="TopDocs类"></p>
+
         
     
 
@@ -584,6 +606,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/02/solr/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -671,7 +701,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -689,7 +719,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -713,7 +743,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">7</span>
+                <span class="sidebar-badge">8</span>
             </a>
         </li>
         
