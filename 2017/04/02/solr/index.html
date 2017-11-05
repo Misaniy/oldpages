@@ -37,7 +37,7 @@
     
     <title>
         
-            solr | 
+            Solr安装与介绍 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="solr | Misaniy | Note">
+    <meta property="og:title" content="Solr安装与介绍 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
         <meta property="article:published_time" content="Sun Apr 02 2017 14:35:02 GMT+0800" />
-        <meta property="article:modified_time" content="Thu Nov 02 2017 20:38:19 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Nov 05 2017 16:52:15 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="solr | Misaniy | Note">
+    <meta name="twitter:title" content="Solr安装与介绍 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -263,9 +263,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://misaniy.cc/2017/04/02/solr/index.html",
-    "headline": "solr",
+    "headline": "Solr安装与介绍",
     "datePublished": "Sun Apr 02 2017 14:35:02 GMT+0800",
-    "dateModified": "Thu Nov 02 2017 20:38:19 GMT+0800",
+    "dateModified": "Sun Nov 05 2017 16:52:15 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -343,6 +343,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Solr的安装和配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">Solr的安装和配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Solr配置到tomcat"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Solr配置到tomcat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置中文分析器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置中文分析器</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -372,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                solr
+                Solr安装与介绍
             </p>
         </div>
 
@@ -423,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=solr&url=http://misaniy.cc/2017/04/02/solr/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Solr安装与介绍&url=http://misaniy.cc/2017/04/02/solr/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -432,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=solr&url=http://misaniy.cc/2017/04/02/solr/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Solr安装与介绍&url=http://misaniy.cc/2017/04/02/solr/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -462,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=solr&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/04/02/solr/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Solr安装与介绍&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/04/02/solr/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -481,15 +490,67 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>solr和tomcat整合过程：</p>
-<ol>
-<li>解压tomcat</li>
-<li>将solr.war拷贝到tomcat/webapps目录下</li>
-<li>启动tomcat会自动解压solr</li>
-<li>停止tomcat删除solr.war</li>
-<li>将solr-4.10.3/example/lib/ext目录下的所有jar包拷贝到tomcat/webapps/solr/WEB-INF/lib目录下</li>
-<li>在tomcat/webapps/solr/WEB-INF目录下</li>
-<li>将solr-4.10.3/example/resources/log4j.properties文件拷贝到tomcat/webapps/solr/WEB-INF/classes目录</li>
+        <p>Solr是基于Lucene的全文搜索服务器</p>
+<h2 id="Solr的安装和配置"><a href="#Solr的安装和配置" class="headerlink" title="Solr的安装和配置"></a>Solr的安装和配置</h2><h3 id="Solr配置到tomcat"><a href="#Solr配置到tomcat" class="headerlink" title="Solr配置到tomcat"></a>Solr配置到tomcat</h3><ol>
+<li>把Solr的war包赋值到tomcat的webapp下并解压</li>
+<li>把Solr/example/lib/ext目录下的jar包添加到solr工程中.</li>
+<li>配置SolrHome和SolrCore<ul>
+<li>Solr/example/solr文件就是一个标准SolrHome，复制出来命名solrHome</li>
+<li>solrHome中的collection1就是一个SolrCore</li>
+<li>solrCore下有一个目录conf，conf下的solrconfig.xml可以配置相关信息。</li>
+</ul>
+</li>
+<li>solrconfig.xml<ol>
+<li>env-entry-value:配置solrhome的绝对路径</li>
+<li>Lib:solr服务依赖的拓展包</li>
+<li>dataDir:配置索引库存放路径</li>
+<li>requestHandler:查询时使用的url</li>
+</ol>
+</li>
+</ol>
+<p>打开Schema.xml可以看到Solr默认的FieldType</p>
+<p><img src="https://i.imgur.com/bgR7edq.png" alt="FieldType"></p>
+<ul>
+<li>class:Solr提供的包solr.TextField，solr.TextField允许用户通过分析器来定制索引和查询，分析器包括一个分词器(tokenizer)和多个过滤器(filter)</li>
+<li>positionIncrementGap:可选属性，定义在同一个文档中此类型数据的空白间隔，避免短语匹配错误，此值相当于Lucene的短语查询设置slop值，根据经验设置位100</li>
+<li>analyzer<ul>
+<li>搜索分析器<ul>
+<li>solr.StandardTokenizerFactory 标准分词器</li>
+<li>solr.StopFilterFactory 停用词过滤器</li>
+<li>solr.LowerCaseFilterFactory 小写过滤器 </li>
+</ul>
+</li>
+<li>索引分析器<ul>
+<li>solr.StandardTokenizerFactory 标准分词器</li>
+<li>solr.StopFilterFactory 停用词过滤器</li>
+<li>solr.SynonymFilterFactory 同义词过滤器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Field 定义<ul>
+<li>name 域名</li>
+<li>type FieldType</li>
+<li>indexed 是否索引</li>
+<li>stored 是否存储</li>
+<li>multiValued 是否存储多个值</li>
+</ul>
+</li>
+<li>uniqueKey<br>  默认定义唯一主键key为id域<br>  <code>&lt;uniqueKey&gt;id&lt;/uniqueKey&gt;</code></li>
+<li><p>copyField 复制域<br>  将多个Field复制到一个Field中，进行统一检索<br>  比如，输入关键字搜索name/description</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 定义name/description/keywords的Field --&gt;</div><div class="line">&lt;field name=&quot;keywords&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot; multiValued=&quot;true&quot;/&gt;</div><div class="line">&lt;field name=&quot;name&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot; /&gt;</div><div class="line">&lt;field name=&quot;description&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;false&quot; /&gt;</div><div class="line">&lt;!-- 只搜索keywords就相当于搜索了name和description</div><div class="line">&lt;copyField source=&quot;name&quot; dest=&quot;keywords&quot;&gt;</div><div class="line">&lt;copyField source=&quot;description&quot; dest=&quot;keywords&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>dynamicField(动态字段)<br>自定义Field为:product_title_t<br><code>&lt;dynamicField name=&quot;*_t&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;</code></p>
+</li>
+</ul>
+<h3 id="配置中文分析器"><a href="#配置中文分析器" class="headerlink" title="配置中文分析器"></a>配置中文分析器</h3><ol>
+<li>将IKAnalyzer2012FF_ul.jar添加到solr/WEB-INF/lib</li>
+<li>赋值IKAnalyzer的配置文件和自定义词典到solr的classpath下</li>
+<li><p>在schema.xml中添加一个自定义的filedType</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextFiled&quot;&gt;</div><div class="line">	&lt;analyzer class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;</div><div class="line">&lt;/fieldType&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>定义field，指定field的type属性为text_ik</p>
+</li>
 </ol>
 
         
