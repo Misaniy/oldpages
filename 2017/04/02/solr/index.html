@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Sun Apr 02 2017 14:35:02 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Nov 05 2017 16:52:15 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Nov 05 2017 21:26:58 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://misaniy.cc/2017/04/02/solr/index.html",
     "headline": "Solr安装与介绍",
     "datePublished": "Sun Apr 02 2017 14:35:02 GMT+0800",
-    "dateModified": "Sun Nov 05 2017 16:52:15 GMT+0800",
+    "dateModified": "Sun Nov 05 2017 21:26:58 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Solr的安装和配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">Solr的安装和配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Solr配置到tomcat"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Solr配置到tomcat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置中文分析器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置中文分析器</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Solr的安装和配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">Solr的安装和配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Solr配置到tomcat"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Solr配置到tomcat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置中文分析器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置中文分析器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Solr管理索引库"><span class="post-toc-number">2.</span> <span class="post-toc-text">Solr管理索引库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#维护索引"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">维护索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除文档"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">删除文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查询索引"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">查询索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用SolrJ管理索引库"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用SolrJ管理索引库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加文档"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">添加文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除文档-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">删除文档</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -552,6 +552,45 @@
 <li><p>定义field，指定field的type属性为text_ik</p>
 </li>
 </ol>
+<h2 id="Solr管理索引库"><a href="#Solr管理索引库" class="headerlink" title="Solr管理索引库"></a>Solr管理索引库</h2><h3 id="维护索引"><a href="#维护索引" class="headerlink" title="维护索引"></a>维护索引</h3><ul>
+<li><p>添加/更新文档</p>
+</li>
+<li><p>使用Dataimport批量导入数据</p>
+<ul>
+<li>导入solr-dataimporthandler.jar、solr-dataimporthandler-extras.jar、mysql数据库jar包</li>
+<li><p>配置solrconfig.xml，添加一个requestHandler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;requestHandler name=&quot;/dateimport&quot; class=&quot;org.apache.solr.handler.dataimport.DataImportHandler&quot;&gt;</div><div class="line">	&lt;lst name=&quot;defaults&quot;&gt;</div><div class="line">		&lt;str name=&quot;config&quot;&gt;data-config.xml&lt;/str&gt;</div><div class="line">	&lt;/lst&gt;</div><div class="line">&lt;/requestHandler&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个data-config.xml，保存到solrcore\conf\目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</div><div class="line">&lt;dataConfig&gt;</div><div class="line">&lt;dataSource type=&quot;JdbcDataSource&quot;</div><div class="line">			driver=&quot;com.mysql.jdbc.Driver</div><div class="line">			url=&quot;jdbc:mysql://localhost:3306/database&quot;</div><div class="line">			user=&quot;root&quot;</div><div class="line">			password=&quot;root&quot;/&gt;</div><div class="line">&lt;document&gt;</div><div class="line">	&lt;entity name=&quot;product&quot; query=&quot;SELECT pid,name,catalog_name,price,description,picture FROM products&quot;&gt;</div><div class="line">		&lt;field column=&quot;pid&quot; name=&quot;id&quot;/&gt;</div><div class="line">		&lt;field column=&quot;name&quot; name=&quot;product_name&quot;/&gt;</div><div class="line">		&lt;field column=&quot;catalog_name&quot; name=&quot;product_catalog_name&quot;/&gt;</div><div class="line">		&lt;field column=&quot;description&quot; name=&quot;product_price&quot;/&gt;</div><div class="line">		&lt;field column=&quot;picture&quot; name=&quot;product_picture&quot;/&gt;</div><div class="line">	&lt;/entity&gt;</div><div class="line">&lt;/document&gt;</div><div class="line">&lt;/dataConfig&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启tomcat</p>
+</li>
+<li>Excute导入数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><pre><code>- 删除指定ID的索引
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;delete&gt;</div><div class="line">	&lt;id&gt;1&lt;/id&gt;</div><div class="line">&lt;/delete&gt;</div></pre></td></tr></table></figure>
+
+- 删除查询到的索引数据&lt;*:*表示全部&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;delete&gt;</div><div class="line">	&lt;query&gt;*:*&lt;/query&gt;</div><div class="line">&lt;/delete&gt;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="查询索引"><a href="#查询索引" class="headerlink" title="查询索引"></a>查询索引</h3><ul>
+<li>q- 查询字符串 域名:条件</li>
+<li>fq- filter query 过滤查询</li>
+<li>sort- 排序</li>
+<li>start,rows- 分页查询</li>
+<li>fl- 返回指定字段内容，用逗号或空格分割</li>
+<li>df- default Feild 默认域</li>
+<li>wt- writer type 指定输出格式</li>
+<li>hl- 是否高亮</li>
+</ul>
+<h2 id="使用SolrJ管理索引库"><a href="#使用SolrJ管理索引库" class="headerlink" title="使用SolrJ管理索引库"></a>使用SolrJ管理索引库</h2><pre><code>使用客户端操作Solr比较繁琐低效，于是有SolrJ通过JAVA来访问Solr客户端
+</code></pre><h3 id="添加文档"><a href="#添加文档" class="headerlink" title="添加文档"></a>添加文档</h3><ul>
+<li>solrJ、slf4j-log4j12、jul-to-slf4j、jcl-over-slf4j<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SolrServer solerServer = new HttpSolrServer(&quot;https://localhost:8080/solr&quot;);</div><div class="line"></div><div class="line">SolrInputDocument document = new SolrInputDocument();</div><div class="line"></div><div class="line">//这里FieldName在schema.xml已定义</div><div class="line">document.addField(FieldName,Value);</div><div class="line"></div><div class="line">solrServer.add(document);</div><div class="line"></div><div class="line">solrServer.commit();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="删除文档-1"><a href="#删除文档-1" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">SolrServer solrServer = new HttpSolrServer(&quot;http://localhost:8080/solr&quot;);</div><div class="line"></div><div class="line">//</div><div class="line">solrServer.deleteByQuery(&quot;*:*&quot;);</div><div class="line"></div><div class="line">solrServer.deleteById(id);</div><div class="line"></div><div class="line">solrServer.commit();</div></pre></td></tr></table></figure>
 
         
     
