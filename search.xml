@@ -25,17 +25,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Linux误删除了备份的数据库]]></title>
-    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
-    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
+    <title><![CDATA[could not initialize proxy - noSession]]></title>
+    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
+    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
       <categories>
         <category>报错集</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[could not initialize proxy - noSession]]></title>
-    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
-    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
+    <title><![CDATA[Linux误删除了备份的数据库]]></title>
+    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
+    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
       <categories>
         <category>报错集</category>
       </categories>
@@ -65,13 +65,13 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[gallery]]></title>
-    <url>%2Fgallery%2Findex.html</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[关于我]]></title>
     <url>%2Fabout%2Findex.html</url>
     <content type="text"><![CDATA[我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[生活图]]></title>
+    <url>%2Fgallery%2Findex.html</url>
+    <content type="text"></content>
   </entry>
 </search>
