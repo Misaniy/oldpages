@@ -33,17 +33,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[could not initialize proxy - noSession]]></title>
-    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
-    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
+    <title><![CDATA[Linux误删除了备份的数据库]]></title>
+    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
+    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
       <categories>
         <category>报错集</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Linux误删除了备份的数据库]]></title>
-    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
-    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
+    <title><![CDATA[could not initialize proxy - noSession]]></title>
+    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
+    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
       <categories>
         <category>报错集</category>
       </categories>
@@ -73,6 +73,14 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[图片服务器FastDFS]]></title>
+    <url>%2F2017%2F01%2F11%2FFastDFS%2F</url>
+    <content type="text"><![CDATA[传统图片上传不能有效应对集群的方式，单独搭建一个图片服务器。可以使用分布式文件系统FastDFS方式。实现服务器的高可用 什么是FastDFSFastDFS是用C语言编写的一款开源的分布式文件系统。FastDFS位互联网量身定制，充分考虑了冗杂备份，负载均衡，线性扩容等机制，并注重高可用、高性能等指标，使用FastDFS很容易搭建一套高性能的文件服务集群提供文件上传、下载等服务 FastDFS架构 FastDFS架构包括Tracker server和Storage server。客户端请求Tracker server进行文件上传、下载，通过tracker server调度最终由Storage server完成文件上传和下载。 Tracker server作用是负载均衡和调度，通过Tracker server在文件上传时可以根据一些策略找到Storage server提供文件上传服务。可以将Tracker称为追踪服务器或调度服务器。 Storage server作用是文件存储，客户端上传的文件最终存储在Storage服务器上，Storage server没有实现自己的文件系统而是利用操作西戎的文件系统来管理文件。可以将storage称为存储服务器. 服务端两个角色： Tracker：管理集群，tracker也可以实现集群。每个tracker节点地位平等。 Storage:实际保存文件。Storage氛围多个组，每个组之间保存的文件是不同的。每个组内部可以有多个成员，组成员内部保存的内容是一样的，组成员的地位是一致的，没有主从概念。 文件上传的流程图客户端上传文件后存储服务器将文件ID返回给客户端，此文件ID用于以后访问该文件的索引信息。文件索引信息包括：组名，虚拟磁盘路径，数据两级目录，文件名。 组名：文件上传后所在的storage组名称，在文件上传成功后有storage服务器返回，需要客户端自行保存。 虚拟磁盘路径:storage配置的虚拟路径，与磁盘选项store_path*对应。如果配置了store_path0则是M00，如果配置了store_path1则是M01,以此类推。 数据两级目录：storage服务器在每个虚拟磁盘路径下创建的两级目录，用于存储数据文件。 文件名：与文件上传时不同。是由存储服务器根据特定信息生成，文件名包含：源存储服务器IP地址、文件创建时间戳、文件大小、随机数和文件拓展名等信息。 文件下载]]></content>
+      <categories>
+        <category>分享集</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Dubbo]]></title>
     <url>%2F2016%2F11%2F09%2FDubbo%2F</url>
     <content type="text"><![CDATA[Dubbo是阿里的开源分布式服务架构，可通过高性能的RPC实现服务的输出和输入功能。 系统通信如何实现远程通信 WebService：效率不高基于soap协议。 使用Restful形式的服务：http+json。很多项目中应用。如果服务太多，服务之间调用关系混乱，需要治疗服务。 dubbo。使用rpc协议进行远程调用，直接使用socket通信。传输效率高，并且可以统计出系统之间的调用关系、调用次数。 规模架构 单一应用架构 当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本。 此时，用于简化增删改差工作量的数据访问框架(ORM)是关键。 垂直应用架构 当访问量逐渐增大，单一应用增加极其带来的加速度越来越小，将应用拆成无不想干的几个应用，以提升效率 此时，用于加速前端页面开发的Web框架(MVC)是关键 分布式服务架构 当垂直应用越来越多，应用之间交互不可避免，将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，使前端应用能更快速的响应多变的市场需求。 此时，用于提高业务服用及整合的分布式服务架构(RPC)是关键。 流动计算架构 当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，此时需增加一个调度中心基于访问压力实时管理集群容量，提高集群利用率。 此时，用于提高极其利用率的**资源调度和治理中心(SOA)是关键。 Dubbo 节点角色说明： Provider:暴露服务的服务提供方 Consumer:调用远程服务的服务消费方 Registry:服务注册与发现的注册中心 Monitor:统计服务的调用次数调和调用时间的监控中心 Container:服务运行容器 调用关系说明： 0.服务容器(Container)负责启动、加载、运行服务提供方(Provider) 1.服务提供方(Provider)在启动时，向注册中心(Registry)注册自己提供的服务。 2.服务消费方(Consumer)在启动时，向注册中心(Registry)订阅自己所需的服务。 3.注册中心(Registry)返回服务提供方(Provider)地址列表给消费者，如果有变化，注册中心将基于长连接推送变更数据给消费方(Consumer). ４。服务消费方(Consumer)，从提供者地址列表中，基于软负载均衡算法，选一台提供方(Provider)进行调用，如果调用失败，再选另一台调用. 5.服务消费者(Consumer)和提供方(Provider)，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心(Monitor)使用方法 Spring配置Dubbo采用全Spring配置方式，透明化接入应用，对应用没有任何API侵入，只需用Spring加载Dubbo的配置即可，Dubbo基于Spring的Schema拓展进行加载。 单一工程中spring的配置 1234&lt;bean id=&quot;xxxService&quot; class=&quot;com.xxxServiceImpl&quot; /&gt;&lt;bean id=&quot;xxxAction&quot; class=&quot;com.xxx.xxxAction&quot;&gt; &lt;property name=&quot;xxxService&quot; ref=&quot;xxxService&quot;&gt;&lt;/bean&gt; 远程服务 将上述local.xml配置拆分成两份，将服务定义部分放在服务提供方remote-provier.xml,将服务引用部分放在服务消费方remote-consumer.xml并在provider增加暴露服务配置&lt;dubbo:service&gt;,在consumer增加引用服务配置&lt;dubbo:reference&gt; 发布服务1234&lt;!-- 和本地服务一样实现远程服务 --&gt;&lt;bean id = &quot;xxxService&quot; class = &quot;com.xxx.xxxServiceImpl&quot;/&gt;&lt;!-- 增加暴露远程服务配置 --&gt;&lt;dubbo:service interface=&quot;com.xxx.xxxService&quot; ref=&quot;xxxService&quot;&gt; 调用服务123456&lt;!-- 增加引用远程服务配置 --&gt;&lt;dubbo:reference id =&quot;xxxService&quot; interface=&quot;com.xxx.xxxService&quot;/&gt;&lt;!-- 和本地服务一样使用远程服务&gt;&lt;bean id =&quot;xxxAction&quot; class=&quot;com.xxx.xxxAction&quot;&gt; &lt;property name=&quot;xxxService&quot; ref=&quot;xxxService&quot;&gt;&lt;/bean&gt; 注册中心(Registry)注册中心负责服务地址的注册与查找，相当于目录服务，服务提供者和消费者只在启动时与注册中心交互，注册中心不转发请求，压力娇小，使用dubbo2.3.3以上版本，建议使用zookeeper注册中心zookeeper是Apache Hadoop的紫霞公募，是一个属性的目录服务，支持变更推送，适合作为Dubbo服务的注册中心 Zookeeper 安装 安装jdk 上传并解压zookeeper 将conf文件夹下的zoo-sample.cfg复制一份，改名位zoo.cfg 修改zoo.cfg的dataDir属性，指定zookeeper的真实目录 修改zoo.cfg的clientport属性，指定该服务器的zookeeper端口 启动zookeeper:zookeeper/bin/zkServer.sh start 关闭zookeeper:zookeeper/bin/zkServer.sh stop 查看zookeeper:zookeeper/bin/zkServer.sh status 框架整合Dubbo监控中心 https://github.com/alibaba/dubbo下载dubbo将dubbo-admin打成war包 1mvn package -Dmaven.test.skip=true 将war包复制到tomcat/webapps/中。修改/WEB-INF/dubbo.properties。包括地址和用户密码]]></content>
@@ -81,13 +89,13 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[关于我]]></title>
-    <url>%2Fabout%2Findex.html</url>
-    <content type="text"><![CDATA[我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[生活图]]></title>
     <url>%2Fgallery%2Findex.html</url>
     <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[关于我]]></title>
+    <url>%2Fabout%2Findex.html</url>
+    <content type="text"><![CDATA[我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
   </entry>
 </search>
