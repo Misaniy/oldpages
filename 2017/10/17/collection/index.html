@@ -37,7 +37,7 @@
     
     <title>
         
-            could not initialize proxy - noSession | 
+            集合小结 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="could not initialize proxy - noSession | Misaniy | Note">
+    <meta property="og:title" content="集合小结 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Wed Sep 13 2017 20:46:25 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 30 2017 11:59:37 GMT+0800" />
+        <meta property="article:published_time" content="Tue Oct 17 2017 11:24:00 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Nov 17 2017 13:32:28 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="could not initialize proxy - noSession | Misaniy | Note">
+    <meta name="twitter:title" content="集合小结 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/09/13/lazily/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2017/10/17/collection/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/09/13/lazily/index.html",
-    "headline": "could not initialize proxy - noSession",
-    "datePublished": "Wed Sep 13 2017 20:46:25 GMT+0800",
-    "dateModified": "Mon Oct 30 2017 11:59:37 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2017/10/17/collection/index.html",
+    "headline": "集合小结",
+    "datePublished": "Tue Oct 17 2017 11:24:00 GMT+0800",
+    "dateModified": "Fri Nov 17 2017 13:32:28 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案有两种"><span class="post-toc-number">1.</span> <span class="post-toc-text">解决方案有两种</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其一，在web-xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory-比如我用的SPRING-DATA-JPA，就用如下方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单例集合"><span class="post-toc-number">1.</span> <span class="post-toc-text">单例集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#List"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">List</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ArrayList"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">ArrayList</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LinkedList"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">LinkedList</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vector"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">Vector</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Set"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Set</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HashSet"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">HashSet</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TreeSet"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">TreeSet</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多例集合"><span class="post-toc-number">2.</span> <span class="post-toc-text">多例集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HashTable"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">HashTable</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HashMap"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">HashMap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">ConcurrentHashMap</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                could not initialize proxy - noSession
+                集合小结
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>9月 13, 2017</span>
+        <span>10月 17, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=could not initialize proxy - noSession&url=http://misaniy.cc/2017/09/13/lazily/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=集合小结&url=http://misaniy.cc/2017/10/17/collection/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=could not initialize proxy - noSession&url=http://misaniy.cc/2017/09/13/lazily/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=集合小结&url=http://misaniy.cc/2017/10/17/collection/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/09/13/lazily/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/10/17/collection/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/09/13/lazily/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/10/17/collection/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=could not initialize proxy - noSession&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/09/13/lazily/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=集合小结&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/10/17/collection/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,10 +490,152 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常</p>
-<h2 id="解决方案有两种"><a href="#解决方案有两种" class="headerlink" title="解决方案有两种"></a>解决方案有两种</h2><h3 id="其一，在web-xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类"><a href="#其一，在web-xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类" class="headerlink" title="其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类"></a>其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;filter&gt;</div><div class="line">	&lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt;</div><div class="line">	&lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt;</div><div class="line">	&lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt;</div><div class="line">	&lt;init-param&gt;</div><div class="line">		&lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt;</div><div class="line">		&lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt;</div><div class="line">	&lt;/init-param&gt;</div><div class="line">&lt;/filter&gt;</div><div class="line">&lt;filter-mapping&gt;</div><div class="line">	&lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt;</div><div class="line">	&lt;url-pattern&gt;/*&lt;/url-pattern&gt;</div><div class="line">&lt;/filter-mapping&gt;</div></pre></td></tr></table></figure>
-<h3 id="其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory-比如我用的SPRING-DATA-JPA，就用如下方法"><a href="#其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory-比如我用的SPRING-DATA-JPA，就用如下方法" class="headerlink" title="其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法"></a>其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@JSON(serialize = false)</div><div class="line">public XXX getXXX()&#123;</div><div class="line">	return XXX;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在Bean类找到你的延迟加载的数据，没有使用到就使用该注解</p>
+        <p>计算机科学中，集合是一组可变数量的数据项(也可能是0个)的组合，这些数据项可能共享某些特征，需要以某种操作方式一起进行操作。</p>
+<h2 id="单例集合"><a href="#单例集合" class="headerlink" title="单例集合"></a>单例集合</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>特点：元素有放入顺序，元素可重复</p>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><ol>
+<li>长度可变的数组<blockquote>
+<ul>
+<li>有索引结构，使用索引在数组中搜索和读取数组是很快的，也就是<strong>查找快</strong></li>
+<li>数组这种数据结构将对象放在连续的位置中，因此<strong>增加、删除的速度比较慢</strong></li>
+</ul>
+</blockquote>
+</li>
+<li>存数类型是Object，允许为null</li>
+<li>初始大小（不设置大小的时候默认是10）</li>
+<li>不是线程安全的，异步的</li>
+</ol>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><ol>
+<li>链表的数据结构</li>
+<li>存储的类型是Object,允许为null</li>
+<li>不是线程安全的，得自己实现线程安全<blockquote>
+<p>在创建List时构造一个同步的List<br> <code>List list = Collections.synchronizedList(new LinkedList(...));</code></p>
+</blockquote>
+</li>
+</ol>
+<h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><ol>
+<li>底层是数组结构</li>
+<li>同步的，线程安全</li>
+<li>执行效率低</li>
+<li>Vector缺省情况下自动增长原来一倍的数组长度<blockquote>
+<p>在集合中保存大量的数据那么使用Vector有一些有事，因为你可以通过设置集合的变化大小来避免不必要的资源开销</p>
+</blockquote>
+</li>
+<li>初始大小是10</li>
+</ol>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>特点：元素无放入顺序，且不可重复（实际存储顺序是HashCode决定的，固定的）</p>
+<h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><ol>
+<li>基于hashmap实现，底层使用hashmap保存元素</li>
+<li>set元素中的值存放在hashmap的key中，value存放了一个模拟值persent</li>
+<li>由于hashmap中的key是不能重复的，所以hashset就利用这个特性实现了set中的值不会重复</li>
+<li>hashset是如何保证元素的唯一性<ol>
+<li>基于哈希表实现的。哈希表是存储一系列哈希值的表，而哈希值是由对象的hashcode()方法产生的。</li>
+<li>确保元素唯一性的两个方法：hashcode()和equals()方法</li>
+<li>当调用add（）方法向集合中存入对象的时候，先比较对象的哈细致有没有一样的，如果都不一样就直接存入。如果有与之相同的哈希值，则要继续比较两个对象是否是同一个对象，调用对象的equals方法<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4></li>
+</ol>
+</li>
+<li>基于treeMap实现的</li>
+<li>有序的二叉树<h2 id="多例集合"><a href="#多例集合" class="headerlink" title="多例集合"></a>多例集合</h2></li>
+</ol>
+<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><ol>
+<li>父类是Dictionary</li>
+<li>实现一个key-value映射的哈希表。任何非空对象都可作为key或者value</li>
+<li>同步的，<strong>线程安全</strong></li>
+<li>内部通过单链表解决冲突问题</li>
+<li>效率低</li>
+<li>有contains方法</li>
+<li>初始大小是11</li>
+<li>扩容时，hashTable采用的是2*old+1</li>
+<li>hash值的计算使用的直接是对象的hashcode方法</li>
+<li>迭代器，HashTable用Enumeration来遍历数据<ol>
+<li>只提供了遍历Vector和Hashtable类型集合元素的功能</li>
+<li>这种类型的集合对象通过调用elements()方法获取一个Enumeration对象，然后Enumeration对象再调用一下方法来对集合中元素进行遍历。<blockquote>
+<p>hasMoreElements():判断Enumeration对象中是否还有数据<br>nextElement():获取Enumeration对象中的下一个数据</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><ol>
+<li>弗雷是AbstractMap</li>
+<li>哈希表，允许key和value值为空</li>
+<li><p>方法是同步的，线程不安全</p>
+<blockquote>
+<p><strong>为什么不安全</strong></p>
+<ul>
+<li>首先如果多个线程同时使用put方法添加元素，而且假设正好存在两个put的key发生了碰撞(hash值一样)，那么根据HashMap的实现，这两个key会添加到数组的同一个位置，这样最终就会发生其中一个线程的put的数据被覆盖</li>
+<li>如果多个线程同时检测到元素个数超过数组大小*loadFactor，这样就会发生多个线程同时对Node数组进行扩容，都在重新计算元素位置以及复制数据，但是最终只有一个线程扩容后的数组会赋值给table，也就算说其他线程的都会丢失，并且各自线程put的数据也丢失</li>
+</ul>
+<p><strong>解决方案</strong></p>
+<ul>
+<li>Hashtable<br>ConcurrentHashMap<br>Synchronized Map</li>
+</ul>
+</blockquote>
+</li>
+<li><p>效率高</p>
+</li>
+<li>有containsvalue()和containsKey()方法</li>
+<li>初始大小是16</li>
+<li>扩容时，hashMap采用的是2*old</li>
+<li>hash值的计算没有直接使用对象的hashcode方法，为对象key的hashcode值与对象value的hashcode值按位与或操作</li>
+<li>迭代器</li>
+<li>hashMap的工作原理</li>
+<li>当两个对象的hashcode值相同时会发生什么？(hashmap中的碰撞探测(collision detection)及解决方案)<blockquote>
+<ul>
+<li>因为hashcode值相同，因此他们的bucket位置相同，碰撞就会发生</li>
+<li>因为hashMap使用链表存储对象，这个Entry(包含有监支队的Map.Entry对象)会存储在链表中</li>
+</ul>
+</blockquote>
+</li>
+<li>如果有两个键的hashcode相同，你如何取对象？<blockquote>
+<ul>
+<li>当我们调用get()方法，hashMap会使用建对象的hashcode找到bucket位置，然后获取值对象</li>
+<li>找到bucket位置之后，会调用keys,equals()方法去找到链表中正确的节点，最终找到要找的值对象</li>
+</ul>
+</blockquote>
+</li>
+<li>如果HashMap的大小超过了负载银子(load factor)定义的容量，怎么办？<blockquote>
+<p>默认的负载银子大小为0.75，也就是说，当一个map填满了75%的bucket时候，和其他集合类(如ArrayList等)一样，将会创建原来HashMap大小的两倍的bucket数组，来重新调整map的大小，并将原来的对象放入新的bucket数组中，这个过程叫做rehashing，因为它调用hash方法找到新的bucket位置</p>
+</blockquote>
+</li>
+<li>重新调整HashMap大小存在什么问题吗？<blockquote>
+<p>当重新调整HashMap大小的时候，确实存在条件竞争，因为如果两个线程都发现HashMap需要重新调整大小了，他们会同时试着调整大小。在调整大小的过程中，存储在链表中的元素的次序会反过来，因为移动到新的bucket位置的时候，HashMap并不会将呀un苏放在链表的尾部，而是放在头部，这是为了避免尾部遍历(tail traversing)。如果条件发生了，那么就死循环了。</p>
+</blockquote>
+</li>
+<li><p>为什么String、Integer这样的wrapper类适合作为键</p>
+<blockquote>
+<p>String、Integer这样的wrapper类作为HashMap的键是再适合不过了，而且String最为常用。因为String是不可变的。也是final的，而且已经重写了equals()和hashcode()方法了。其他的wrapper类也有这个特点。不可变形是必须，因为为了要计算hashCode(),就要防止键值改变，如果键值在放入时和获取是i返回不同的hashcode的话，那么就不能从HashMap中找到你想要的对象。不可变性是必要的，因为为了要计算hashCode()，就要防止兼职改变。如果键值在放入和获取时返回不同的hashCode就不能从HashMap中找到想要的对象。不可变性还有其他优点如线程安全。如果你可以仅仅通过将某个field声明成final就能保证hashCode是不变的，那么请这么做吧。因为获取对象的时候要用到equals()和hashCode()方法，那么键对象正确的重写这两个方法非常重要。如果两个不想等的对象返回不同的hashcode的话，那么碰撞的几率就会小些，这样就能提高HashMap的性能。</p>
+<h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3></blockquote>
+</li>
+<li><p>CHM不但是线程安全的，而且比HashTable和synchronizedMap的性能要好</p>
+</li>
+<li>相对于HashTable和synchronizedMap锁住了整个Map,CHM只锁住部分Map.</li>
+<li>CHM允许并发的读操作，同时通过同步锁在写操作时保证数据完整性</li>
+<li><p>如何实现</p>
+<blockquote>
+<ol>
+<li>CHM引入了分割，并提供了HashTable支持的所有的功能</li>
+<li>在CHM中，支持多线程对Map做读操作，并且不需要任何的blocking<ul>
+<li>CHM将MAP分割成不同的部分，在执行更新操作的时候只锁住了一部分</li>
+<li>根据默认的并发级别，Map被分割成16个部分，并且由不同的锁控制。这样的话可以同时最多有16个写线程进行操作</li>
+<li>但由于一些更新操作，如put()，remove(),putAll(),clear()只锁住操作的部分，所以检索操作不能保证返回的是最新的结果</li>
+<li>在迭代遍历CHM时，keySet返回的是iterator是弱一致性和fail-safe的，可能不会返回某些最近的改变，并且在遍历过程中，如果已经遍历的数组上的内容变化了，不会抛出ConcurrentModificationException的异常</li>
+<li>CHM默认的并发级别是16，但可以在创建CHM时通过构造函数改变</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>CHM不允许null的键值</p>
+</li>
+<li>应用场景<blockquote>
+<ol>
+<li>CHM适用于读数量超过写</li>
+<li>当写数量大于读时，CHM的性能低于Hashtable的synchronized Map的。这是因为当锁住了整个Map时，读操作要等待对统一部分执行写操作的线程结束</li>
+<li>CHM适用于cache,在程序启动时初始化，之后可以被多个请求线程访问。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
 
         
     
@@ -514,7 +656,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/13/OracleBankDelete/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/11/10/PageHelper/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -528,7 +670,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/09/12/PortException/" id="post_nav-older" class="next-content">
+        <a href="/2017/09/25/JAVA7PathsFiles/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
