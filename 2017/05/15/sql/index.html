@@ -37,7 +37,7 @@
     
     <title>
         
-            利用Redis实现缓存 | 
+            浅谈数据库优化 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="利用Redis实现缓存 | Misaniy | Note">
+    <meta property="og:title" content="浅谈数据库优化 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Thu Apr 13 2017 19:22:34 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Nov 14 2017 11:38:43 GMT+0800" />
+        <meta property="article:published_time" content="Mon May 15 2017 16:05:34 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Nov 17 2017 14:35:38 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="利用Redis实现缓存 | Misaniy | Note">
+    <meta name="twitter:title" content="浅谈数据库优化 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/04/13/Redis/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2017/05/15/sql/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/04/13/Redis/index.html",
-    "headline": "利用Redis实现缓存",
-    "datePublished": "Thu Apr 13 2017 19:22:34 GMT+0800",
-    "dateModified": "Tue Nov 14 2017 11:38:43 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2017/05/15/sql/index.html",
+    "headline": "浅谈数据库优化",
+    "datePublished": "Mon May 15 2017 16:05:34 GMT+0800",
+    "dateModified": "Fri Nov 17 2017 14:35:38 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">Redis安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux下安装"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Linux下安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接Redis"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">连接Redis</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis的持久化方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">Redis的持久化方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis集群搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">Redis集群搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集群搭建"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">集群搭建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搭建伪集群"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">搭建伪集群</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集群的使用方法"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">集群的使用方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Redis-cli-连接集群"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">Redis-cli 连接集群</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Jedis"><span class="post-toc-number">4.</span> <span class="post-toc-text">Jedis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接单机版"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">连接单机版</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接单机版使用连接池"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">连接单机版使用连接池</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接集群版"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">连接集群版</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软优化"><span class="post-toc-number">1.</span> <span class="post-toc-text">软优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查询条件尽量加索引"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">查询条件尽量加索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#少部分关键字的使用需要减少"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">少部分关键字的使用需要减少</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#减少子查询的使用"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">减少子查询的使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#硬优化"><span class="post-toc-number">2.</span> <span class="post-toc-text">硬优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#拆表"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">拆表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分表"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">分表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#读写分离"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">读写分离</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                利用Redis实现缓存
+                浅谈数据库优化
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>4月 13, 2017</span>
+        <span>5月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=利用Redis实现缓存&url=http://misaniy.cc/2017/04/13/Redis/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=浅谈数据库优化&url=http://misaniy.cc/2017/05/15/sql/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=利用Redis实现缓存&url=http://misaniy.cc/2017/04/13/Redis/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=浅谈数据库优化&url=http://misaniy.cc/2017/05/15/sql/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/04/13/Redis/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/05/15/sql/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/04/13/Redis/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/05/15/sql/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=利用Redis实现缓存&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/04/13/Redis/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=浅谈数据库优化&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/05/15/sql/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,123 +490,28 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p> 实现缓存的工具有很多，现在比较流行的是Redis。Redis(remote dictionary server)缓存存放在内存，数据库存放在磁盘，访问内存更快。频繁访问而不频繁修改的数据放在缓存里，能带来更好的体验和更小的服务器压力。</p>
-<h2 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h2><p>Redis即便是高并发也是单线程的，不适合保存内容大的数据。</p>
-<h3 id="Linux下安装"><a href="#Linux下安装" class="headerlink" title="Linux下安装"></a>Linux下安装</h3><p>由于Redis是C语言开发的，安装Redis前需要安装c语言的编译环境。如果没有gcc需要在线安装。<br><code>Yum install gcc-c++</code><br>解压后编译<code>make</code>安装<code>make install PREFIX=/usr/local/redis</code></p>
-<h3 id="连接Redis"><a href="#连接Redis" class="headerlink" title="连接Redis"></a>连接Redis</h3><ul>
-<li>启动Redis服务<ul>
-<li>前端启动 <code>bin]./redis-server</code></li>
-<li>后台启动<ul>
-<li>把redis3.0/redis.conf复制到redis/bin 目录下</li>
-<li>修改配置文件<code>daemonize yes</code></li>
-<li>启动服务<code>bin]./redis-server redis.conf</code></li>
+        <p>数据库优化分为硬优化、软优化。硬优化主要是指针对数据库本身的优化（表和库），软优化主要就是针对sql语句之类的优化。</p>
+<h2 id="软优化"><a href="#软优化" class="headerlink" title="软优化"></a>软优化</h2><h3 id="查询条件尽量加索引"><a href="#查询条件尽量加索引" class="headerlink" title="查询条件尽量加索引"></a>查询条件尽量加索引</h3><pre><code>- 这个不是必须加的，但很大成都上能够解决一定查询效率的问题。但是需要主义的是不要在索引字段上做计算、函数等操作。
+</code></pre><h3 id="少部分关键字的使用需要减少"><a href="#少部分关键字的使用需要减少" class="headerlink" title="少部分关键字的使用需要减少"></a>少部分关键字的使用需要减少</h3><pre><code>- 避免使用Like
+- exit not exit来代替not in
+- 字段名代替*
+- id&gt;=3代替id&gt;2
+</code></pre><h3 id="减少子查询的使用"><a href="#减少子查询的使用" class="headerlink" title="减少子查询的使用"></a>减少子查询的使用</h3><pre><code>- 复杂业务简单化，不使用子查询
+    - 先生成临时表，再做关联查询
+</code></pre><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre><code>- 减少对数据库的重复操作，能合并就合并，能一条sql就不要分多条
+- 其他有的再补充
+</code></pre><h2 id="硬优化"><a href="#硬优化" class="headerlink" title="硬优化"></a>硬优化</h2><h3 id="拆表"><a href="#拆表" class="headerlink" title="拆表"></a>拆表</h3><ul>
+<li>在很多情况下，某一张表某些字段经常被查询到，那么我们就有必要拆分表<br><img src="https://i.imgur.com/Yy4qqup.png" alt=""></li>
+<li>正如这张图，在id\name\attr7\attr8\attr9常用的情况下，把表拆分成两张表再关联起来</li>
 </ul>
-</li>
+<h3 id="分表"><a href="#分表" class="headerlink" title="分表"></a>分表</h3><ul>
+<li>单表数据太多，查询的效率极慢的情况下我们可以把表里的数据分成几张表来存储<br><img src="https://i.imgur.com/nzcpyp0.png" alt=""></li>
+<li>就如上图，我们每次查询一月份的数据的时候都要在全年度的表里去查，数据量太大，查询了会很慢，所以我们将每个月份的数据单独提出来做成表，这样查询就相对比较快了</li>
 </ul>
-</li>
-<li><p>启动客户端</p>
-<ul>
-<li><code>bin]./redis-cli</code>默认连接localhost:6379</li>
-<li><code>bin]./redis-cli -h 192.168.25.130 -p 6379</code><ul>
-<li>-h:Path</li>
-<li>-p:Port</li>
+<h3 id="读写分离"><a href="#读写分离" class="headerlink" title="读写分离"></a>读写分离</h3><ul>
+<li>读写分离，主要针对数据库访问的量很大，导致数据库运行可能宕机的问题。原理就是添加几个数据库，形成集群将访问量平均分配到每个数据库上<br><img src="https://i.imgur.com/iYdfjkS.png" alt=""></li>
+<li>如上图，我们只需要修改主库数据，通知到每个分类，从库更新之后，每次查询我们都将查询分配到每个从库就可以了</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>Redis五中数据类型</p>
-<ul>
-<li><strong>String</strong>:key-value(做缓存)<ul>
-<li>get/incr/decr key</li>
-<li>set key value</li>
-</ul>
-</li>
-<li><strong>Hash</strong>:key-fields-values(做缓存)<ul>
-<li>hget key field</li>
-<li>hset key field value</li>
-<li>hincrby key field int</li>
-</ul>
-</li>
-<li>List:有顺序可重复 （类似堆）<ul>
-<li>rpush key values往右添加</li>
-<li>lpush key values 往左添加（倒序）</li>
-<li>lrange 0 -1 查询所有</li>
-<li>lpop 从左取</li>
-<li>rpop 从右取</li>
-</ul>
-</li>
-<li>Set:无顺序，不能重复<ul>
-<li>sadd key values</li>
-<li>smembers key</li>
-<li>srem key 删除</li>
-</ul>
-</li>
-<li>SortedSet(zset):有顺序，不能重复<ul>
-<li>zadd key n values<code>zadd zset1 2 a 5 b 1 c 6 d</code></li>
-<li>zrange key 0 -1 <code>c a b d</code></li>
-<li>zrevrange key 0 -1 倒序查看</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Key命令</p>
-<ul>
-<li>expire key time 设置失效时间</li>
-<li>ttl key 查看有效期</li>
-<li>persist key 解除失效（持久化）</li>
-</ul>
-</li>
-</ul>
-<h2 id="Redis的持久化方案"><a href="#Redis的持久化方案" class="headerlink" title="Redis的持久化方案"></a>Redis的持久化方案</h2><p>Redis所有数据都是保存在内存中的。</p>
-<ul>
-<li>Rdb:快照形式。定期把内存中当前时刻的数据保存到磁盘。<strong>Redis默认支持的持久化方案</strong>。一直开启</li>
-<li>Aof:Append Only File。把所有对Redis数据库操作的命令，增删改命令保存到一个文件中。数据库恢复时，把所有命令执行一遍就可恢复。开启后会降低一点性能</li>
-<li>在Redis.conf配置文件中配置。<ul>
-<li>默认RBD<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">save 900 1</div><div class="line">save 300 10</div><div class="line">save 60 10000</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>    - 备份文件 dump.rdb
-- AOF.每秒执行一次
-`appendonly yes`
-</code></pre><h2 id="Redis集群搭建"><a href="#Redis集群搭建" class="headerlink" title="Redis集群搭建"></a>Redis集群搭建</h2><p><img src="https://i.imgur.com/TmMbFyW.jpg" alt=""><br>架构细节</p>
-<ol>
-<li>所有Redis节点彼此互联(PING-PONG机制)，内部使用二进制协议优化传输速度和带宽。</li>
-<li>节点的fail是通过集群中超过半数的节点检测失效时才生效。</li>
-<li>客户端与redis节点直连，不需要中间proxy层，客户端不需要连接集群所有节点，连接集群中任何一个可用节点即可</li>
-<li>redis-cluster把所有物理节点映射到[0-16383]slot上，cluster负责维护node&lt;-&gt;slot&lt;-&gt;value</li>
-</ol>
-<blockquote>
-<p>Redis集群中内置了16384个哈希槽，当需要在Redis集群中防止一个key-value时，redis先对key使用crc16算法算出一个结果，然后把结果对16384求余数，这样每个key都会对应一个编号在0-16383之间的哈希槽，redis会根据节点数量大致均等的将哈希槽映射到不同的节点</p>
-</blockquote>
-<h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h3><p>Redis集群中至少应该有三个节点，为了保证集群的高可用，需要每个节点有一个备份机。所以至少需要6台服务器。</p>
-<h3 id="搭建伪集群"><a href="#搭建伪集群" class="headerlink" title="搭建伪集群"></a>搭建伪集群</h3><ul>
-<li>复制单机版<code>redis</code>复制5份<code>redis-cluster</code></li>
-<li>修改每一个redis节点的端口<code>port</code>以及启用集群<code>cluster-enabled yes</code></li>
-<li>启动每一个节点<code>./redis-server redis.conf</code></li>
-<li>创建集群<ul>
-<li>安装Ruby的运行环境<code>yum install ruby</code></li>
-<li>安装Ruby的包管理器<code>yum install rubygems</code></li>
-<li>安装脚本<code>gem install redis-3.0.0.gem</code></li>
-<li>复制<code>redis-3.0.0/src/redis-trib.rb</code>到<code>redis</code></li>
-</ul>
-</li>
-<li>使用ruby脚本搭建集群<code>./redis-trib.rb create --replicase 1 192.168.XX.XX:7001 1992.168.XX.XX:7002 ......</code></li>
-<li><p>创建关闭集群的脚本</p>
-<ul>
-<li><p><code>redis-cluster]vim shutdown-all.sh</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">redis01/redis-cli -h address -p 7001 shutdown</div><div class="line">redis01/redis-cli -h address -p 7002 shutdown</div><div class="line">redis01/redis-cli -h address -p 7003 shutdown</div></pre></td></tr></table></figure>
-</li>
-<li><p>chmod u+x shutdown-all.sh<br>这里这个redis-cli可以是任意一个redis集群的客户端</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="集群的使用方法"><a href="#集群的使用方法" class="headerlink" title="集群的使用方法"></a>集群的使用方法</h3><h4 id="Redis-cli-连接集群"><a href="#Redis-cli-连接集群" class="headerlink" title="Redis-cli 连接集群"></a>Redis-cli 连接集群</h4><p><code>redis-cluster]redis01/redis-cli -p 7002 -c</code><br>-c:代表连接的redis集群</p>
-<h2 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h2><h3 id="连接单机版"><a href="#连接单机版" class="headerlink" title="连接单机版"></a>连接单机版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Jedis jedis = new Jedis(ipaddress,port);</div><div class="line">jedis.set(key,value);</div><div class="line">String result = jedis.get(key);</div><div class="line">System.out.print(result);</div></pre></td></tr></table></figure>
-<h3 id="连接单机版使用连接池"><a href="#连接单机版使用连接池" class="headerlink" title="连接单机版使用连接池"></a>连接单机版使用连接池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">JedisPool jedisPool = new JedisPool(ipaddress,port);</div><div class="line">Jedis jedis = jedisPool.getResource();</div><div class="line">jedis.set(key,value);</div><div class="line">String result = jedis.get(key);</div><div class="line">System.out.print(result);</div><div class="line">jedis.close();</div><div class="line">jedisPool.close();</div></pre></td></tr></table></figure>
-<h3 id="连接集群版"><a href="#连接集群版" class="headerlink" title="连接集群版"></a>连接集群版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//第一步：使用JedisCluster对象，需要一个Set&lt;HostAndPort&gt;参数，Redis节点的列表</div><div class="line">Set&lt;HostAndPort&gt; nodes = new HashSet&lt;&gt;();</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">JedisCluster jedisCluster = new JedisCluster(nodes);</div><div class="line">//第二部：直接使用JedisCluster对象操作redis,在系统中举例存在。</div><div class="line">jedisCluster.set(key,value);</div><div class="line">String result = jedisCluster.get(key);</div><div class="line">//关闭JedisCluster对象。</div><div class="line">jedisCluster.close();</div></pre></td></tr></table></figure>
 
         
     
@@ -627,7 +532,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/27/Full-Context/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/08/10/PageHelper/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -641,7 +546,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/02/solr/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/27/Full-Context/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

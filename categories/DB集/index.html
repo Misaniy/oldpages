@@ -37,7 +37,7 @@
     
     <title>
         
-            利用Redis实现缓存 | 
+            分类: DB集 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="利用Redis实现缓存 | Misaniy | Note">
+    <meta property="og:title" content="分类: DB集 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Thu Apr 13 2017 19:22:34 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Nov 14 2017 11:38:43 GMT+0800" />
-    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="利用Redis实现缓存 | Misaniy | Note">
+    <meta name="twitter:title" content="分类: DB集 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,43 +247,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/04/13/Redis/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/categories/DB集/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/04/13/Redis/index.html",
-    "headline": "利用Redis实现缓存",
-    "datePublished": "Thu Apr 13 2017 19:22:34 GMT+0800",
-    "dateModified": "Tue Nov 14 2017 11:38:43 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Misaniy Wu",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/avatar.png"
-        },
-        "description": "一个人知道自己为什么而活,就能忍受任何一种生活"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Misaniy | Note",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": "",
-    "description": "",
-}
-</script>
 
 
     
@@ -320,340 +287,99 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">Redis安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux下安装"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Linux下安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接Redis"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">连接Redis</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis的持久化方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">Redis的持久化方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis集群搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">Redis集群搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集群搭建"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">集群搭建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搭建伪集群"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">搭建伪集群</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集群的使用方法"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">集群的使用方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Redis-cli-连接集群"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">Redis-cli 连接集群</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Jedis"><span class="post-toc-number">4.</span> <span class="post-toc-text">Jedis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接单机版"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">连接单机版</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接单机版使用连接池"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">连接单机版使用连接池</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接集群版"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">连接集群版</span></a></li></ol></li></ol>
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+        
+    
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/11/19/datebase/">数据库基础小结</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            数据库是入门Coder的基础。工具用太久，有时候甚至忘了一些基础，小结一下。
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/11/19/datebase/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
+            </div>
+            <div>
+                <strong>Misaniy Wu</strong>
+                <span>11月 19, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/DB集/">DB集</a>
+              </span>
+            
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                利用Redis实现缓存
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Misaniy Wu</strong>
-        <span>4月 13, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=利用Redis实现缓存&url=http://misaniy.cc/2017/04/13/Redis/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=利用Redis实现缓存&url=http://misaniy.cc/2017/04/13/Redis/index.html&via=Misaniy Wu" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/04/13/Redis/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/04/13/Redis/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=利用Redis实现缓存&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/04/13/Redis/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
     
 </div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p> 实现缓存的工具有很多，现在比较流行的是Redis。Redis(remote dictionary server)缓存存放在内存，数据库存放在磁盘，访问内存更快。频繁访问而不频繁修改的数据放在缓存里，能带来更好的体验和更小的服务器压力。</p>
-<h2 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h2><p>Redis即便是高并发也是单线程的，不适合保存内容大的数据。</p>
-<h3 id="Linux下安装"><a href="#Linux下安装" class="headerlink" title="Linux下安装"></a>Linux下安装</h3><p>由于Redis是C语言开发的，安装Redis前需要安装c语言的编译环境。如果没有gcc需要在线安装。<br><code>Yum install gcc-c++</code><br>解压后编译<code>make</code>安装<code>make install PREFIX=/usr/local/redis</code></p>
-<h3 id="连接Redis"><a href="#连接Redis" class="headerlink" title="连接Redis"></a>连接Redis</h3><ul>
-<li>启动Redis服务<ul>
-<li>前端启动 <code>bin]./redis-server</code></li>
-<li>后台启动<ul>
-<li>把redis3.0/redis.conf复制到redis/bin 目录下</li>
-<li>修改配置文件<code>daemonize yes</code></li>
-<li>启动服务<code>bin]./redis-server redis.conf</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>启动客户端</p>
-<ul>
-<li><code>bin]./redis-cli</code>默认连接localhost:6379</li>
-<li><code>bin]./redis-cli -h 192.168.25.130 -p 6379</code><ul>
-<li>-h:Path</li>
-<li>-p:Port</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Redis五中数据类型</p>
-<ul>
-<li><strong>String</strong>:key-value(做缓存)<ul>
-<li>get/incr/decr key</li>
-<li>set key value</li>
-</ul>
-</li>
-<li><strong>Hash</strong>:key-fields-values(做缓存)<ul>
-<li>hget key field</li>
-<li>hset key field value</li>
-<li>hincrby key field int</li>
-</ul>
-</li>
-<li>List:有顺序可重复 （类似堆）<ul>
-<li>rpush key values往右添加</li>
-<li>lpush key values 往左添加（倒序）</li>
-<li>lrange 0 -1 查询所有</li>
-<li>lpop 从左取</li>
-<li>rpop 从右取</li>
-</ul>
-</li>
-<li>Set:无顺序，不能重复<ul>
-<li>sadd key values</li>
-<li>smembers key</li>
-<li>srem key 删除</li>
-</ul>
-</li>
-<li>SortedSet(zset):有顺序，不能重复<ul>
-<li>zadd key n values<code>zadd zset1 2 a 5 b 1 c 6 d</code></li>
-<li>zrange key 0 -1 <code>c a b d</code></li>
-<li>zrevrange key 0 -1 倒序查看</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Key命令</p>
-<ul>
-<li>expire key time 设置失效时间</li>
-<li>ttl key 查看有效期</li>
-<li>persist key 解除失效（持久化）</li>
-</ul>
-</li>
-</ul>
-<h2 id="Redis的持久化方案"><a href="#Redis的持久化方案" class="headerlink" title="Redis的持久化方案"></a>Redis的持久化方案</h2><p>Redis所有数据都是保存在内存中的。</p>
-<ul>
-<li>Rdb:快照形式。定期把内存中当前时刻的数据保存到磁盘。<strong>Redis默认支持的持久化方案</strong>。一直开启</li>
-<li>Aof:Append Only File。把所有对Redis数据库操作的命令，增删改命令保存到一个文件中。数据库恢复时，把所有命令执行一遍就可恢复。开启后会降低一点性能</li>
-<li>在Redis.conf配置文件中配置。<ul>
-<li>默认RBD<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">save 900 1</div><div class="line">save 300 10</div><div class="line">save 60 10000</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>    - 备份文件 dump.rdb
-- AOF.每秒执行一次
-`appendonly yes`
-</code></pre><h2 id="Redis集群搭建"><a href="#Redis集群搭建" class="headerlink" title="Redis集群搭建"></a>Redis集群搭建</h2><p><img src="https://i.imgur.com/TmMbFyW.jpg" alt=""><br>架构细节</p>
-<ol>
-<li>所有Redis节点彼此互联(PING-PONG机制)，内部使用二进制协议优化传输速度和带宽。</li>
-<li>节点的fail是通过集群中超过半数的节点检测失效时才生效。</li>
-<li>客户端与redis节点直连，不需要中间proxy层，客户端不需要连接集群所有节点，连接集群中任何一个可用节点即可</li>
-<li>redis-cluster把所有物理节点映射到[0-16383]slot上，cluster负责维护node&lt;-&gt;slot&lt;-&gt;value</li>
-</ol>
-<blockquote>
-<p>Redis集群中内置了16384个哈希槽，当需要在Redis集群中防止一个key-value时，redis先对key使用crc16算法算出一个结果，然后把结果对16384求余数，这样每个key都会对应一个编号在0-16383之间的哈希槽，redis会根据节点数量大致均等的将哈希槽映射到不同的节点</p>
-</blockquote>
-<h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h3><p>Redis集群中至少应该有三个节点，为了保证集群的高可用，需要每个节点有一个备份机。所以至少需要6台服务器。</p>
-<h3 id="搭建伪集群"><a href="#搭建伪集群" class="headerlink" title="搭建伪集群"></a>搭建伪集群</h3><ul>
-<li>复制单机版<code>redis</code>复制5份<code>redis-cluster</code></li>
-<li>修改每一个redis节点的端口<code>port</code>以及启用集群<code>cluster-enabled yes</code></li>
-<li>启动每一个节点<code>./redis-server redis.conf</code></li>
-<li>创建集群<ul>
-<li>安装Ruby的运行环境<code>yum install ruby</code></li>
-<li>安装Ruby的包管理器<code>yum install rubygems</code></li>
-<li>安装脚本<code>gem install redis-3.0.0.gem</code></li>
-<li>复制<code>redis-3.0.0/src/redis-trib.rb</code>到<code>redis</code></li>
-</ul>
-</li>
-<li>使用ruby脚本搭建集群<code>./redis-trib.rb create --replicase 1 192.168.XX.XX:7001 1992.168.XX.XX:7002 ......</code></li>
-<li><p>创建关闭集群的脚本</p>
-<ul>
-<li><p><code>redis-cluster]vim shutdown-all.sh</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">redis01/redis-cli -h address -p 7001 shutdown</div><div class="line">redis01/redis-cli -h address -p 7002 shutdown</div><div class="line">redis01/redis-cli -h address -p 7003 shutdown</div></pre></td></tr></table></figure>
-</li>
-<li><p>chmod u+x shutdown-all.sh<br>这里这个redis-cli可以是任意一个redis集群的客户端</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="集群的使用方法"><a href="#集群的使用方法" class="headerlink" title="集群的使用方法"></a>集群的使用方法</h3><h4 id="Redis-cli-连接集群"><a href="#Redis-cli-连接集群" class="headerlink" title="Redis-cli 连接集群"></a>Redis-cli 连接集群</h4><p><code>redis-cluster]redis01/redis-cli -p 7002 -c</code><br>-c:代表连接的redis集群</p>
-<h2 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h2><h3 id="连接单机版"><a href="#连接单机版" class="headerlink" title="连接单机版"></a>连接单机版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Jedis jedis = new Jedis(ipaddress,port);</div><div class="line">jedis.set(key,value);</div><div class="line">String result = jedis.get(key);</div><div class="line">System.out.print(result);</div></pre></td></tr></table></figure>
-<h3 id="连接单机版使用连接池"><a href="#连接单机版使用连接池" class="headerlink" title="连接单机版使用连接池"></a>连接单机版使用连接池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">JedisPool jedisPool = new JedisPool(ipaddress,port);</div><div class="line">Jedis jedis = jedisPool.getResource();</div><div class="line">jedis.set(key,value);</div><div class="line">String result = jedis.get(key);</div><div class="line">System.out.print(result);</div><div class="line">jedis.close();</div><div class="line">jedisPool.close();</div></pre></td></tr></table></figure>
-<h3 id="连接集群版"><a href="#连接集群版" class="headerlink" title="连接集群版"></a>连接集群版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//第一步：使用JedisCluster对象，需要一个Set&lt;HostAndPort&gt;参数，Redis节点的列表</div><div class="line">Set&lt;HostAndPort&gt; nodes = new HashSet&lt;&gt;();</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">nodes.add(new HostAndPort(ipaddress,port));</div><div class="line">JedisCluster jedisCluster = new JedisCluster(nodes);</div><div class="line">//第二部：直接使用JedisCluster对象操作redis,在系统中举例存在。</div><div class="line">jedisCluster.set(key,value);</div><div class="line">String result = jedisCluster.get(key);</div><div class="line">//关闭JedisCluster对象。</div><div class="line">jedisCluster.close();</div></pre></td></tr></table></figure>
-
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/04/27/Full-Context/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/04/02/solr/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     
