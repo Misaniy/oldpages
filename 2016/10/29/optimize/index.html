@@ -37,7 +37,7 @@
     
     <title>
         
-            Mybatis的分页插件PageHelper | 
+            数据库优化 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Mybatis的分页插件PageHelper | Misaniy | Note">
+    <meta property="og:title" content="数据库优化 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Thu Aug 10 2017 01:17:45 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Nov 17 2017 14:35:12 GMT+0800" />
+        <meta property="article:published_time" content="Sat Oct 29 2016 09:32:10 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Nov 20 2017 19:12:26 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Mybatis的分页插件PageHelper | Misaniy | Note">
+    <meta name="twitter:title" content="数据库优化 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/08/10/PageHelper/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2016/10/29/optimize/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/08/10/PageHelper/index.html",
-    "headline": "Mybatis的分页插件PageHelper",
-    "datePublished": "Thu Aug 10 2017 01:17:45 GMT+0800",
-    "dateModified": "Fri Nov 17 2017 14:35:12 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2016/10/29/optimize/index.html",
+    "headline": "数据库优化",
+    "datePublished": "Sat Oct 29 2016 09:32:10 GMT+0800",
+    "dateModified": "Mon Nov 20 2017 19:12:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用方法</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL语句优化"><span class="post-toc-number">1.</span> <span class="post-toc-text">SQL语句优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库优化"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据库优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主从复制（读写分离）"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">主从复制（读写分离）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分库分表"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">分库分表</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                Mybatis的分页插件PageHelper
+                数据库优化
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>8月 10, 2017</span>
+        <span>10月 29, 2016</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Mybatis的分页插件PageHelper&url=http://misaniy.cc/2017/08/10/PageHelper/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=数据库优化&url=http://misaniy.cc/2016/10/29/optimize/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Mybatis的分页插件PageHelper&url=http://misaniy.cc/2017/08/10/PageHelper/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=数据库优化&url=http://misaniy.cc/2016/10/29/optimize/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/08/10/PageHelper/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2016/10/29/optimize/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/08/10/PageHelper/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2016/10/29/optimize/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Mybatis的分页插件PageHelper&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/08/10/PageHelper/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=数据库优化&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2016/10/29/optimize/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,15 +490,41 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>逆向工程生成的代码是不支持分页处理的，如果想进行分页需要自己编写mapper，这样就失去逆向工程的意义了。为了提高开发效率可以是要弄个mybatis的分页插件PageHelper.</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该插件目前支持Oracle，MySQL，MariaDB,SQLite,Hsqldb,PostgreSQL六种数据库分页.</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
-<li>把PageHelper依赖的jar包添加到工程中。官方提供的代码对逆向工程支持的不好，使用民间修改版pagehelper-fix.</li>
-<li><p>在Mybatis配置xml中配置拦截器插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;plugins&gt;</div><div class="line">	&lt;plugin interceptor=&quot;com.github.pagehelper.PageHelper&quot;&gt;</div><div class="line">		&lt;property name=&quot;dialect&quot; value=&quot;mysql&quot;/&gt;</div><div class="line">	&lt;/plugin&gt;</div><div class="line">&lt;/plugins&gt;</div></pre></td></tr></table></figure>
+        <p>浅析数据库的优化</p>
+<h2 id="SQL语句优化"><a href="#SQL语句优化" class="headerlink" title="SQL语句优化"></a>SQL语句优化</h2><ol>
+<li>对查询进行优化，尽量避免全表查询，首先考虑在where以及order by 涉及的列上建立索引。</li>
+<li>应尽量避免在where子句中字段进行null值判断，否则将导致引擎放弃使用索引而进行全表扫描</li>
+<li>应尽量避免在where子句中使用!=或&lt;&gt;操作符，否则将导致引擎放弃使用索引而进行全表扫描。</li>
+<li>应尽量避免在where子句中使用or来连接条件，如果一个字段有索引，一个字段没有索引，将导致引擎放弃使用索引而进行全表扫描，可以使用union all来代替</li>
+<li>in 和not in 也要慎用，否则会导致全表扫描，对连续的数据用between 代替，也可以用exists 代替in</li>
+<li>like ‘%a%’这种，索引失效，可以使用全文索引代替</li>
+<li>对于多张大数据量（几百条就算）的表JOIN，要先分页再JOIN，否则逻辑读会很高，性能很差</li>
+<li>少使用*</li>
+<li>日期使用mysql自带的，少使用字符串存储，字符串的比较复杂；IP也使用int类型，不要使用字符串</li>
+<li>尽可能的使用varchar/nvarchar代替char/nchar，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对娇小的字段内搜索效率显然要高些。</li>
+</ol>
+<h2 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h2><h3 id="主从复制（读写分离）"><a href="#主从复制（读写分离）" class="headerlink" title="主从复制（读写分离）"></a>主从复制（读写分离）</h3><p>使用spring可以实现读写分离<br><img src="https://i.imgur.com/63X8SU0.png" alt=""></p>
+<h3 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h3><ul>
+<li>分表<ul>
+<li>垂直分表<blockquote>
+<p>将表按照功能模块、关系密切程度划分出来，部署到不同的库上，比如我们会建立定义数据库workDB、商品数据库payDB、用户数据库userDB、日志数据库logDB等，分别用于存储项目数据定义表、商品定义表、用户数据表、日志数据表等</p>
+</blockquote>
 </li>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//获取第1页，10条内容，默认查询总数count</div><div class="line">PageHelper.startPage(1,10);</div><div class="line">//分页处理</div><div class="line">List&lt;E&gt; list = ;</div><div class="line">//取分页信息</div><div class="line">PageInfo&lt;E&gt; pageInfo = new PageInfo(list);</div><div class="line">pageInfo.getTotal();</div><div class="line">pageInfo.getPages();</div><div class="line">pageInfo.getPageNum();</div><div class="line">pageInfo.getPageSize();</div></pre></td></tr></table></figure></li>
+<li>水平分表<blockquote>
+<p>指定自己的规则：1、求余。2、哈希。3、时间</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>分库<ul>
+<li>分库就是把一张表的数据分成N多个区块，这些区块可以在同一个磁盘上，也可以在不同的磁盘上</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>表太多，海量数据，各项业务划分清除，低耦合的话，用垂直拆分比较号</li>
+<li>表不多，单表数据量大的话，选水平拆分比较号</li>
+</ul>
+</li>
 </ul>
 
         
@@ -520,7 +546,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/12/PortException/" id="post_nav-newer" class="prev-content">
+        <a href="/2016/10/31/MyBatis/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -534,7 +560,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/05/15/sql/" id="post_nav-older" class="next-content">
+        <a href="/2016/10/26/StorageEngine/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
