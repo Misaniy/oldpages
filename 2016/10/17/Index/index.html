@@ -37,7 +37,7 @@
     
     <title>
         
-            归档: 2016/8 | 
+            数据库之索引 | 
         
         Misaniy | Note
     </title>
@@ -231,15 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2016/8 | Misaniy | Note">
+    <meta property="og:title" content="数据库之索引 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Mon Oct 17 2016 20:28:26 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Nov 20 2017 19:21:16 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2016/8 | Misaniy | Note">
+    <meta name="twitter:title" content="数据库之索引 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/archives/2016/08/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2016/10/17/Index/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://misaniy.cc/2016/10/17/Index/index.html",
+    "headline": "数据库之索引",
+    "datePublished": "Mon Oct 17 2016 20:28:26 GMT+0800",
+    "dateModified": "Mon Nov 20 2017 19:21:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Misaniy Wu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "一个人知道自己为什么而活,就能忍受任何一种生活"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Misaniy | Note",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -287,99 +320,285 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">索引概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">索引分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通索引"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">普通索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#唯一索引"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">唯一索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主键索引"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">主键索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全文索引"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">全文索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组合索引"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">组合索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">应用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么情况适合创建索引"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">什么情况适合创建索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么情况不适合创建索引"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">什么情况不适合创建索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引失效"><span class="post-toc-number">4.</span> <span class="post-toc-text">索引失效</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看索引和优化索引"><span class="post-toc-number">5.</span> <span class="post-toc-text">查看索引和优化索引</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/08/19/Index/">数据库之索引</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/08/19/Index/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>8月 19, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/DB集/">DB集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                数据库之索引
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Misaniy Wu</strong>
+        <span>10月 17, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=数据库之索引&url=http://misaniy.cc/2016/10/17/Index/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=数据库之索引&url=http://misaniy.cc/2016/10/17/Index/index.html&via=Misaniy Wu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2016/10/17/Index/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2016/10/17/Index/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=数据库之索引&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2016/10/17/Index/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。</p>
+<h2 id="索引概述"><a href="#索引概述" class="headerlink" title="索引概述"></a>索引概述</h2><ul>
+<li>索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，他们包含着数据表里所有文件的引用指针。可以类比为书的目录，可以加快数据库的查询速度。</li>
+<li>索引是创建在数据表对象上的。由表中的一个字段或多个字段生成的键组成，这些键存储在数据结构（B-树或哈希表）中，通过mysql可以快速有效的查找与键值相关联的字段</li>
+<li>根据存储类型，分为B型树索引和哈希索引<ul>
+<li>InnoDB和MyISAM支持BTREE类型索引，默认</li>
+<li>Memoery支持HASH类型的索引</li>
+</ul>
+</li>
+</ul>
+<h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><h3 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h3><p>最基本的索引，没有任何限制。MyIASM中默认的BTREE类型的索引，经常用</p>
+<h3 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h3><p>与普通索引类是，不同的是：索引的列必须唯一，但允许有<strong>空值</strong></p>
+<h3 id="主键索引"><a href="#主键索引" class="headerlink" title="主键索引"></a>主键索引</h3><p>它是一种特殊的唯一索引，<strong>不允许有空值</strong></p>
+<h3 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h3><ul>
+<li>FULLTEXT索引仅仅可用于MYISAM表</li>
+<li>他们可以从CHAR、VARCHAR或TEXT列中作为CREATE TABLE语句的一部分被创建，或是随后使用ALTER TABLE 或CREATE INDEX被添加<blockquote>
+<p>注意：大容量的表，使用全文索引虽然速度更快，但是生产全文检索是一个非常消耗时间消耗磁盘空间的做法</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="组合索引"><a href="#组合索引" class="headerlink" title="组合索引"></a>组合索引</h3><ul>
+<li>所谓多列索引，是指在创建索引的时候，锁关联的字段不是一个字段，而是多个字段。</li>
+<li>虽然可以通过所关联的字段进行查询，但是只有查询条件中使用了所关联字段中的第一个字段，多列索引才会被使用</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="什么情况适合创建索引"><a href="#什么情况适合创建索引" class="headerlink" title="什么情况适合创建索引"></a>什么情况适合创建索引</h3><ol>
+<li>经常被查询的字段，即在WHERE子句中出现的字段</li>
+<li>在分组的字段，即在GROUP BY子句中出现的字段</li>
+<li>存在依赖关系的子表和父表之间的联合查询，即主键或外键字段</li>
+<li>设置唯一完整性约束的字段</li>
+</ol>
+<h3 id="什么情况不适合创建索引"><a href="#什么情况不适合创建索引" class="headerlink" title="什么情况不适合创建索引"></a>什么情况不适合创建索引</h3><ol>
+<li>在查询中很少使用的字段</li>
+<li>拥有许多重复值的字段</li>
+</ol>
+<h2 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h2><ol>
+<li>使用or关键字的时候索引失效，要想使用or,又想使用索引，只能将or条件中的每个列都加上索引</li>
+<li>对于多列索引，不是使用的第一部分，则不会使用索引</li>
+<li>like查询是以%开头</li>
+<li>如果列类型是字符串，那一定要在条件中将数据使用引号引用起来，否则不使用索引</li>
+<li>如果mysql估计使用全表扫描要比使用索引快，则不使用索引</li>
+<li>对索引列进行运算导致索引失效(+，-，*，/，！等)</li>
+<li>独立的列（对列变量需要计算（聚合运算、类型转换等））</li>
+<li>在JOIN操作中（需要从多个数据表提取数据时），MYSQL只在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用</li>
+<li>不使用NOT IN和&lt;&gt;操作，不会使用索引将进行全表扫描，NOT IN 可以NOT EXISTS代替，ID&lt;&gt;3则可以用id&gt;3 or id &lt; 3来代替</li>
+<li>索引不会包含有NULL值的列，只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于此复合索引就是无效的。所以我们在数据库设计时不要让字段的默认值为NULL。</li>
+</ol>
+<h2 id="查看索引和优化索引"><a href="#查看索引和优化索引" class="headerlink" title="查看索引和优化索引"></a>查看索引和优化索引</h2><ul>
+<li>查看索引<code>show status like &#39;Handler_read%&#39;</code></li>
+<li>优化索引<ul>
+<li>索引不会包含有NULL值的列，因此数据库设计时不要让字段的默认值为NULL</li>
+<li>使用短索引<blockquote>
+<p>例如：如果有一个CHAR(255)的列，如果在前10个或20个字符内，多数值是唯一的，那么就不要对整个列进行索引。短索引不仅可以提高查询速度而且可以节省磁盘空间和I/O操作。</p>
+</blockquote>
+</li>
+<li>索引列排序<blockquote>
+<p>MySQL查询只使用一个索引，因此如果WHERE子句中已经使用了索引的话，那么order by 中的列是不会使用索引的。因此数据库默认排序可以符合要求的情况下不要使用排序操作；尽量不要包含多个列的排序，如果需要最好给这些列创建复合索引</p>
+</blockquote>
+</li>
+<li>不要在列上进行运算</li>
+</ul>
+</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/10/19/Lock/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/10/13/SpringWebMvc/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -461,7 +680,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -479,7 +698,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/DB集/">DB集<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Web集/">Web集<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/基本集/">基本集<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/DB集/">DB集<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Web集/">Web集<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/基本集/">基本集<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/框架集/">框架集<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -503,7 +722,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">21</span>
+                <span class="sidebar-badge">23</span>
             </a>
         </li>
         
