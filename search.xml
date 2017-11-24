@@ -17,6 +17,30 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[Hibernate]]></title>
+    <url>%2F2017%2F10%2F26%2Fhibernate%2F</url>
+    <content type="text"><![CDATA[Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。 执行流程 读取配置Configuration 创建sessionFactory 打开session 开启事务Transaction 进行持久化操作（CRUD） 提交事务 关闭session延迟加载延迟加载机制是为了避免一些无谓的性能开销而提出来的。所谓延迟加载就是当在真正需要数据的时候，才真正执行数据加载操作。在Hibernate中提供了对实体对象的延迟加载以及对集合的延迟加载，另外在Hibernate3中还提供了对属性的延迟加载。缓存 一级缓存 hibernate支持两个级别的缓存，默认只支持一级缓存 每个session内部自带一个一级缓存 每个Session被关闭时，其对应的一级缓存自动清除二级缓存独立于session，默认不开启查询方式本地SQL查询，Criteria、HQL状态 瞬时态不纯在持久化标识OID，尚未与Hibernate Session关联对象，被认为处于瞬时态，失去引用将被JVM回收 持久态存在持久化标识OID，与当前session有关联，并且相关联的session没有关闭，并且事务未提交 游离态存在持久化标识OID，但没有与当前session关联，游离状态改变hibernate不能检测到 优化 使用双向一对多关联，不使用单向一对多 灵活使用单向一对多关联 不用一对多，用多对一取代 配置对象缓存，不使用集合缓存 一对多集合使用Bag,多对多集合使用Set 继承类使用显式多台 表字段要少，表关联不要怕多，有二级缓存撑腰GET和LOAD的区别Session.get方法，查询立即执行，返回Customer类对象Session.load方法，默认采用延迟加载数据方式，不会立即查询，返回Customer类子类对象（动态生成代理对象）]]></content>
+      <categories>
+        <category>框架集</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[MyBatis]]></title>
+    <url>%2F2017%2F10%2F25%2Fmybatis2%2F</url>
+    <content type="text"><![CDATA[MyBatis是一个持久层框架，避免了jdbc代码和手工设置参数以及抽取结果集，可以使用简单的xml或者注解方式来配置映射基本体，将接口和java中的pojo映射成数据库中的记录 执行流程 和Hibernate的对比 Mybatis和Hibernate不同，它不完全是一个ORM框架，因为MyBatis需要程序员自己编写SQL语句，不过mybatis可以用过XML或注解方式灵活配置要运行的sql语句，并将java对象和SQL语句映射生成最终执行的SQL，最后将SQL执行的结果再映射生成JAVA对象 Mybatis学习门槛低，简单易学，程序员直接编写原生态sql，可严格控制sql执行性能，灵活度高，非常适合对关系数据模型要求不高的软件开发，例如互联网软件、企业运营类软件等，因为这类软件需求变化频繁，一旦需求变化要求成功输出迅速。但是灵活的前提是mybatis无法做到数据库无关性，如果需要实现支持多种数据库的软件则需要自定义多套sql映射文件，工作量大 Hibernate对象/关系映射能力强，数据库无关性号，对于关系模型要求高的软件（例如需求固定的定制化软件）如果用hibernate开发可以节省很多代码，提高效率。但是Hibernate的缺点是学习门槛高，要精通门槛更高，而且怎么设计O/R映射，在性能和对象模型之间如何权衡，以及怎样用好Hibernate需要具有很强的经验和能力才行。 使用MyBatis的mapper接口调用时有哪些要求 Mapper接口方法名和mapper.xml中定义的每个sql的ID相同 Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql的parameterType类型相同 Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType类型相同 Mapper.xml文件中的namespace即是mapper接口的类路径。 SqlMapConfig.xml中配置有哪些内容SqlMapConfig.xml中配置的内容和顺序如下 properties(属性) settings(配置) typeAliases(类型别名) typeHandlers（类型处理器） objectFactory（对象工厂） plugins（插件） environments（环境集合属性对象） enviroment（环境子属性对象） transactionManager(事务管理) dataSource（数据源） mappers（映射器） 一级缓存和二级缓存一级缓存Mybatis首先去缓存中查询结果集，如果没有则查询数据库，如果又则从缓存取出返回结果就不查数据库。Mybatis内部存储缓存使用一个HashMap。key为hashCode+sqlId+Sql语句。value为查询出来映射生成的java对象。 二级缓存Mybatis的二级缓存即查询缓存，它的作用域是一个mapper的namespace，即在同一个namespace中查询sql可以从缓存中获取数据。二级缓存是可以跨SqlSession的。]]></content>
+      <categories>
+        <category>框架集</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[springmvc]]></title>
+    <url>%2F2017%2F10%2F24%2Fspringmvc%2F</url>
+    <content type="text"><![CDATA[Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring 框架提供了构建 Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用Spring进行WEB开发时，可以选择使用Spring的SpringMVC框架或集成其他MVC开发框架，如Struts1，Struts2等。 执行流程 用户发送请求到前端控制器DispatcherServlet DispatcherServlet收到请求调用HandlerMapping处理器映射器 处理器映射器找到具体的处理器，生成处理器对象及处理器拦截器（如果有则生成）一并返回给DispatcherServlet。 DispatcherServlet调用HandlerAdapter处理器适配器 HandlerAdapter经过适配调用具体的处理器（Controller，也叫后端控制器） Controller执行完成返回ModelAndView HandlerAdpater将Controller执行结果ModelAndView返回给DispatcherServlet DispatcherServlet将ModelAndView传给ViewReslover视图解析器 ViewReslover解析后返回具体View DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中） DispatcherServlet响应用户常用的注解 @Controller 标记在一个类上，一个springmvc的controller对象 @RequestMapping 处理请求地址映射的注解，可用于类或方法上，用于类上，表示类中的所有响应方法都是以该地址作为父路径的。 @Resource和@Autowired 都是bean注入使用 @Autowired为spring提供的注解，需要导包 @Autowired是按照类型注入对象的，如果想按照名称来配置，可以结合@Qualifier注解使用 @Resource是按照名称自动注入 @PathVariable 用于将请求路径URL中的模版变量映射到功能方法的参数上，即取出URL模版中的变量作为参数 @RequestParm 在Springmvc后台控制层获取参数 @ResponseBody 将controller的方法返回的对象，通过适当的htppmessageconverter转化为指定格式后，写入到response对象的body数据区 @Component 通用注解 @Repository 注解dao层 @ModelAttribute和@SessionAttribute @ModelAttribute该Controller的所有方法在调用前，先执行，应用在basecontroller中 @SessionAttribute将值放在session域中]]></content>
+      <categories>
+        <category>框架集</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[集合小结]]></title>
     <url>%2F2017%2F10%2F17%2Fcollection%2F</url>
     <content type="text"><![CDATA[计算机科学中，集合是一组可变数量的数据项(也可能是0个)的组合，这些数据项可能共享某些特征，需要以某种操作方式一起进行操作。 单例集合List特点：元素有放入顺序，元素可重复 ArrayList 长度可变的数组 有索引结构，使用索引在数组中搜索和读取数组是很快的，也就是查找快 数组这种数据结构将对象放在连续的位置中，因此增加、删除的速度比较慢 存数类型是Object，允许为null 初始大小（不设置大小的时候默认是10） 不是线程安全的，异步的 LinkedList 链表的数据结构 存储的类型是Object,允许为null 不是线程安全的，得自己实现线程安全 在创建List时构造一个同步的List List list = Collections.synchronizedList(new LinkedList(...)); Vector 底层是数组结构 同步的，线程安全 执行效率低 Vector缺省情况下自动增长原来一倍的数组长度 在集合中保存大量的数据那么使用Vector有一些有事，因为你可以通过设置集合的变化大小来避免不必要的资源开销 初始大小是10 Set特点：元素无放入顺序，且不可重复（实际存储顺序是HashCode决定的，固定的） HashSet 基于hashmap实现，底层使用hashmap保存元素 set元素中的值存放在hashmap的key中，value存放了一个模拟值persent 由于hashmap中的key是不能重复的，所以hashset就利用这个特性实现了set中的值不会重复 hashset是如何保证元素的唯一性 基于哈希表实现的。哈希表是存储一系列哈希值的表，而哈希值是由对象的hashcode()方法产生的。 确保元素唯一性的两个方法：hashcode()和equals()方法 当调用add（）方法向集合中存入对象的时候，先比较对象的哈细致有没有一样的，如果都不一样就直接存入。如果有与之相同的哈希值，则要继续比较两个对象是否是同一个对象，调用对象的equals方法TreeSet 基于treeMap实现的 有序的二叉树多例集合 HashTable 父类是Dictionary 实现一个key-value映射的哈希表。任何非空对象都可作为key或者value 同步的，线程安全 内部通过单链表解决冲突问题 效率低 有contains方法 初始大小是11 扩容时，hashTable采用的是2*old+1 hash值的计算使用的直接是对象的hashcode方法 迭代器，HashTable用Enumeration来遍历数据 只提供了遍历Vector和Hashtable类型集合元素的功能 这种类型的集合对象通过调用elements()方法获取一个Enumeration对象，然后Enumeration对象再调用一下方法来对集合中元素进行遍历。 hasMoreElements():判断Enumeration对象中是否还有数据nextElement():获取Enumeration对象中的下一个数据 HashMap 弗雷是AbstractMap 哈希表，允许key和value值为空 方法是同步的，线程不安全 为什么不安全 首先如果多个线程同时使用put方法添加元素，而且假设正好存在两个put的key发生了碰撞(hash值一样)，那么根据HashMap的实现，这两个key会添加到数组的同一个位置，这样最终就会发生其中一个线程的put的数据被覆盖 如果多个线程同时检测到元素个数超过数组大小*loadFactor，这样就会发生多个线程同时对Node数组进行扩容，都在重新计算元素位置以及复制数据，但是最终只有一个线程扩容后的数组会赋值给table，也就算说其他线程的都会丢失，并且各自线程put的数据也丢失 解决方案 HashtableConcurrentHashMapSynchronized Map 效率高 有containsvalue()和containsKey()方法 初始大小是16 扩容时，hashMap采用的是2*old hash值的计算没有直接使用对象的hashcode方法，为对象key的hashcode值与对象value的hashcode值按位与或操作 迭代器 hashMap的工作原理 当两个对象的hashcode值相同时会发生什么？(hashmap中的碰撞探测(collision detection)及解决方案) 因为hashcode值相同，因此他们的bucket位置相同，碰撞就会发生 因为hashMap使用链表存储对象，这个Entry(包含有监支队的Map.Entry对象)会存储在链表中 如果有两个键的hashcode相同，你如何取对象？ 当我们调用get()方法，hashMap会使用建对象的hashcode找到bucket位置，然后获取值对象 找到bucket位置之后，会调用keys,equals()方法去找到链表中正确的节点，最终找到要找的值对象 如果HashMap的大小超过了负载银子(load factor)定义的容量，怎么办？ 默认的负载银子大小为0.75，也就是说，当一个map填满了75%的bucket时候，和其他集合类(如ArrayList等)一样，将会创建原来HashMap大小的两倍的bucket数组，来重新调整map的大小，并将原来的对象放入新的bucket数组中，这个过程叫做rehashing，因为它调用hash方法找到新的bucket位置 重新调整HashMap大小存在什么问题吗？ 当重新调整HashMap大小的时候，确实存在条件竞争，因为如果两个线程都发现HashMap需要重新调整大小了，他们会同时试着调整大小。在调整大小的过程中，存储在链表中的元素的次序会反过来，因为移动到新的bucket位置的时候，HashMap并不会将呀un苏放在链表的尾部，而是放在头部，这是为了避免尾部遍历(tail traversing)。如果条件发生了，那么就死循环了。 为什么String、Integer这样的wrapper类适合作为键 String、Integer这样的wrapper类作为HashMap的键是再适合不过了，而且String最为常用。因为String是不可变的。也是final的，而且已经重写了equals()和hashcode()方法了。其他的wrapper类也有这个特点。不可变形是必须，因为为了要计算hashCode(),就要防止键值改变，如果键值在放入时和获取是i返回不同的hashcode的话，那么就不能从HashMap中找到你想要的对象。不可变性是必要的，因为为了要计算hashCode()，就要防止兼职改变。如果键值在放入和获取时返回不同的hashCode就不能从HashMap中找到想要的对象。不可变性还有其他优点如线程安全。如果你可以仅仅通过将某个field声明成final就能保证hashCode是不变的，那么请这么做吧。因为获取对象的时候要用到equals()和hashCode()方法，那么键对象正确的重写这两个方法非常重要。如果两个不想等的对象返回不同的hashcode的话，那么碰撞的几率就会小些，这样就能提高HashMap的性能。 ConcurrentHashMap CHM不但是线程安全的，而且比HashTable和synchronizedMap的性能要好 相对于HashTable和synchronizedMap锁住了整个Map,CHM只锁住部分Map. CHM允许并发的读操作，同时通过同步锁在写操作时保证数据完整性 如何实现 CHM引入了分割，并提供了HashTable支持的所有的功能 在CHM中，支持多线程对Map做读操作，并且不需要任何的blocking CHM将MAP分割成不同的部分，在执行更新操作的时候只锁住了一部分 根据默认的并发级别，Map被分割成16个部分，并且由不同的锁控制。这样的话可以同时最多有16个写线程进行操作 但由于一些更新操作，如put()，remove(),putAll(),clear()只锁住操作的部分，所以检索操作不能保证返回的是最新的结果 在迭代遍历CHM时，keySet返回的是iterator是弱一致性和fail-safe的，可能不会返回某些最近的改变，并且在遍历过程中，如果已经遍历的数组上的内容变化了，不会抛出ConcurrentModificationException的异常 CHM默认的并发级别是16，但可以在创建CHM时通过构造函数改变 CHM不允许null的键值 应用场景 CHM适用于读数量超过写 当写数量大于读时，CHM的性能低于Hashtable的synchronized Map的。这是因为当锁住了整个Map时，读操作要等待对统一部分执行写操作的线程结束 CHM适用于cache,在程序启动时初始化，之后可以被多个请求线程访问。]]></content>
@@ -41,17 +65,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[could not initialize proxy - noSession]]></title>
-    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
-    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
+    <title><![CDATA[Linux误删除了备份的数据库]]></title>
+    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
+    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
       <categories>
         <category>报错集</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Linux误删除了备份的数据库]]></title>
-    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
-    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
+    <title><![CDATA[could not initialize proxy - noSession]]></title>
+    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
+    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
       <categories>
         <category>报错集</category>
       </categories>
@@ -185,13 +209,13 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[生活图]]></title>
-    <url>%2Fgallery%2Findex.html</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[关于我]]></title>
     <url>%2Fabout%2Findex.html</url>
     <content type="text"><![CDATA[我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[生活图]]></title>
+    <url>%2Fgallery%2Findex.html</url>
+    <content type="text"></content>
   </entry>
 </search>
