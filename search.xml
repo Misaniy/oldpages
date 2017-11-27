@@ -81,17 +81,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[could not initialize proxy - noSession]]></title>
-    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
-    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
+    <title><![CDATA[Linux误删除了备份的数据库]]></title>
+    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
+    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
       <categories>
         <category>报错集</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Linux误删除了备份的数据库]]></title>
-    <url>%2F2017%2F09%2F13%2FOracleBankDelete%2F</url>
-    <content type="text"><![CDATA[延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session reason：误删除了备份的数据库resolve：12345678910111213141516sqlplus /nolog//使用数据库命令模式connect system/root as sysdba//连接数据库SQL&gt;shutdown normal//关闭数据库oracle服务SQL&gt;startup mount//重新启动Oracle服务SQL&gt;alter database open;//打开数据库//SQL&gt;alter database datafile 5 offline drop 若出现错误SQL&gt;alter database open;//重新更改数据库的openSQL&gt;startup]]></content>
+    <title><![CDATA[could not initialize proxy - noSession]]></title>
+    <url>%2F2017%2F09%2F13%2Flazily%2F</url>
+    <content type="text"><![CDATA[failed to lazily initialize a collection of role: com.misaniy.xxx, could not initialize proxy - no Session延迟加载异常 解决方案有两种其一，在web.xml中配置Spring的OpenSessionInViewFilter，确保服务器端的逻辑执行完后再关闭session，这是针对hibernate的支持类12345678910111213&lt;filter&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.orm.jpa.support.OpenEntityManagerInviewFilter&lt;/filter-class&gt; &lt;!-- 如果你的sessionFactory不是叫sessionFactory，需要配置如下--&gt; &lt;init-param&gt; &lt;param-name&gt;sessionFactoryBeanName&lt;/param-name&gt; &lt;param-value&gt;&#123;Your Session Factory Name&#125;&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 其二，上面方法是hibernate的支持类，如果你配置的不是sessionFactory,比如我用的SPRING DATA JPA，就用如下方法1234@JSON(serialize = false)public XXX getXXX()&#123; return XXX;&#125; 在Bean类找到你的延迟加载的数据，没有使用到就使用该注解]]></content>
       <categories>
         <category>报错集</category>
       </categories>
@@ -173,7 +173,7 @@
     <url>%2F2016%2F10%2F29%2Foptimize%2F</url>
     <content type="text"><![CDATA[浅析数据库的优化 SQL语句优化 对查询进行优化，尽量避免全表查询，首先考虑在where以及order by 涉及的列上建立索引。 应尽量避免在where子句中字段进行null值判断，否则将导致引擎放弃使用索引而进行全表扫描 应尽量避免在where子句中使用!=或&lt;&gt;操作符，否则将导致引擎放弃使用索引而进行全表扫描。 应尽量避免在where子句中使用or来连接条件，如果一个字段有索引，一个字段没有索引，将导致引擎放弃使用索引而进行全表扫描，可以使用union all来代替 in 和not in 也要慎用，否则会导致全表扫描，对连续的数据用between 代替，也可以用exists 代替in like ‘%a%’这种，索引失效，可以使用全文索引代替 对于多张大数据量（几百条就算）的表JOIN，要先分页再JOIN，否则逻辑读会很高，性能很差 少使用* 日期使用mysql自带的，少使用字符串存储，字符串的比较复杂；IP也使用int类型，不要使用字符串 尽可能的使用varchar/nvarchar代替char/nchar，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对娇小的字段内搜索效率显然要高些。 数据库优化主从复制（读写分离）使用spring可以实现读写分离 分库分表 分表 垂直分表 将表按照功能模块、关系密切程度划分出来，部署到不同的库上，比如我们会建立定义数据库workDB、商品数据库payDB、用户数据库userDB、日志数据库logDB等，分别用于存储项目数据定义表、商品定义表、用户数据表、日志数据表等 水平分表 指定自己的规则：1、求余。2、哈希。3、时间 分库 分库就是把一张表的数据分成N多个区块，这些区块可以在同一个磁盘上，也可以在不同的磁盘上 应用场景 表太多，海量数据，各项业务划分清除，低耦合的话，用垂直拆分比较号 表不多，单表数据量大的话，选水平拆分比较号]]></content>
       <categories>
-        <category>DB集</category>
+        <category>数据库集</category>
       </categories>
   </entry>
   <entry>
@@ -181,7 +181,7 @@
     <url>%2F2016%2F10%2F26%2FStorageEngine%2F</url>
     <content type="text"><![CDATA[MySQL中的数据用各种不同的技术存储在文件（或者内存）中。这些技术中的每一种技术都使用不同的存储机制、索引技巧、锁定水平并且最终提供广泛的不同的功能和能力 查看mysql支持的存储引擎（SHOW ENGINES） myisam和innodb的区别 存储结构 MyISAM每个MyISAM在磁盘上存储成三个文件。第一个文件的名字以表的名字开始，拓展名指出文件类型。.frm文件存储表定义。数据文件的拓展名为.MYD(MYDate)。索引文件的拓展名是.MYI(MYIndex) InnoDB所有的表都保存在同一个数据文件中（也可能是多个文件，或者是独立的表空间文件），InnoDB表的大小只受限于操作系统文件的大小，一般为2GB 存储空间 MyISAM可被压缩，存储空间较小。支持三种不同的存储格式：静态表（默认，但是主义数据末尾不能有空格，会被去掉）、动态表、压缩表 innoDB需要更多的内存和存储，它会在主内存中建立其专用的缓冲池用于告诉缓冲数据和索引 可移植性、备份及恢复 MyISAM数据是以文件的形式存储，所以在跨平台的数据转移中会很方便。在备份和恢复时可单独针对某个进行操作。 innoDB免费的方案可以是拷贝数据文件、备份binlog，或用mysqldump，在数据量达到几十GB的时候就相对痛苦了。 事务支持 MyISAM强调的是性能，每次查询具有原子性，其执行速度比InnoDB类型要快，但是不提供事务支持。 innoDB提供事务支持，外部键等高级数据库功能。具有事务（commit），回滚（rollback）和崩溃修复能力（crash recovery capablities）的事务安全（transaction=safe(ACID compliant)）型表 表锁差异 MyISAM只支持表级锁，用户在操作myisam表时，select，update，delete，insert语句都会给表自动加锁，如果加锁以后的表满足insert并发的情况下，可以在表的尾部插入新的数据 innoDB支持事务和行级锁，是innodb的最大特色。行锁大幅度提高了多用户并发操作的性能，但是InnoDB的行锁，只是在WHERE的主键是有效的，非主键的WHERE都会锁全表的 AUTO-INCREMENT MyISAM可以和其他字段一起建立联合索引。引擎的自动增长列必须是索引，如果是组合索引，自动增长可以不是第一列，他可以根据前面几列进行排序后递增。 innoDBInnoDB中必须包含只有该字段的索引。引擎的自动增长列必须是索引。如果是组合索引也必须是组合索引的第一列。 全文索引 MyISAM支持FULLTEXT类型的全文索引。 innoDB不支持FULLTEXT类型的全文索引，但是innodb可以使用sphinx插件支持全文索引，并且效果更好 表主键 MyISAM允许没有任何索引和主键的表存在，索引都是保存行的地址。 innoDB如果没有设定主键或空孔唯一索引，就会自动生成一个6字节的主键（用户不可见），数据是主索引的一部分，附加索引保存的是主索引的值。 表的具体行数 MyISAM保存表的总行数，如果select count(*) from table会直接取出该值 innoDB没有保存表的总行数，如果使用select count(*) from table；会遍历整个表，消耗相当大，但是在加了where条件后，myisam和innodb处理的方式都一样。 CRUD操作 MyISAM如果执行大量的select，MyISAM是更好的选择 innoDB如果你的数据执行大量的insert或update，出于性能方面的考虑，应该使用InnoDB表。DELETE从性能上InnoDB更优，但DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除，在InnoDB上如果要清空保存有大量数据的表，最好使用truncate table这个命令 外键 MyISAM不支持 innoDB支持]]></content>
       <categories>
-        <category>DB集</category>
+        <category>数据库集</category>
       </categories>
   </entry>
   <entry>
@@ -197,7 +197,7 @@
     <url>%2F2016%2F10%2F19%2FLock%2F</url>
     <content type="text"><![CDATA[数据库是一个多用户使用的共享资源。当多个用户并发地存取数据时，在数据库中就会产生多个事务同时存取同一数据的情况。若对并发操作不加控制就可能会读取和存储不正确的数据，破坏数据库的一致性。加锁是实现数据库并发控制的一个非常重要的技术。当事务在对某个数据对象进行操作前，先向系统发出请求，对其加锁。加锁后事务就对该数据对象有了一定的控制，在该事务释放锁之前，其他的事务不能对此数据对象进行更新操作。 表锁行锁（InnoDB）共享锁又成为读锁，多个事务对于同一数据可以共享一把锁，都能访问到数据，但是只能读不能修改 &gt; SELECT ... LOCK IN SHARE MODE 排他锁又称为写锁。排它锁就是不能与其他锁并存，如一个事务获取了一个数据行的排他锁，其他事务就不能再获取该行的其他锁，包括共享锁和排他锁，但是获取排他锁的事务是可以对数据就行数据和修改。排他锁指的是一个事务在一行数据加上排它锁后，其他事务不能再加其他的锁。updata,delete,isnert都会自动给设计到的数据加上排他锁，select语句默认不会加任何锁类型 &gt; SELECT ... FRO UPDATE 乐观锁 乐观锁假设认为数据一般情况下不会造成冲突，所以在数据进行提交更新的时候，才会正式对数据的冲突与否进行就爱南侧，如果发现冲突了，则返回用户错误的信息，让用户决定如何去做 实现方式 版本（Version）记录机制 一般是通过为数据库表增加一个数字类型的”version”字段来实现。当读取数据时，将version字段的值一同独处，数据每更新一次，对此version值加一。当我们提交更新的时候，判断数据库表对应记录的当前版本信息与第一次取出来的version值进行比较。如果数据库表当前版本号与第一次取出来的version值相等，则予以更新，否则认为是过期数据 时间戳（timestamp） 悲观锁它指的是对数据被外界（包括本系统当前的其他事务，以及来自外部系统的事务处理）修改持保守状态（悲观），因此，在整个数据处理过程中，将数据处于锁定状态。 &gt; SELECT ... FOR UPDATE 或 LOCK IN SHARE MODE]]></content>
       <categories>
-        <category>DB集</category>
+        <category>数据库集</category>
       </categories>
   </entry>
   <entry>
@@ -205,7 +205,7 @@
     <url>%2F2016%2F10%2F17%2FIndex%2F</url>
     <content type="text"><![CDATA[索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。 索引概述 索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，他们包含着数据表里所有文件的引用指针。可以类比为书的目录，可以加快数据库的查询速度。 索引是创建在数据表对象上的。由表中的一个字段或多个字段生成的键组成，这些键存储在数据结构（B-树或哈希表）中，通过mysql可以快速有效的查找与键值相关联的字段 根据存储类型，分为B型树索引和哈希索引 InnoDB和MyISAM支持BTREE类型索引，默认 Memoery支持HASH类型的索引 索引分类普通索引最基本的索引，没有任何限制。MyIASM中默认的BTREE类型的索引，经常用 唯一索引与普通索引类是，不同的是：索引的列必须唯一，但允许有空值 主键索引它是一种特殊的唯一索引，不允许有空值 全文索引 FULLTEXT索引仅仅可用于MYISAM表 他们可以从CHAR、VARCHAR或TEXT列中作为CREATE TABLE语句的一部分被创建，或是随后使用ALTER TABLE 或CREATE INDEX被添加 注意：大容量的表，使用全文索引虽然速度更快，但是生产全文检索是一个非常消耗时间消耗磁盘空间的做法 组合索引 所谓多列索引，是指在创建索引的时候，锁关联的字段不是一个字段，而是多个字段。 虽然可以通过所关联的字段进行查询，但是只有查询条件中使用了所关联字段中的第一个字段，多列索引才会被使用 应用场景什么情况适合创建索引 经常被查询的字段，即在WHERE子句中出现的字段 在分组的字段，即在GROUP BY子句中出现的字段 存在依赖关系的子表和父表之间的联合查询，即主键或外键字段 设置唯一完整性约束的字段 什么情况不适合创建索引 在查询中很少使用的字段 拥有许多重复值的字段 索引失效 使用or关键字的时候索引失效，要想使用or,又想使用索引，只能将or条件中的每个列都加上索引 对于多列索引，不是使用的第一部分，则不会使用索引 like查询是以%开头 如果列类型是字符串，那一定要在条件中将数据使用引号引用起来，否则不使用索引 如果mysql估计使用全表扫描要比使用索引快，则不使用索引 对索引列进行运算导致索引失效(+，-，*，/，！等) 独立的列（对列变量需要计算（聚合运算、类型转换等）） 在JOIN操作中（需要从多个数据表提取数据时），MYSQL只在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用 不使用NOT IN和&lt;&gt;操作，不会使用索引将进行全表扫描，NOT IN 可以NOT EXISTS代替，ID&lt;&gt;3则可以用id&gt;3 or id &lt; 3来代替 索引不会包含有NULL值的列，只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于此复合索引就是无效的。所以我们在数据库设计时不要让字段的默认值为NULL。 查看索引和优化索引 查看索引show status like &#39;Handler_read%&#39; 优化索引 索引不会包含有NULL值的列，因此数据库设计时不要让字段的默认值为NULL 使用短索引 例如：如果有一个CHAR(255)的列，如果在前10个或20个字符内，多数值是唯一的，那么就不要对整个列进行索引。短索引不仅可以提高查询速度而且可以节省磁盘空间和I/O操作。 索引列排序 MySQL查询只使用一个索引，因此如果WHERE子句中已经使用了索引的话，那么order by 中的列是不会使用索引的。因此数据库默认排序可以符合要求的情况下不要使用排序操作；尽量不要包含多个列的排序，如果需要最好给这些列创建复合索引 不要在列上进行运算]]></content>
       <categories>
-        <category>DB集</category>
+        <category>数据库集</category>
       </categories>
   </entry>
   <entry>
