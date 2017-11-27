@@ -34,7 +34,7 @@
   </entry>
   <entry>
     <title><![CDATA[MyBatis]]></title>
-    <url>%2F2017%2F10%2F25%2Fmybatis2%2F</url>
+    <url>%2F2017%2F10%2F25%2Fmybatis%2F</url>
     <content type="text"><![CDATA[MyBatis是一个持久层框架，避免了jdbc代码和手工设置参数以及抽取结果集，可以使用简单的xml或者注解方式来配置映射基本体，将接口和java中的pojo映射成数据库中的记录 执行流程 和Hibernate的对比 Mybatis和Hibernate不同，它不完全是一个ORM框架，因为MyBatis需要程序员自己编写SQL语句，不过mybatis可以用过XML或注解方式灵活配置要运行的sql语句，并将java对象和SQL语句映射生成最终执行的SQL，最后将SQL执行的结果再映射生成JAVA对象 Mybatis学习门槛低，简单易学，程序员直接编写原生态sql，可严格控制sql执行性能，灵活度高，非常适合对关系数据模型要求不高的软件开发，例如互联网软件、企业运营类软件等，因为这类软件需求变化频繁，一旦需求变化要求成功输出迅速。但是灵活的前提是mybatis无法做到数据库无关性，如果需要实现支持多种数据库的软件则需要自定义多套sql映射文件，工作量大 Hibernate对象/关系映射能力强，数据库无关性号，对于关系模型要求高的软件（例如需求固定的定制化软件）如果用hibernate开发可以节省很多代码，提高效率。但是Hibernate的缺点是学习门槛高，要精通门槛更高，而且怎么设计O/R映射，在性能和对象模型之间如何权衡，以及怎样用好Hibernate需要具有很强的经验和能力才行。 使用MyBatis的mapper接口调用时有哪些要求 Mapper接口方法名和mapper.xml中定义的每个sql的ID相同 Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql的parameterType类型相同 Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType类型相同 Mapper.xml文件中的namespace即是mapper接口的类路径。 SqlMapConfig.xml中配置有哪些内容SqlMapConfig.xml中配置的内容和顺序如下 properties(属性) settings(配置) typeAliases(类型别名) typeHandlers（类型处理器） objectFactory（对象工厂） plugins（插件） environments（环境集合属性对象） enviroment（环境子属性对象） transactionManager(事务管理) dataSource（数据源） mappers（映射器） 一级缓存和二级缓存一级缓存Mybatis首先去缓存中查询结果集，如果没有则查询数据库，如果又则从缓存取出返回结果就不查数据库。Mybatis内部存储缓存使用一个HashMap。key为hashCode+sqlId+Sql语句。value为查询出来映射生成的java对象。 二级缓存Mybatis的二级缓存即查询缓存，它的作用域是一个mapper的namespace，即在同一个namespace中查询sql可以从缓存中获取数据。二级缓存是可以跨SqlSession的。]]></content>
       <categories>
         <category>框架集</category>
@@ -161,14 +161,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[MyBatis框架小结]]></title>
-    <url>%2F2016%2F10%2F31%2FMyBatis%2F</url>
-    <content type="text"><![CDATA[学习MyBatis的一些个人总结 MyBatis环境配置 1 导入jar包 2 log4j.properties 3 sqlMapConfig.xml 12345678910111213141516171819202122232425262728293031&lt;configuration&gt;&lt;!-- 先加载property，再加载properties,后加载覆盖--&gt;&lt;properties resource=&quot;db.properties&quot;&gt; &lt;property name=&quot;jdbc.driver&quot; value=&quot;AAA&quot;/&gt;&lt;/properties&gt;&lt;!-- 配置pojo别名--&gt; &lt;typeAliases&gt; &lt;!--&lt;typeAlias type=&quot;com.misaniy.po.User&quot; alias=&quot;user&quot; /&gt;--&gt; &lt;!-- 单个配置typeAlias 扫描包package，不区分大小写 --&gt; &lt;package name=&quot;com.misaniy.po&quot; /&gt;&lt;/typeAliases&gt;&lt;enviroments default=&quot;development&quot;&gt; &lt;enviroment id=&quot;development&quot;&gt; &lt;transactionManager type=&quot;JDBC&quot; /&gt; &lt;dataSource type=&quot;POOLED&quot;&gt; &lt;/dataSource&gt; &lt;/enviroment&gt;&lt;/enviroments&gt;&lt;mappers&gt; &lt;!-- resource根据classpath查找，url绝对路径,class，接口全限定名（目录相同、名称一致、）、package扫描包 --&gt; &lt;mapper class=&quot;com.misaniy.mapper.UserMapper&quot; /&gt; &lt;mapper resource=&quot;XXX.xml&quot;&gt; &lt;package name=&quot;com.misaniy.mapper&quot; /&gt; &lt;mappers&gt;&lt;/configuration&gt; ####Config.xml配置内容和顺序 properties(属性) settings(全局配置参数) typeAliases(类型别名) typeHandlers(类型处理器) objectFactory(对象工厂) plugins(插件) enviroments（环境集合属性对象） enviroments(环境子属性对象) -transactionManager -dataSource mappers（映射器） 4 PO类5 映射文件xxx.xml 1234567891011121314&lt;!-- &lt;mapper namespace=&quot;test&quot;&gt; 传统--&gt;&lt;mapper namespace=&quot;com.misaniy.UserMapper&quot;/&gt;&lt;!-- 使用Mapper不需要DaoImpl --&gt;&lt;!-- 这里的Type使用的别名，类型由mybatis内部定制，pojo由config配置文件定制--&gt;&lt;select id=&quot;findUserByName&quot; parameterType=&quot;String&quot; resultType=&quot;user&quot;&gt; select * from user where name like &apos;%$&#123;value&#125;%&apos;&lt;/select&gt;&lt;insert id=&quot;insertUser&quot; parameterType=&quot;user&quot;&gt; &lt;selectKey keyProperty=&quot;id&quot; order=&quot;After&quot; resultType=&quot;Integer&quot;&gt; select LAST_INSERT_ID() &lt;/selectKey&gt; insert into user(name) values(#&#123;name&#125;)&lt;/insert&gt;&lt;/mapper&gt; Mybatis解决jdbc的问题数据库链接和创建的频繁操作、sql硬编码、结果集封装到pojo、parameterType对输入参数的规范]]></content>
-      <categories>
-        <category>分享集</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[数据库优化]]></title>
     <url>%2F2016%2F10%2F29%2Foptimize%2F</url>
     <content type="text"><![CDATA[浅析数据库的优化 SQL语句优化 对查询进行优化，尽量避免全表查询，首先考虑在where以及order by 涉及的列上建立索引。 应尽量避免在where子句中字段进行null值判断，否则将导致引擎放弃使用索引而进行全表扫描 应尽量避免在where子句中使用!=或&lt;&gt;操作符，否则将导致引擎放弃使用索引而进行全表扫描。 应尽量避免在where子句中使用or来连接条件，如果一个字段有索引，一个字段没有索引，将导致引擎放弃使用索引而进行全表扫描，可以使用union all来代替 in 和not in 也要慎用，否则会导致全表扫描，对连续的数据用between 代替，也可以用exists 代替in like ‘%a%’这种，索引失效，可以使用全文索引代替 对于多张大数据量（几百条就算）的表JOIN，要先分页再JOIN，否则逻辑读会很高，性能很差 少使用* 日期使用mysql自带的，少使用字符串存储，字符串的比较复杂；IP也使用int类型，不要使用字符串 尽可能的使用varchar/nvarchar代替char/nchar，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对娇小的字段内搜索效率显然要高些。 数据库优化主从复制（读写分离）使用spring可以实现读写分离 分库分表 分表 垂直分表 将表按照功能模块、关系密切程度划分出来，部署到不同的库上，比如我们会建立定义数据库workDB、商品数据库payDB、用户数据库userDB、日志数据库logDB等，分别用于存储项目数据定义表、商品定义表、用户数据表、日志数据表等 水平分表 指定自己的规则：1、求余。2、哈希。3、时间 分库 分库就是把一张表的数据分成N多个区块，这些区块可以在同一个磁盘上，也可以在不同的磁盘上 应用场景 表太多，海量数据，各项业务划分清除，低耦合的话，用垂直拆分比较号 表不多，单表数据量大的话，选水平拆分比较号]]></content>
@@ -186,10 +178,10 @@
   </entry>
   <entry>
     <title><![CDATA[事务Transaction]]></title>
-    <url>%2F2016%2F10%2F23%2Fbasiclanguage%2F</url>
+    <url>%2F2016%2F10%2F23%2Ftransaction%2F</url>
     <content type="text"><![CDATA[Transaction是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行。 事务的四个属性 原子性 事务是由一个或一组相互关联的SQL语句组成，这些语句被认为是一个不可分割的单元 一致性 对于数据库的修改是一致的，即多个用户查的数据是一样的。一致性主要由mysql的日志机制处理，他记录数据的变化，为事务恢复提供跟踪记录。 隔离性 每个事务都有自己的空间，和其他发生在系统中的事务隔离开来，而且事务的结果只在他完全被执行时才能看到 持久性 提交了这个事务之后对数据的修改更新就是永久的。当一个事务完成，数据库的日志已经被更新时，持久性即可发挥其特有的功效，在mysql中，如果系统崩溃或数据戒指被破坏，通过日志，系统能够恢复在重启前进行的最后一次成功更新，可以反应系统崩溃时处于执行过程的事物的变化 事务的四种隔离级别READ UNCOMMITTED(未提交读)事务A对数据做的修改，即使没有提交，对于事务B来说也是可见的，这种问题叫脏读 READ COMMITTED（提交读）事务A对数据做的修改，提交之后会对事务B可见。 &gt; 举例：事务B开启时独到数据1，接下来事务A开启，把这个数据改成2，提交，B再次读取这个数据，会独到最新的数据2 REPEATABLE READ(可重复读)事务A对数据做的修改，提交之后，对于先于事务A开启的事务是不可见的。 &gt; 举例：事务B开启时读到数据1，接下来事务A开启，把这个数据改成2，提交，B再次读取这个数据，仍然独到数据1 SERIALIZABLE（可串行化）可串行化是最高的隔离级别。这种隔离级别强制要求所有事物串行执行，在这种隔离级别下，读取的每行数据都加锁，会导致大量的锁征用问题，性能最差 &gt; 随着隔离级别的增高，并发性能也会降低 mysql中的事务 事务的实现是基于数据库的存储引擎的。不同的存储引擎对事务的支持成都不一样 mysql支持的存储引擎中支持事务的InnoDB 事务的隔离级别是通过锁实现的，而事务的原子性、一致性和持久性是通过事务日志实现的 事务日志 redo——保障了事务的持久性和一致性 在InnoDB的存储引擎中，事务日志通过重做(redo)日志和innoDB存储引擎的日志缓冲(InnoDB Log Buffer)实现。事务开启时，事务中的操作，都会先写入存储引擎的日志缓冲中，在事务提交之前，这些缓冲的日志都需要提前刷新到磁盘上持久化，这就是DBA们口中常说的“日志现形”。当事务提交之后，在BUFFER POOL中映射的数据文件才会慢慢刷新到磁盘。此时如果数据库崩溃或者宕机，那么当系统进行恢复时，就可以根据redo log中记录的日志，把数据库恢复到崩溃前的一个状态，未完成的事务，可以继续提交，也可以选择回滚，这是基于恢复的策略而定 undo——保障了事务的原子性 undo log主要为事务的回滚服务。在事务执行的过程中，除了记录redo log，还会记录一定量的undo log。undo log记录数据在每个操作前的状态，如果事务执行过程中需要回滚，就可以根据undo log进行回滚操作。每个事务的回滚，只会当回滚当前事务做的操作，并不会印象到其他的事务做的操作]]></content>
       <categories>
-        <category>DB集</category>
+        <category>数据库集</category>
       </categories>
   </entry>
   <entry>
@@ -225,13 +217,13 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[关于我]]></title>
-    <url>%2Fabout%2Findex.html</url>
-    <content type="text"><![CDATA[我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[生活图]]></title>
     <url>%2Fgallery%2Findex.html</url>
     <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[关于我]]></title>
+    <url>%2Fabout%2Findex.html</url>
+    <content type="text"><![CDATA[我是谁Misaniy 这个名字是因为她的名字是YUANSIYI，我从中抠了几个字符串，加上我的想念组合的。 上可陪领导逛街拎包吃喝玩乐，下可宅在家里追新番，热衷于研究新菜品和更优雅的代码，也没有忘记工作之余锻炼身体给自己未来投资，有一个非常有眼光的女朋友（这绝不是在夸我），也在努力成为一个优雅的hentai绅士。 热爱生活，热爱科技，爱小米，更爱小米的智能家居体系，有朝一日，我要让家里充满智能，充满GEEK的味道。 这是哪里misaniy.cc这是我的博客小站，也是我的黄金屋。在我的代码之夜上，地上有数不清的咯脚的石子，我摸索着前行，背后总有一个人意味深长地让我带上他们。如果你听过这个故事，你也会像我一样，写这样一个博客，把一路的石子捡起来。 我会不时更新我的博客，在我代码上遇到问题，或者我觉得需要记录的时候 怎么联系我Github:MisaniyEmail:MisaniyWeibo:为这美好的世界献上祝福Location：中国.重庆]]></content>
   </entry>
 </search>

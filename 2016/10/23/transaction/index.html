@@ -37,7 +37,7 @@
     
     <title>
         
-            分类: 分享集 | 
+            事务Transaction | 
         
         Misaniy | Note
     </title>
@@ -231,15 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 分享集 | Misaniy | Note">
+    <meta property="og:title" content="事务Transaction | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Sun Oct 23 2016 18:28:10 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Nov 27 2017 23:54:36 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 分享集 | Misaniy | Note">
+    <meta name="twitter:title" content="事务Transaction | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/categories/分享集/page/2/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2016/10/23/transaction/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://misaniy.cc/2016/10/23/transaction/index.html",
+    "headline": "事务Transaction",
+    "datePublished": "Sun Oct 23 2016 18:28:10 GMT+0800",
+    "dateModified": "Mon Nov 27 2017 23:54:36 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Misaniy Wu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "一个人知道自己为什么而活,就能忍受任何一种生活"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Misaniy | Note",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -287,104 +320,266 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务的四个属性"><span class="post-toc-number">1.</span> <span class="post-toc-text">事务的四个属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务的四种隔离级别"><span class="post-toc-number">2.</span> <span class="post-toc-text">事务的四种隔离级别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#READ-UNCOMMITTED-未提交读"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">READ UNCOMMITTED(未提交读)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#READ-COMMITTED（提交读）"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">READ COMMITTED（提交读）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#REPEATABLE-READ-可重复读"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">REPEATABLE READ(可重复读)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SERIALIZABLE（可串行化）"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">SERIALIZABLE（可串行化）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mysql中的事务"><span class="post-toc-number">3.</span> <span class="post-toc-text">mysql中的事务</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/10/13/SpringWebMvc/">SpringWebMvc小结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            学习SpringWebMvc的个人小结
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/10/13/SpringWebMvc/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>10月 13, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/categories/分享集/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/categories/分享集/">1</a><span class="page-number current">2</span>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                事务Transaction
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Misaniy Wu</strong>
+        <span>10月 23, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=事务Transaction&url=http://misaniy.cc/2016/10/23/transaction/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=事务Transaction&url=http://misaniy.cc/2016/10/23/transaction/index.html&via=Misaniy Wu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2016/10/23/transaction/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2016/10/23/transaction/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=事务Transaction&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2016/10/23/transaction/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>Transaction是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行。</p>
+<h2 id="事务的四个属性"><a href="#事务的四个属性" class="headerlink" title="事务的四个属性"></a>事务的四个属性</h2><ul>
+<li>原子性<ul>
+<li>事务是由一个或一组相互关联的SQL语句组成，这些语句被认为是一个不可分割的单元</li>
+</ul>
+</li>
+<li>一致性<ul>
+<li>对于数据库的修改是一致的，即多个用户查的数据是一样的。一致性主要由mysql的日志机制处理，他记录数据的变化，为事务恢复提供跟踪记录。</li>
+</ul>
+</li>
+<li>隔离性<ul>
+<li>每个事务都有自己的空间，和其他发生在系统中的事务隔离开来，而且事务的结果只在他完全被执行时才能看到</li>
+</ul>
+</li>
+<li>持久性<ul>
+<li>提交了这个事务之后对数据的修改更新就是永久的。当一个事务完成，数据库的日志已经被更新时，持久性即可发挥其特有的功效，在mysql中，如果系统崩溃或数据戒指被破坏，通过日志，系统能够恢复在重启前进行的最后一次成功更新，可以反应系统崩溃时处于执行过程的事物的变化</li>
+</ul>
+</li>
+</ul>
+<h2 id="事务的四种隔离级别"><a href="#事务的四种隔离级别" class="headerlink" title="事务的四种隔离级别"></a>事务的四种隔离级别</h2><h3 id="READ-UNCOMMITTED-未提交读"><a href="#READ-UNCOMMITTED-未提交读" class="headerlink" title="READ UNCOMMITTED(未提交读)"></a>READ UNCOMMITTED(未提交读)</h3><p>事务A对数据做的修改，即使没有提交，对于事务B来说也是可见的，这种问题叫脏读</p>
+<h3 id="READ-COMMITTED（提交读）"><a href="#READ-COMMITTED（提交读）" class="headerlink" title="READ COMMITTED（提交读）"></a>READ COMMITTED（提交读）</h3><p>事务A对数据做的修改，提交之后会对事务B可见。</p>
+<pre><code>&gt; 举例：事务B开启时独到数据1，接下来事务A开启，把这个数据改成2，提交，B再次读取这个数据，会独到最新的数据2
+</code></pre><h3 id="REPEATABLE-READ-可重复读"><a href="#REPEATABLE-READ-可重复读" class="headerlink" title="REPEATABLE READ(可重复读)"></a>REPEATABLE READ(可重复读)</h3><p>事务A对数据做的修改，提交之后，对于先于事务A开启的事务是不可见的。</p>
+<pre><code>&gt; 举例：事务B开启时读到数据1，接下来事务A开启，把这个数据改成2，提交，B再次读取这个数据，仍然独到数据1
+</code></pre><h3 id="SERIALIZABLE（可串行化）"><a href="#SERIALIZABLE（可串行化）" class="headerlink" title="SERIALIZABLE（可串行化）"></a>SERIALIZABLE（可串行化）</h3><p>可串行化是最高的隔离级别。这种隔离级别强制要求所有事物串行执行，在这种隔离级别下，读取的每行数据都加锁，会导致大量的锁征用问题，性能最差</p>
+<p><img src="https://i.imgur.com/3DF95Aj.png" alt=""></p>
+<pre><code>&gt; 随着隔离级别的增高，并发性能也会降低
+</code></pre><h2 id="mysql中的事务"><a href="#mysql中的事务" class="headerlink" title="mysql中的事务"></a>mysql中的事务</h2><ul>
+<li>事务的实现是基于数据库的存储引擎的。不同的存储引擎对事务的支持成都不一样</li>
+<li>mysql支持的存储引擎中支持事务的InnoDB</li>
+<li>事务的隔离级别是通过锁实现的，而事务的原子性、一致性和持久性是通过事务日志实现的</li>
+<li>事务日志<ul>
+<li>redo——<strong>保障了事务的持久性和一致性</strong><ul>
+<li>在InnoDB的存储引擎中，事务日志通过重做(redo)日志和innoDB存储引擎的日志缓冲(InnoDB Log Buffer)实现。事务开启时，事务中的操作，都会先写入存储引擎的日志缓冲中，在事务提交之前，这些缓冲的日志都需要提前刷新到磁盘上持久化，这就是DBA们口中常说的“日志现形”。当事务提交之后，在BUFFER POOL中映射的数据文件才会慢慢刷新到磁盘。此时如果数据库崩溃或者宕机，那么当系统进行恢复时，就可以根据redo log中记录的日志，把数据库恢复到崩溃前的一个状态，未完成的事务，可以继续提交，也可以选择回滚，这是基于恢复的策略而定</li>
+</ul>
+</li>
+<li>undo——<strong>保障了事务的原子性</strong><ul>
+<li>undo log主要为事务的回滚服务。在事务执行的过程中，除了记录redo log，还会记录一定量的undo log。undo log记录数据在每个操作前的状态，如果事务执行过程中需要回滚，就可以根据undo log进行回滚操作。每个事务的回滚，只会当回滚当前事务做的操作，并不会印象到其他的事务做的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/10/26/StorageEngine/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/10/19/Lock/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -466,7 +661,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -484,7 +679,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/DB集/">DB集<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Web集/">Web集<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/基本集/">基本集<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库集/">数据库集<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/框架集/">框架集<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/categories/Web集/">Web集<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/分享集/">分享集<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/基本集/">基本集<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/报错集/">报错集<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库集/">数据库集<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/框架集/">框架集<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -508,7 +703,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">28</span>
+                <span class="sidebar-badge">27</span>
             </a>
         </li>
         
