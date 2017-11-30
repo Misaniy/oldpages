@@ -37,7 +37,7 @@
     
     <title>
         
-            分布式文件系统FastDFS | 
+            Redis小结 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分布式文件系统FastDFS | Misaniy | Note">
+    <meta property="og:title" content="Redis小结 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Wed Jan 11 2017 18:29:53 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Nov 15 2017 10:42:23 GMT+0800" />
+        <meta property="article:published_time" content="Mon Nov 28 2016 10:21:35 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 28 2017 14:46:13 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分布式文件系统FastDFS | Misaniy | Note">
+    <meta name="twitter:title" content="Redis小结 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/01/11/FastDFS/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2016/11/28/redis2/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/01/11/FastDFS/index.html",
-    "headline": "分布式文件系统FastDFS",
-    "datePublished": "Wed Jan 11 2017 18:29:53 GMT+0800",
-    "dateModified": "Wed Nov 15 2017 10:42:23 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2016/11/28/redis2/index.html",
+    "headline": "Redis小结",
+    "datePublished": "Mon Nov 28 2016 10:21:35 GMT+0800",
+    "dateModified": "Tue Nov 28 2017 14:46:13 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是FastDFS"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是FastDFS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FastDFS架构"><span class="post-toc-number">2.</span> <span class="post-toc-text">FastDFS架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#服务端两个角色："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">服务端两个角色：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件上传的流程图"><span class="post-toc-number">3.</span> <span class="post-toc-text">文件上传的流程图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件下载"><span class="post-toc-number">4.</span> <span class="post-toc-text">文件下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FastDFS使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">FastDFS使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传文件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">上传文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用工具类上传"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">使用工具类上传</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整合Spring"><span class="post-toc-number">6.</span> <span class="post-toc-text">整合Spring</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SpringMvc-xml设定文件上传解析器"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">SpringMvc.xml设定文件上传解析器</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String（字符串）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">String（字符串）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特点"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用场景"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">应用场景</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hash-散列"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">hash(散列)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特点-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用场景-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">应用场景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">常用命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#list-列表"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">list(列表)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特点-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用场景-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">应用场景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用命令-1"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">常用命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#set（集合）"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">set（集合）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特点-3"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用场景-3"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">应用场景</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#zset-sorted-set-（有序集合）"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">zset(sorted set)（有序集合）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特点-4"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用场景-4"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">应用场景</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#持久化"><span class="post-toc-number">2.</span> <span class="post-toc-text">持久化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RDB"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">RDB</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AOF"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">AOF</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">比较</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redis的漏洞"><span class="post-toc-number">3.</span> <span class="post-toc-text">Redis的漏洞</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#漏洞介绍"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">漏洞介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何入侵"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">如何入侵</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修复"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">修复</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                分布式文件系统FastDFS
+                Redis小结
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>1月 11, 2017</span>
+        <span>11月 28, 2016</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=分布式文件系统FastDFS&url=http://misaniy.cc/2017/01/11/FastDFS/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Redis小结&url=http://misaniy.cc/2016/11/28/redis2/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=分布式文件系统FastDFS&url=http://misaniy.cc/2017/01/11/FastDFS/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Redis小结&url=http://misaniy.cc/2016/11/28/redis2/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/01/11/FastDFS/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2016/11/28/redis2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/01/11/FastDFS/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2016/11/28/redis2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=分布式文件系统FastDFS&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/01/11/FastDFS/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Redis小结&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2016/11/28/redis2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,29 +490,151 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>传统图片上传不能有效应对集群的方式，单独搭建一个图片服务器。可以使用分布式文件系统FastDFS方式。实现服务器的高可用</p>
-<h2 id="什么是FastDFS"><a href="#什么是FastDFS" class="headerlink" title="什么是FastDFS"></a>什么是FastDFS</h2><p>FastDFS是用<strong>C语言</strong>编写的一款开源的<strong>分布式文件系统</strong>。FastDFS位互联网量身定制，充分考虑了冗杂备份，负载均衡，线性扩容等机制，并注重高可用、高性能等指标，使用FastDFS很容易搭建一套高性能的文件服务集群提供文件上传、下载等服务</p>
-<h2 id="FastDFS架构"><a href="#FastDFS架构" class="headerlink" title="FastDFS架构"></a>FastDFS架构</h2><ul>
-<li>FastDFS架构包括<strong>Tracker server</strong>和<strong>Storage server</strong>。客户端请求Tracker server进行文件上传、下载，通过tracker server调度最终由Storage server完成文件上传和下载。</li>
-<li>Tracker server作用是<strong>负载均衡和调度</strong>，通过Tracker server在文件上传时可以根据一些策略找到Storage server提供文件上传服务。可以将Tracker称为追踪服务器或<strong>调度服务器</strong>。</li>
-<li>Storage server作用是文件存储，客户端上传的文件最终存储在Storage服务器上，Storage server没有实现自己的文件系统而是利用操作西戎的文件系统来管理文件。可以将storage称为<strong>存储服务器</strong>.</li>
+        <p>redis是C语言写的，存储key-value类型的非关系型数据库，可基于内存也可持久化的日志型数据库，适合作为缓存使用</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>最简单的类型，key-value，二进制安全的</p>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>任何场景都使用：商品编号、订单号采用String的递增特性生成（incr）</p>
+<h3 id="hash-散列"><a href="#hash-散列" class="headerlink" title="hash(散列)"></a>hash(散列)</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>field和value之间的映射，即键值对的集合，所以特别适合存储对象</li>
+<li>每个hash最多可以存储2^32-1键值对（40多亿）</li>
+<li>hash对应的value内部实际是一个hashmap，这里有两种实现方式<ul>
+<li>hash的成员比较少时，Redis为了节省内存会采用一对数组的方式来紧凑存储，而不会采用真正的HashMap结构，对应的value redisObject的encoding为zipmap</li>
+<li>当成员数量增大时会自动转成真正的HashMap</li>
 </ul>
-<h3 id="服务端两个角色："><a href="#服务端两个角色：" class="headerlink" title="服务端两个角色："></a>服务端两个角色：</h3><p><img src="https://i.imgur.com/6q1ySLY.png" alt=""></p>
-<ul>
-<li>Tracker：管理集群，tracker也可以实现集群。每个tracker节点地位平等。</li>
-<li>Storage:实际保存文件。Storage氛围多个组，每个组之间保存的文件是不同的。每个组内部可以有多个成员，组成员内部保存的内容是一样的，组成员的地位是一致的，没有主从概念。</li>
+</li>
+</ol>
+<h4 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h4><p>首页广告</p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>hget、hset、hgetall</p>
+<h3 id="list-列表"><a href="#list-列表" class="headerlink" title="list(列表)"></a>list(列表)</h3><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>链表类型，主要功能是push、pop、获取一个范围的所有值等</li>
+<li>List类型是按照插入顺序排序的字符串链表。比如使用LPUSH命令在list头插入一个元素，使用RPUSH命令在list的尾插入一个元素。当这两个命令之一作用于一个空的key时，一个新的list就创建出来了</li>
+<li>List的最大长度是2^32-1个元素</li>
+<li>list的实现为一个双向链表，即可以支持反向查找和遍历，更方便操作，不过带来了部分额外的内存开销，Redis内部的很多实现，包括发送缓冲队列等也都是用的这个数据结构</li>
+</ol>
+<h4 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+<li>商品评论列表</li>
+<li>最新消息排行</li>
+<li>消息队列，可以利用Lists的PUSH操作，将任务存在List中，然后工作线程再用POP操作将任务取出进行执行</li>
 </ul>
-<h2 id="文件上传的流程图"><a href="#文件上传的流程图" class="headerlink" title="文件上传的流程图"></a>文件上传的流程图</h2><p><img src="https://i.imgur.com/C8wTeZn.png" alt=""><br>客户端上传文件后存储服务器将文件ID返回给客户端，此文件ID用于以后访问该文件的索引信息。文件索引信息包括：组名，虚拟磁盘路径，数据两级目录，文件名。<br><img src="https://i.imgur.com/TW8hzEQ.png" alt=""></p>
-<ul>
-<li>组名：文件上传后所在的storage组名称，在文件上传成功后有storage服务器返回，需要客户端自行保存。</li>
-<li>虚拟磁盘路径:storage配置的虚拟路径，与磁盘选项store_path*对应。如果配置了store_path0则是M00，如果配置了store_path1则是M01,以此类推。</li>
-<li>数据两级目录：storage服务器在每个虚拟磁盘路径下创建的两级目录，用于存储数据文件。</li>
-<li>文件名：与文件上传时不同。是由存储服务器根据特定信息生成，文件名包含：源存储服务器IP地址、文件创建时间戳、文件大小、随机数和文件拓展名等信息。</li>
+<h4 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h4><p>lpush、rpush、(插入)lpop、rpop、（返回并删除）lrange、（获取start到stop）BLPOP(返回并删除第一个元素，堵塞并直到有可用，不建议使用)</p>
+<h3 id="set（集合）"><a href="#set（集合）" class="headerlink" title="set（集合）"></a>set（集合）</h3><h4 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>set是String的无序集合</li>
+<li>集合成员是唯一的，这就意味着集合中不能出现重复的数据</li>
+<li>Redis集合是 通过哈希表实现的</li>
+<li>支持随机获取元素</li>
+<li>支持集合间的取差集、交集与并集操作</li>
+<li>set的内部实现是一个value永远为null的HashMap，实际就是通过计算hash的方式来快速排重的，这也是set能提供判断一个成员是否在集合内的集合<h4 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h4>微博应用中，每个人的好友存在一个集合（set）中，这样求两个人的共同好友的操作可能就只需要用求交集命令即可</li>
+</ol>
+<h3 id="zset-sorted-set-（有序集合）"><a href="#zset-sorted-set-（有序集合）" class="headerlink" title="zset(sorted set)（有序集合）"></a>zset(sorted set)（有序集合）</h3><h4 id="特点-4"><a href="#特点-4" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>有序集合和集合一样是String类型的元素的集合，且不允许重复的成员</li>
+<li>不同的是每个元素都会关联一个double类型的分数，Redis正是通过分数来为集合中的元素排序，scope越低排名越靠前。</li>
+<li>zet的内部使用HashMap和跳跃表（SkipList）来保证数据的存储和有序，HashMap里放的是成员到score的映射，而跳跃表里存放的是所有的成员，排序一句是HashMap里存的score，使用跳跃表的结构可以获得比较高的查找效率，并且在实现上比较简单<h4 id="应用场景-4"><a href="#应用场景-4" class="headerlink" title="应用场景"></a>应用场景</h4>以某个条件为群暗中，比如按顶的次数排序<br>需要精准设定过期时间的应用</li>
 </ul>
-<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p><img src="https://i.imgur.com/CrNHy4i.png" alt=""></p>
-<h2 id="FastDFS使用"><a href="#FastDFS使用" class="headerlink" title="FastDFS使用"></a>FastDFS使用</h2><h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//加载配置文件，配置文件内容就是tracker服务的地址</div><div class="line">ClientGlobal.init(AbsoluteAddress);</div><div class="line">//创建一个TrackerClient对象</div><div class="line">TrakcerClient trackerClient = new TrackerClient();</div><div class="line">//使用TrackerClient对象创建连接，获得一个TrackerServer对象</div><div class="line">TrackerServer trackerServer = trackerClient.getConnection();</div><div class="line">//创建一个StorageServer的引用</div><div class="line">StorageServer storageServer = null;</div><div class="line">//创建一个StorageClient对象，提供两个Server对象</div><div class="line">StorageClient storageClient = new StorageClient(trackerServer,storageServer);</div><div class="line">//使用StorageClient对象上传图片</div><div class="line">String[] result = storageClient.upload_file(&quot;D:/a.jpg&quot;,&quot;jpg&quot;,null);</div></pre></td></tr></table></figure>
-<h3 id="使用工具类上传"><a href="#使用工具类上传" class="headerlink" title="使用工具类上传"></a>使用工具类上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//加载配置文件</div><div class="line">FastDFSClient fastDFSClient = new FastDFSClient(AbsoluteAddress);</div><div class="line">//上传文件</div><div class="line">String file = fastDFSClient.uploadFile(AbsoluteAddress);</div></pre></td></tr></table></figure>
-<h2 id="整合Spring"><a href="#整合Spring" class="headerlink" title="整合Spring"></a>整合Spring</h2><h3 id="SpringMvc-xml设定文件上传解析器"><a href="#SpringMvc-xml设定文件上传解析器" class="headerlink" title="SpringMvc.xml设定文件上传解析器"></a>SpringMvc.xml设定文件上传解析器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 定义文件上传解析器 --&gt;</div><div class="line">	&lt;bean id=&quot;multipartResolver&quot; class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</div><div class="line">		&lt;!-- 设定默认编码 --&gt;</div><div class="line">		&lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot;/&gt;</div><div class="line">		&lt;!-- 设定文件上传的最大值,这里设5MB --&gt;</div><div class="line">		&lt;property name=&quot;maxUploadSize&quot; value=&quot;5242888&quot;/&gt;</div><div class="line">	&lt;/bean&gt;</div></pre></td></tr></table></figure>
+<h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h3><ul>
+<li>方式<ul>
+<li>快照形式是直接把内存中的数据保存到一个dump文件中，定时保存</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>半持久方式<ul>
+<li>不定期的通过异步方式保存到磁盘上</li>
+</ul>
+</li>
+<li>在redis.conf中进行配置<ul>
+<li>格式：save N M</li>
+<li>含义：表示在N秒之内，redis至少发生M次修改则redis抓快照到磁盘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>原理<ul>
+<li>当redis需要坐持久化时，redis会fork一个子进程；子进程将数据写到磁盘上的一个临时RDB文件中；当子进程完成写临时文件后，将原来的RDB替换掉，这样的好处就是可以copy-on-write（写时拷贝）</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>只包含一个文件，对于文件备份比较实用</li>
+<li>对于灾难恢复而言，RDB是非常不错的选择。因为我们可以非常轻松的将一个单独的文件压缩后再转移到其他存储介质上</li>
+<li>性能最大化。对于Redis的服务进程而言，在开始持久化时，它唯一需要坐的是fork出子进程，之后再由子进程完成这些持久化的工作，这样就可以极大的避免服务进程执行IO操作了</li>
+<li>相比于AOF机制，如果数据集很大，RDB的启动效率会更高</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>如果你想保证数据的高可用性，即最大限度的避免是数据丢失，那么RDB不是一个很好的选择。因为系统一旦在定时持久化之前出现宕机现象，此前没有来得及写入磁盘的数据都将丢失</li>
+<li>由于RDB是通过fork子进程来协助完成数据持久化工作的。因此，如果当数据集较大时，可能会导致整个服务器停止服务几百毫秒，甚至是1秒钟<h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3></li>
+</ul>
+</li>
+<li>方式<ul>
+<li>把所有对REDIS的服务器进行修改的命令都存到一个文件里，命令的集合</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>全持久化方式<ul>
+<li>每一个写命令都通过write函数追加到appendonly.aof中</li>
+</ul>
+</li>
+<li>配置方式<ul>
+<li>修改appendonly yes 默认是no</li>
+<li>文件刷新三种方式<ul>
+<li>appendfsync<ul>
+<li>appendfsync always（每提交一个修改命令都调用fsync刷新到AOF文件，非常非常慢，但也非常安全）</li>
+</ul>
+</li>
+<li>appendfsync everysec（每秒都调用fsnyc刷新AOF文件，很快，但可能会都市1秒内的数据） 推荐使用</li>
+<li>appendfsync no（依靠OS进行刷新，redis不主动刷新，这样最快，但安全性就差）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>原理<ul>
+<li>以日志的形式记录服务器所处理的每一个写、删除操作，查询操作不会记录，以文本的方式进行记录，可以打开文本看到详细的操作记录</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>较高的数据安全性，即数据持久性</li>
+<li>由于该机制对日志文件的写入操作采用的是append模式，因此在写入过程中即使出现宕机现象，也不会破坏日志文件中已经存在的内容</li>
+<li>如果日志过大，redis可以自动启用rewrite机制</li>
+<li>AOF包含一个格式清晰、易于理解的日志文件用于记录所有的修改操作</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>对于相同的数据集而言，AOF文件通常要大于RDB文件。RDB在恢复大数据时的速度比AOF快</li>
+<li>根据同步策略的不同，AOF在运行效率上往往会慢于RDB。总之，每秒同步策略的效率是比较高的，同步禁用策略的效率和RBD一样高效。<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3></li>
+</ul>
+</li>
+<li>牺牲一些性能，换取更高的一致性（AOF）</li>
+<li>写操作频繁的时候，不启用备份来换取更高的性能，待手动运行save的时候，再做备份（RDB）</li>
+</ul>
+<h2 id="Redis的漏洞"><a href="#Redis的漏洞" class="headerlink" title="Redis的漏洞"></a>Redis的漏洞</h2><h3 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h3><p>Redis默认情况下，会绑定在0.0.0.0：6379，这样会将Redis服务暴露到公网上，如果没有开启认证的情况下，可以导致任意用户在可以访问目标服务器的情况下未授权访问Redis以及读取Redis的数据。攻击者在未授权访问Redis的情况下可以利用Redis的相关方法，可以成功在Redis服务器上写入公钥，进而可以使用对应私钥直接登录目标服务器</p>
+<h3 id="如何入侵"><a href="#如何入侵" class="headerlink" title="如何入侵"></a>如何入侵</h3><ul>
+<li>Redis可能执行过FLUSHALL方法，整个Redis数据库被清空</li>
+<li>在Redis数据库中新建了一个名为crackit（网上流传的命令指令）的键值对，内容为一个SSH公钥。</li>
+<li>在/root/.ssh文件夹下新建或者修改了authrized_keys文件，内容为Redis生成的db文件，包含上述公钥<h3 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h3></li>
+</ul>
+<ol>
+<li>禁止一些高危命令<ul>
+<li>修改Redis.conf文件，禁用远程修改DB文件地址<ul>
+<li>rename-command FLUSHALL “”</li>
+<li>rename-command CONFIG “”</li>
+<li>rename-command EVAL “”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>以低权限运行Redis服务<ul>
+<li>为Redis服务创建单独的用户和家目录，并且配置禁止登录</li>
+</ul>
+</li>
+<li>为Redis添加密码验证<ul>
+<li>修改redis.conf文件，添加requirepass password</li>
+</ul>
+</li>
+<li>禁止外网访问Redis<ul>
+<li>修改redis.conf文件，添加或修改 bind 127.0.0.1 使得Redis服务只在当前主机可用</li>
+</ul>
+</li>
+<li>做Log监控，及时发现攻击</li>
+</ol>
 
         
     
@@ -533,7 +655,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/03/16/shiro/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/01/11/FastDFS/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -547,7 +669,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2016/11/28/redis2/" id="post_nav-older" class="next-content">
+        <a href="/2016/11/09/Dubbo/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

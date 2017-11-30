@@ -37,7 +37,7 @@
     
     <title>
         
-            分布式文件系统FastDFS | 
+            归档: 2017/3 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分布式文件系统FastDFS | Misaniy | Note">
+    <meta property="og:title" content="归档: 2017/3 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Wed Jan 11 2017 18:29:53 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Nov 15 2017 10:42:23 GMT+0800" />
-    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分布式文件系统FastDFS | Misaniy | Note">
+    <meta name="twitter:title" content="归档: 2017/3 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,43 +247,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/01/11/FastDFS/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/archives/2017/03/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/01/11/FastDFS/index.html",
-    "headline": "分布式文件系统FastDFS",
-    "datePublished": "Wed Jan 11 2017 18:29:53 GMT+0800",
-    "dateModified": "Wed Nov 15 2017 10:42:23 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Misaniy Wu",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/avatar.png"
-        },
-        "description": "一个人知道自己为什么而活,就能忍受任何一种生活"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Misaniy | Note",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": "",
-    "description": "",
-}
-</script>
 
 
     
@@ -320,246 +287,98 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是FastDFS"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是FastDFS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FastDFS架构"><span class="post-toc-number">2.</span> <span class="post-toc-text">FastDFS架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#服务端两个角色："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">服务端两个角色：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件上传的流程图"><span class="post-toc-number">3.</span> <span class="post-toc-text">文件上传的流程图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件下载"><span class="post-toc-number">4.</span> <span class="post-toc-text">文件下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FastDFS使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">FastDFS使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传文件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">上传文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用工具类上传"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">使用工具类上传</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整合Spring"><span class="post-toc-number">6.</span> <span class="post-toc-text">整合Spring</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SpringMvc-xml设定文件上传解析器"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">SpringMvc.xml设定文件上传解析器</span></a></li></ol></li></ol>
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+        
+    
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/16/shiro/">shiro</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            shiro是apache的一个开源的安全框架，支持认证一个或者多个数据源，可以对数据进行会话管理，对用户进行认证和授权，实现角色的细粒度权限控制，并...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/16/shiro/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
+            </div>
+            <div>
+                <strong>Misaniy Wu</strong>
+                <span>3月 16, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/框架集合/">框架集合</a>
+              </span>
+            
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                分布式文件系统FastDFS
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Misaniy Wu</strong>
-        <span>1月 11, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=分布式文件系统FastDFS&url=http://misaniy.cc/2017/01/11/FastDFS/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=分布式文件系统FastDFS&url=http://misaniy.cc/2017/01/11/FastDFS/index.html&via=Misaniy Wu" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/01/11/FastDFS/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/01/11/FastDFS/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=分布式文件系统FastDFS&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/01/11/FastDFS/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
     
 </div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>传统图片上传不能有效应对集群的方式，单独搭建一个图片服务器。可以使用分布式文件系统FastDFS方式。实现服务器的高可用</p>
-<h2 id="什么是FastDFS"><a href="#什么是FastDFS" class="headerlink" title="什么是FastDFS"></a>什么是FastDFS</h2><p>FastDFS是用<strong>C语言</strong>编写的一款开源的<strong>分布式文件系统</strong>。FastDFS位互联网量身定制，充分考虑了冗杂备份，负载均衡，线性扩容等机制，并注重高可用、高性能等指标，使用FastDFS很容易搭建一套高性能的文件服务集群提供文件上传、下载等服务</p>
-<h2 id="FastDFS架构"><a href="#FastDFS架构" class="headerlink" title="FastDFS架构"></a>FastDFS架构</h2><ul>
-<li>FastDFS架构包括<strong>Tracker server</strong>和<strong>Storage server</strong>。客户端请求Tracker server进行文件上传、下载，通过tracker server调度最终由Storage server完成文件上传和下载。</li>
-<li>Tracker server作用是<strong>负载均衡和调度</strong>，通过Tracker server在文件上传时可以根据一些策略找到Storage server提供文件上传服务。可以将Tracker称为追踪服务器或<strong>调度服务器</strong>。</li>
-<li>Storage server作用是文件存储，客户端上传的文件最终存储在Storage服务器上，Storage server没有实现自己的文件系统而是利用操作西戎的文件系统来管理文件。可以将storage称为<strong>存储服务器</strong>.</li>
-</ul>
-<h3 id="服务端两个角色："><a href="#服务端两个角色：" class="headerlink" title="服务端两个角色："></a>服务端两个角色：</h3><p><img src="https://i.imgur.com/6q1ySLY.png" alt=""></p>
-<ul>
-<li>Tracker：管理集群，tracker也可以实现集群。每个tracker节点地位平等。</li>
-<li>Storage:实际保存文件。Storage氛围多个组，每个组之间保存的文件是不同的。每个组内部可以有多个成员，组成员内部保存的内容是一样的，组成员的地位是一致的，没有主从概念。</li>
-</ul>
-<h2 id="文件上传的流程图"><a href="#文件上传的流程图" class="headerlink" title="文件上传的流程图"></a>文件上传的流程图</h2><p><img src="https://i.imgur.com/C8wTeZn.png" alt=""><br>客户端上传文件后存储服务器将文件ID返回给客户端，此文件ID用于以后访问该文件的索引信息。文件索引信息包括：组名，虚拟磁盘路径，数据两级目录，文件名。<br><img src="https://i.imgur.com/TW8hzEQ.png" alt=""></p>
-<ul>
-<li>组名：文件上传后所在的storage组名称，在文件上传成功后有storage服务器返回，需要客户端自行保存。</li>
-<li>虚拟磁盘路径:storage配置的虚拟路径，与磁盘选项store_path*对应。如果配置了store_path0则是M00，如果配置了store_path1则是M01,以此类推。</li>
-<li>数据两级目录：storage服务器在每个虚拟磁盘路径下创建的两级目录，用于存储数据文件。</li>
-<li>文件名：与文件上传时不同。是由存储服务器根据特定信息生成，文件名包含：源存储服务器IP地址、文件创建时间戳、文件大小、随机数和文件拓展名等信息。</li>
-</ul>
-<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p><img src="https://i.imgur.com/CrNHy4i.png" alt=""></p>
-<h2 id="FastDFS使用"><a href="#FastDFS使用" class="headerlink" title="FastDFS使用"></a>FastDFS使用</h2><h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//加载配置文件，配置文件内容就是tracker服务的地址</div><div class="line">ClientGlobal.init(AbsoluteAddress);</div><div class="line">//创建一个TrackerClient对象</div><div class="line">TrakcerClient trackerClient = new TrackerClient();</div><div class="line">//使用TrackerClient对象创建连接，获得一个TrackerServer对象</div><div class="line">TrackerServer trackerServer = trackerClient.getConnection();</div><div class="line">//创建一个StorageServer的引用</div><div class="line">StorageServer storageServer = null;</div><div class="line">//创建一个StorageClient对象，提供两个Server对象</div><div class="line">StorageClient storageClient = new StorageClient(trackerServer,storageServer);</div><div class="line">//使用StorageClient对象上传图片</div><div class="line">String[] result = storageClient.upload_file(&quot;D:/a.jpg&quot;,&quot;jpg&quot;,null);</div></pre></td></tr></table></figure>
-<h3 id="使用工具类上传"><a href="#使用工具类上传" class="headerlink" title="使用工具类上传"></a>使用工具类上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//加载配置文件</div><div class="line">FastDFSClient fastDFSClient = new FastDFSClient(AbsoluteAddress);</div><div class="line">//上传文件</div><div class="line">String file = fastDFSClient.uploadFile(AbsoluteAddress);</div></pre></td></tr></table></figure>
-<h2 id="整合Spring"><a href="#整合Spring" class="headerlink" title="整合Spring"></a>整合Spring</h2><h3 id="SpringMvc-xml设定文件上传解析器"><a href="#SpringMvc-xml设定文件上传解析器" class="headerlink" title="SpringMvc.xml设定文件上传解析器"></a>SpringMvc.xml设定文件上传解析器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 定义文件上传解析器 --&gt;</div><div class="line">	&lt;bean id=&quot;multipartResolver&quot; class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</div><div class="line">		&lt;!-- 设定默认编码 --&gt;</div><div class="line">		&lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot;/&gt;</div><div class="line">		&lt;!-- 设定文件上传的最大值,这里设5MB --&gt;</div><div class="line">		&lt;property name=&quot;maxUploadSize&quot; value=&quot;5242888&quot;/&gt;</div><div class="line">	&lt;/bean&gt;</div></pre></td></tr></table></figure>
-
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/03/16/shiro/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2016/11/28/redis2/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     
