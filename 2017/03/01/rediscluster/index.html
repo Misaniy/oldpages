@@ -37,7 +37,7 @@
     
     <title>
         
-            分类: 报错集 | 
+            Redis集群的搭建及使用 | 
         
         Misaniy | Note
     </title>
@@ -231,15 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 报错集 | Misaniy | Note">
+    <meta property="og:title" content="Redis集群的搭建及使用 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Wed Mar 01 2017 19:45:28 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 05 2017 00:10:00 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 报错集 | Misaniy | Note">
+    <meta name="twitter:title" content="Redis集群的搭建及使用 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/categories/报错集/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2017/03/01/rediscluster/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://misaniy.cc/2017/03/01/rediscluster/index.html",
+    "headline": "Redis集群的搭建及使用",
+    "datePublished": "Wed Mar 01 2017 19:45:28 GMT+0800",
+    "dateModified": "Tue Dec 05 2017 00:10:00 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Misaniy Wu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "一个人知道自己为什么而活,就能忍受任何一种生活"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Misaniy | Note",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -287,159 +320,240 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/13/OracleBankDelete/">Linux误删除了备份的数据库</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.d...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/13/OracleBankDelete/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>9月 13, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/报错集/">报错集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/13/lazily/">could not initialize proxy - noSession</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            failed to lazily initialize a collection of role: com.misaniy.xxx, could n...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/13/lazily/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>9月 13, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/报错集/">报错集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Redis集群的搭建及使用
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Misaniy Wu</strong>
+        <span>3月 01, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Redis集群的搭建及使用&url=http://misaniy.cc/2017/03/01/rediscluster/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Redis集群的搭建及使用&url=http://misaniy.cc/2017/03/01/rediscluster/index.html&via=Misaniy Wu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/03/01/rediscluster/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/03/01/rediscluster/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Redis集群的搭建及使用&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/03/01/rediscluster/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>小结一下，让自己以后参考这个步骤来搭建，避免出错</p>
+<ol>
+<li>下载并解压</li>
+<li>编译安装<code>make &amp;&amp; make install</code></li>
+<li>将redis-trib.rb复制到/usr/local/bin目录下</li>
+<li><p>创建redis节点</p>
+<ol>
+<li>首先在第一台机器上 /root/software/redis-3.0.0 目录下创建redisCluster目录<br><code>mkdir redisCluster</code></li>
+<li><p>在redisCluster目录下，创建名为7000,7001,7002的目录，并将redis.conf拷贝到这三个目录中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir 7000 7001 7002&lt;br&gt;cp redis.conf redisCluster/7000</div><div class="line">cp redis.conf redisCluster/7001</div><div class="line">cp redis.conf redisCluster/7002</div></pre></td></tr></table></figure>
+</li>
+<li><p>分别修改这三个配置文件，修改如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">prot 7000							//端口7000,7002,7003</div><div class="line">bind 本机ip							//默认IP为127.0.0.1，需要修改为其他节点极其可访问的IP，否则创建集群时无法访问对应的端口，无法创建集群</div><div class="line">deamonize yes						//redis后台启动</div><div class="line">pidfile /var/run/redis_7000.pid		//pidfile文件对应7000,7001,7002</div><div class="line">cluster-enabled yes					//开启集群   把注释#去掉</div><div class="line">cluster-config-file	nodes_7000.conf	//集群的配置 配置文件首次启动自动生成 7000，7001，7002</div><div class="line">cluster-node-timeout	15000		//请求超时 默认15秒，可自行设置</div><div class="line">appendonly yes						//aof日志开启	有需要就开启，它会每次写操作都记录一条日志</div></pre></td></tr></table></figure>
+<p>接着在另外一台机器上的操作重复以上三步，只是把目录改为7003、7004、7005，对应的配置文件也按照这个规则修改即可</p>
+</li>
+</ol>
+</li>
+<li><p>启动各个节点</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">第一台机器上执行</div><div class="line">redis-server redisCluster/7000/redis.conf</div><div class="line">redis-server redisCluster/7001/redis.conf</div><div class="line">redis-server redisCluster/7002/redis.conf</div><div class="line"></div><div class="line">另外一台机器上执行</div><div class="line">redis-server redisCluster/7003/redis.conf</div><div class="line">redis-server redisCluster/7004/redis.conf</div><div class="line">redis-server redisCluster/7005/redis.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建集群<br> Redis官方提供了redis-trib.rb这个工具，就在解压目录的src目录中，第三步中已将它复制到/usr/local/bin目录中，可以直接在命令行中适用了。该工具又ruby实现，需要安装ruby.安装命令如下</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum -y install ruby ruby-devel rubygems rpm-build</div><div class="line">gem install redis</div></pre></td></tr></table></figure>
+<p> 使用下面这个命令即可安装</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-trib.rb create --replicas 1 192.168.31.245:7000 192.168.31.245:7001 192.168.31.245:7002	192.168.31.210:7003	192.168.31.210:7004	192.168.31.210:7005</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/03/16/shiro/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/24/dubbo2/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
