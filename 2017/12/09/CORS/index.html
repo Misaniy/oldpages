@@ -37,7 +37,7 @@
     
     <title>
         
-            Linux误删除了备份的数据库 | 
+            跨域请求JSONP和CORS | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Linux误删除了备份的数据库 | Misaniy | Note">
+    <meta property="og:title" content="跨域请求JSONP和CORS | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Wed Sep 13 2017 20:46:25 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 30 2017 11:58:37 GMT+0800" />
+        <meta property="article:published_time" content="Sat Dec 09 2017 15:11:59 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Dec 11 2017 17:16:18 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Linux误删除了备份的数据库 | Misaniy | Note">
+    <meta name="twitter:title" content="跨域请求JSONP和CORS | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2017/09/13/OracleBankDelete/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2017/12/09/CORS/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2017/09/13/OracleBankDelete/index.html",
-    "headline": "Linux误删除了备份的数据库",
-    "datePublished": "Wed Sep 13 2017 20:46:25 GMT+0800",
-    "dateModified": "Mon Oct 30 2017 11:58:37 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2017/12/09/CORS/index.html",
+    "headline": "跨域请求JSONP和CORS",
+    "datePublished": "Sat Dec 09 2017 15:11:59 GMT+0800",
+    "dateModified": "Mon Dec 11 2017 17:16:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#reason：误删除了备份的数据库"><span class="post-toc-number">1.</span> <span class="post-toc-text">reason：误删除了备份的数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#resolve："><span class="post-toc-number">2.</span> <span class="post-toc-text">resolve：</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSONP"><span class="post-toc-number">1.</span> <span class="post-toc-text">JSONP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CORS"><span class="post-toc-number">2.</span> <span class="post-toc-text">CORS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两种请求"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">两种请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简单请求"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">简单请求</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#非简单请求"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">非简单请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#预检请求"><span class="post-toc-number">2.1.2.1.</span> <span class="post-toc-text">预检请求</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#预检请求的回应"><span class="post-toc-number">2.1.2.2.</span> <span class="post-toc-text">预检请求的回应</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用-CrossOrigin注解"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">使用@CrossOrigin注解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CORS全局配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">CORS全局配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于JAVA的配置"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">基于JAVA的配置</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                Linux误删除了备份的数据库
+                跨域请求JSONP和CORS
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>9月 13, 2017</span>
+        <span>12月 09, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Linux误删除了备份的数据库&url=http://misaniy.cc/2017/09/13/OracleBankDelete/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=跨域请求JSONP和CORS&url=http://misaniy.cc/2017/12/09/CORS/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Linux误删除了备份的数据库&url=http://misaniy.cc/2017/09/13/OracleBankDelete/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=跨域请求JSONP和CORS&url=http://misaniy.cc/2017/12/09/CORS/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/09/13/OracleBankDelete/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/12/09/CORS/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/09/13/OracleBankDelete/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/12/09/CORS/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Linux误删除了备份的数据库&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/09/13/OracleBankDelete/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=跨域请求JSONP和CORS&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/12/09/CORS/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,8 +490,90 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>延迟加载异常：failed to lazily initialize a collection of role: com.misaniy.bos.domain.base.Courier.fixedAreas, could not initialize proxy - no Session</p>
-<h2 id="reason：误删除了备份的数据库"><a href="#reason：误删除了备份的数据库" class="headerlink" title="reason：误删除了备份的数据库"></a>reason：误删除了备份的数据库</h2><h2 id="resolve："><a href="#resolve：" class="headerlink" title="resolve："></a>resolve：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">sqlplus /nolog</div><div class="line">//使用数据库命令模式</div><div class="line">connect system/root as sysdba</div><div class="line">//连接数据库</div><div class="line">SQL&gt;shutdown normal</div><div class="line">//关闭数据库oracle服务</div><div class="line">SQL&gt;startup mount</div><div class="line">//重新启动Oracle服务</div><div class="line">SQL&gt;alter database open;</div><div class="line">//打开数据库</div><div class="line"></div><div class="line">//SQL&gt;alter database datafile 5 offline drop 若出现错误</div><div class="line"></div><div class="line">SQL&gt;alter database open;</div><div class="line">//重新更改数据库的open</div><div class="line">SQL&gt;startup</div></pre></td></tr></table></figure>
+        <p>当涉及到跨域的时候，传统的方案是采用JSONP，因为JSONP对低版本的浏览器兼容性很好，但实际上有更符合规范的跨域请求解决方案，那就是CORS。</p>
+<h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>JSONP的原理可以说十分简单，就是利用JS没有跨域限制的“BUG”达到与第三方通讯目的。当需要通讯时，创建一个<code>&lt;script&gt;</code>元素，地址指向第三方网址，例如：<code>&lt;script src=&quot;http://misaniy.cc?value=10&quot;/&gt;</code><br>并提供一个callback(默认)接收数据。<br>第三方产生的响应为json数据的包装，例如：<code>callback({&quot;name&quot;:&quot;misaniy&quot;})</code>。<br>这样浏览器会调用callback函数，并传递解析后json对象作为参数，可以在callback函数里处理传入的数据。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>jsonP的使用非常简单，JQuery还将jsonp封装到dateType里面，更进一步简化开发，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">	url:&quot;misaniy.cc&quot;,</div><div class="line">	dateType: &quot;jsonp&quot;,</div><div class="line">	jsonp: &quot;jsonpCallBack&quot;,</div><div class="line">	type: &quot;GET&quot;,</div><div class="line">	success:function(data)&#123;</div><div class="line">		alert(data);</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>客户端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(&quot;user/token/&#123;token&#125;&quot;)</div><div class="line">@ResponseBody</div><div class="line">public Object getUserByToken(@PathVariable String callback) &#123;</div><div class="line">	if(callback.equals(jsonpCallBack))&#123;</div><div class="line"></div><div class="line">		//设置要包装的参数</div><div class="line">		MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(&quot;result&quot;);</div><div class="line"></div><div class="line">		//设置回调方法</div><div class="line">		mappingJacksonValue.setJsonpFunction(callback);</div><div class="line">		return mappingJacksonValue;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return &quot;result&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p> CORS（Cross-origin resource sharing）即“跨域资源共享”。这是HTML5里面的的一个符合W3C规范的跨域请求方式，但是他目前兼容性不是最好的，因为IE10一下的版本都不能用。这个要分情况使用。</p>
+<h3 id="两种请求"><a href="#两种请求" class="headerlink" title="两种请求"></a>两种请求</h3><p>浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求(not-so-simple request)<br>只要同时满足以下两大条件，就属于简单请求</p>
+<ul>
+<li>请求方法是以下三种方法之一<ul>
+<li>HEAD</li>
+<li>GET</li>
+<li>POST</li>
+</ul>
+</li>
+<li>HTTP的头信息不超出以下几种字段：<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Last-Event-ID</li>
+<li>Content-Type: 只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain</li>
+</ul>
+</li>
+</ul>
+<p>凡是不能同时满足上面两个条件，就属于非简单请求</p>
+<h4 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h4><p>对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。这个Origin字段用来说明，本次请求来自哪个源（协议+域名+端口）。服务器根据这个值，决定是否同一这次请求，源也可以用*来代替，代表所有源都可以请求。<br>如果Origin指定的域名在许可范围内，服务器返回的响应，会多几个头信息字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin:http:misaniy.cc</div><div class="line">Access-Control-Allow-Credentials: true</div><div class="line">Access-Control-Expose-Headers:FooBar</div><div class="line">Content-Type: text/html;charset=utf-8</div></pre></td></tr></table></figure></p>
+<p>上面的头信息之中，有三个与CORS请求相关的字段，都以Access-Control开头。</p>
+<ul>
+<li>Access-Control-Allow-Origin<ul>
+<li>该字段表示请求时Origin的值</li>
+</ul>
+</li>
+<li>Access-Control-Allow-Credentials<ul>
+<li>该字段表示是否允许发送Cookie,不设置时为false，设置后为ture，且只能为true。</li>
+</ul>
+</li>
+<li>Access-Control-Expose-Headers<ul>
+<li>CORS请求时，XMLHttpRequest对象的getResponseHeader()只能拿到6个基本字符：Cache-Control、Content-Language、Content-Type、Expires,Last-Modified、Pragma。如果想拿到其他字段就得声明。</li>
+</ul>
+</li>
+</ul>
+<p>withCredentials属性<br>如果要把Cookie发到服务器，一方面要服务器同一，指定<code>Access-Control-Allow-Credentials</code>字段。<br><code>Access-Control-Allow-Credentials:true</code><br>另一方面，开发者必须在AJAX请求中打开withCredentials属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.withCredentials = true;</div></pre></td></tr></table></figure></p>
+<p>值得注意的是，如果要发送Cookie,Origin就不能设置为*.</p>
+<h4 id="非简单请求"><a href="#非简单请求" class="headerlink" title="非简单请求"></a>非简单请求</h4><h5 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h5><p>非简单请求是指<code>PUT</code>或<code>DELETE</code>，或者<code>Content-Type</code>字段的类型是<code>application/json</code>。非简单请求会在正式通信之前，增加一次HTTP查询请求，成为“预检”请求。<br>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，一级可以使用那些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHTTPREQUEST请求，否则就报错</p>
+<p>下面是一段浏览器的JavaScript脚本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var url = &apos;http:misaniy.cc/cors&apos;;</div><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(&apos;PUT&apos;,url,true);</div><div class="line">xhr.setRequestHeader(&apos;X-Custom-Header&apos;,&apos;value&apos;);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure></p>
+<p>上面代码中，HTTP请求的方法是PUT，并且发送了一个自定义头信息<code>X-Custom-Header</code>。<br>浏览器发现，这是一个非简单请求，就自动发出一个预检请求，要求服务器确认可以这样的请求，下面是这个预检请求的HTTP头信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">OPTIONS /cors HTTP/1.1</div><div class="line">Origin:http://api.bob.com</div><div class="line">Access-Control-Request-Method: PUT</div><div class="line">Access-Control-Request-Headers: X-Custom-Header</div><div class="line">Host: api.alice.com</div><div class="line">Accept-Language : en-US</div><div class="line">Connection: keep-alive</div><div class="line">User-Agent: Mozilla/5.0</div></pre></td></tr></table></figure></p>
+<p>预检请求用的请求方式是OPTIONS，表示这个请求用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。<br>除了Orgin字段，预检请求的头信息包括两个特殊字段。</p>
+<ul>
+<li>Access-Control-Request-Method<ul>
+<li>该字段是必须的，列出用到哪些HTTP方法，上列是PUT</li>
+</ul>
+</li>
+<li>Access-Control-Request-Headers<ul>
+<li>该字段是一个逗号分割的字符串，指定浏览器CORS请求会额外发送的头信息字段，上列是X-Custom-Header.</li>
+</ul>
+</li>
+</ul>
+<h5 id="预检请求的回应"><a href="#预检请求的回应" class="headerlink" title="预检请求的回应"></a>预检请求的回应</h5><p>服务器收到预检请求后，检查了Origin、Access-Control-Request-Method、Access-Control-Request-Headers字段以后，确认允许跨域一球，就可以作出回应。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Date: Mon, 01 Dec 2017 01:15:39 GMT</div><div class="line">Server: Apache/2.0.61 (Unix)</div><div class="line">Access-Control-Allow-Origin: http://misaniy.cc</div><div class="line">Access-Control-Allow-Methods: GET, POST, PUT</div><div class="line">Access-Control-Allow-Headers: X-Custom-Header</div><div class="line">Content-Type: text/html; charset=utf-8</div><div class="line">Content-Encoding: gzip</div><div class="line">Content-Length: 0</div><div class="line">Keep-Alive: timeout=2, max=100</div><div class="line">Connection: Keep-Alive</div><div class="line">Content-Type: text/plain</div></pre></td></tr></table></figure></p>
+<p>上面的回应中 ，关键字是<code>Access-Control-Allow-Origin</code>，表示可以请求访问。也可设为*</p>
+<p>如果否定了预检请求，会返回一个饿没有CORS相关的头信息。这时会报错。</p>
+<p>服务器回应的其他CORS字段如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Methods: GET, POST, PUT</div><div class="line">Access-Control-Allow-Headers: X-Custom-Header</div><div class="line">Access-Control-Allow-Credentials: true</div><div class="line">Access-Control-Max-Age: 1728000</div></pre></td></tr></table></figure></p>
+<ul>
+<li>Access-Control-Max-Age<br>这里表示指定本次预检请求的有小区，单位为秒。上图表示20天，代表20天内不会发出另一条预检请求。</li>
+</ul>
+<p>###使用</p>
+<p>上面讲了这么多CORS的原理和执行流程，其实CORS的使用是非常简单的。<br>SpringMVC4.2+版本就提供了对CORS的支持</p>
+<h4 id="使用-CrossOrigin注解"><a href="#使用-CrossOrigin注解" class="headerlink" title="使用@CrossOrigin注解"></a>使用@CrossOrigin注解</h4><ul>
+<li>在Controller使用@CrossOrigin<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@CrossOrigin(origins=&quot;http://misaniy.cc&quot;,maxAge=3600)</div><div class="line">@RestController</div><div class="line">@RequestMapping(&quot;/account&quot;)</div><div class="line">public class AccountController&#123;</div><div class="line">	</div><div class="line">	@RequestMapping(&quot;/&#123;id&#125;&quot;)</div><div class="line">	public Account retrieve(@PathVariable Long id)&#123;</div><div class="line">		//...</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@RequestMapping(method = RequestMethod.DELETE, path=&quot;/&#123;id&#125;&quot;)</div><div class="line">	public void remove(@PathVariable Long id) &#123;</div><div class="line">		//...</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里指定当前Controller所有方法都可以处理<code>http://misaniy.cc</code>域上的请求</p>
+<ul>
+<li>在方法上使用@CrossOrigin</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@CrossOrigin(maxAge=3600)</div><div class="line">@RestController</div><div class="line">@RequestMapping(&quot;/account&quot;)</div><div class="line">public class AccountController&#123;</div><div class="line"></div><div class="line">	@CrossOrigin(&quot;http://misaniy.cc&quot;)</div><div class="line">	@RequestMapping(&quot;/&#123;id&#125;&quot;)</div><div class="line">	public Account retrieve(@PathVariable Long id)&#123;</div><div class="line">		//...</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@RequestMapping(method = RequestMethod.DELETE, path=&quot;/&#123;id&#125;&quot;)</div><div class="line">	public void remove(@PathVariable Long id) &#123;</div><div class="line">		//...</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这个例子中，Controller和retrieve都又注解，Spring会结合两者一起使用</p>
+<h3 id="CORS全局配置"><a href="#CORS全局配置" class="headerlink" title="CORS全局配置"></a>CORS全局配置</h3><p>除了细粒度基于注解的配置，你可能会想定义一些全局CORS的配置，这类似于过滤器，但可以在SpringMVC中声明，并结合细粒度@CrossOrigin配置。默认情况下所有的域名和GET、HEAD和POST方法都是允许的。</p>
+<h4 id="基于JAVA的配置"><a href="#基于JAVA的配置" class="headerlink" title="基于JAVA的配置"></a>基于JAVA的配置</h4><p>看下面例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">@EnableWebMVC</div><div class="line">public class WebConfig extends WebMvcConfigurerAdapter&#123;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void addCorsMapping(CoreRegistry registry)&#123;</div><div class="line">		registry.addMapping(&quot;/**&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>你可以轻松地更改任何属性，以及配置适用于特定的路径模式的CORS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">@EnableWebMVC</div><div class="line">public class WebConfig extends WebMvcConfigurerAdapter&#123;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void addCorsMapping(CoreRegistry registry)&#123;</div><div class="line">		registry.addMapping(&quot;/**&quot;)</div><div class="line">		.allowedOrigins(&quot;http://misaniy.cc&quot;)</div><div class="line">		.allowedMethods(&quot;PUT&quot;,&quot;DELETE&quot;)</div><div class="line">		.allowedHeaders(&quot;header1&quot;,&quot;header2&quot;,&quot;header3&quot;)</div><div class="line">		.exposedHeaders(&quot;header1&quot;,&quot;header2&quot;)</div><div class="line">		.allowCredentials(false).maxAge(3600);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果你使用Spring Boot，你可以通过这种方式方便的进行配置</p>
+<p>基于XML的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;mvc:cors&gt;</div><div class="line">	&lt;mvc:mapping path=&quot;/**&quot; /&gt;</div><div class="line">&lt;/mvc:cors&gt;</div></pre></td></tr></table></figure></p>
+<p>也可以做更复杂的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;mvc:cors&gt;</div><div class="line"></div><div class="line">    &lt;mvc:mapping path=&quot;/api/**&quot;</div><div class="line">        allowed-origins=&quot;http://domain1.com, http://domain2.com&quot;</div><div class="line">        allowed-methods=&quot;GET, PUT&quot;</div><div class="line">        allowed-headers=&quot;header1, header2, header3&quot;</div><div class="line">        exposed-headers=&quot;header1, header2&quot; allow-credentials=&quot;false&quot;</div><div class="line">        max-age=&quot;123&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;mvc:mapping path=&quot;/resources/**&quot;</div><div class="line">        allowed-origins=&quot;http://domain1.com&quot; /&gt;</div><div class="line"></div><div class="line">&lt;/mvc:cors&gt;</div></pre></td></tr></table></figure></p>
+
         
     
 
@@ -511,21 +593,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/17/javaweb/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/09/13/lazily/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/24/cluster&loadbalance/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
