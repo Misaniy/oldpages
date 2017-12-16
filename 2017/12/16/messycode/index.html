@@ -37,7 +37,7 @@
     
     <title>
         
-            分类: 分享集 | 
+            中文乱码总结 | 
         
         Misaniy | Note
     </title>
@@ -231,15 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 分享集 | Misaniy | Note">
+    <meta property="og:title" content="中文乱码总结 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Sat Dec 16 2017 10:11:42 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 16 2017 12:32:24 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 分享集 | Misaniy | Note">
+    <meta name="twitter:title" content="中文乱码总结 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/categories/分享集/page/2/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2017/12/16/messycode/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://misaniy.cc/2017/12/16/messycode/index.html",
+    "headline": "中文乱码总结",
+    "datePublished": "Sat Dec 16 2017 10:11:42 GMT+0800",
+    "dateModified": "Sat Dec 16 2017 12:32:24 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Misaniy Wu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "一个人知道自己为什么而活,就能忍受任何一种生活"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Misaniy | Note",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -287,416 +320,265 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求中文乱码"><span class="post-toc-number">1.</span> <span class="post-toc-text">请求中文乱码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GET提交中文参数乱码解决"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">GET提交中文参数乱码解决</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POST提交中文参数乱码解决"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">POST提交中文参数乱码解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#响应中文乱码"><span class="post-toc-number">2.</span> <span class="post-toc-text">响应中文乱码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字节流"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">字节流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符流"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">字符流</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件下载时中文乱码处理"><span class="post-toc-number">3.</span> <span class="post-toc-text">文件下载时中文乱码处理</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/01/rediscluster/">Redis集群的搭建及使用</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            小结一下，让自己以后参考这个步骤来搭建，避免出错
-
-下载并解压
-编译安装make &amp;&...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/01/rediscluster/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>3月 01, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/24/dubbo2/">dubbo小结第二弹</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            dubbo小结第二弹~
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/24/dubbo2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>1月 24, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/11/FastDFS/">分布式文件系统FastDFS</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            传统图片上传不能有效应对集群的方式，单独搭建一个图片服务器。可以使用分布式文件系统FastDFS方式。实现服务器的高可用
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/11/FastDFS/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>1月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/11/28/redis2/">Redis小结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            redis是C语言写的，存储key-value类型的非关系型数据库，可基于内存也可持久化的日志型数据库，适合作为缓存使用
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/28/redis2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>11月 28, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/11/09/Dubbo/">Dubbo</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Dubbo是阿里的开源分布式服务架构，可通过高性能的RPC实现服务的输出和输入功能。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/09/Dubbo/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>11月 09, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/10/13/SpringWebMvc/">SpringWebMvc小结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            学习SpringWebMvc的个人小结
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/10/13/SpringWebMvc/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Misaniy Wu's avatar">
-            </div>
-            <div>
-                <strong>Misaniy Wu</strong>
-                <span>10月 13, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/分享集/">分享集</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/categories/分享集/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/categories/分享集/">1</a><span class="page-number current">2</span>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                中文乱码总结
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Misaniy Wu</strong>
+        <span>12月 16, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=中文乱码总结&url=http://misaniy.cc/2017/12/16/messycode/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=中文乱码总结&url=http://misaniy.cc/2017/12/16/messycode/index.html&via=Misaniy Wu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2017/12/16/messycode/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2017/12/16/messycode/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=中文乱码总结&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2017/12/16/messycode/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>常见中文乱码解决方案总结</p>
+<h2 id="请求中文乱码"><a href="#请求中文乱码" class="headerlink" title="请求中文乱码"></a>请求中文乱码</h2><h3 id="GET提交中文参数乱码解决"><a href="#GET提交中文参数乱码解决" class="headerlink" title="GET提交中文参数乱码解决"></a>GET提交中文参数乱码解决</h3><blockquote>
+<p>GET方式的中文参数已经经过一次默认编码，解决方式有三种</p>
+</blockquote>
+<ol>
+<li>修改Tomcat编码（tomcat8默认编码为UTF-8）</li>
+<li><p>通过URLEncoder和URLDecoder进行编码和解码的操作</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String encode = URLEncoder.encode(request.getParameter(&apos;name&apos;),&quot;ISO-8859-1&quot;);</div><div class="line">String name = URLDecoder.decode(&quot;name&quot;,&quot;UTF-8&quot;);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>通过String的构造方法</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String name = new String(request.getParameter(&quot;name&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>无论从浏览器提交时中文参数是什么编码格式，到达服务器时因为Tomcat编码方式的原因，采用ISO-8859-1的方式解析成了乱码<br> request.getParameter(“name”)获取到的就是一个通过ISO-8859-1方式解析之后的乱码，那么我们通过getBytes(“ISO-8859-1”)将它反解成原有编码的字符数组，相当于打回原形，这是一个正确的字符数组，然后通过String的构造方法将这个正确的字符数组转成UTF-8编码的字符串。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="POST提交中文参数乱码解决"><a href="#POST提交中文参数乱码解决" class="headerlink" title="POST提交中文参数乱码解决"></a>POST提交中文参数乱码解决</h3><blockquote>
+<p>POST的参数是在请求体中，直接到达后台，数据在Servlet中的request中。request也有一个缓冲区，request的缓冲区也是ISO-8859-1编码，因为request是Tomcat负责创建的，所以用的是Tomcat的编码。解决方式是设置request缓冲区编码</p>
+</blockquote>
+<pre><code>request.setCharacterEncoding(&quot;UTF-8&quot;); 
+</code></pre><h2 id="响应中文乱码"><a href="#响应中文乱码" class="headerlink" title="响应中文乱码"></a>响应中文乱码</h2><h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><blockquote>
+<p>不一定会出现中文乱码，取决于操作系统，工作空间的编码，以及浏览器打开页面时设置的默认编码。如果两端编码一致，则不会出现中文乱码，不一致则出现乱码。</p>
+</blockquote>
+<ol>
+<li>设置字符数组取出时的编码</li>
+<li><p>设置浏览器打开时的编码</p>
+<blockquote>
+<p>总之是设置输出时的字节数组编码和浏览器解析时的编码一致。中文转成字节数组的时候，如果Eclipse工作空间的编码正好和浏览器一致，可以不用设置编码，但是为了保险起见，要求还是设置。</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">response.getOutPutStream.write(&quot;中文&quot;.getBytes(&quot;UTF-8&quot;));</div><div class="line">response.setHeader(&quot;Content-Type&quot;,&quot;text/html;charset=UTF-8&quot;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h3><blockquote>
+<p>一定会出现中文乱码，response使用的字符流是有缓冲区的，缓冲区使用的默认编码是ISO-8859-1，压根儿就不支持中文。</p>
+</blockquote>
+<ol>
+<li>设置字符流缓冲区的编码</li>
+<li><p>设置浏览器打开时的编码</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">response.setCharacterEncoding(&quot;UTF-8&quot;);</div><div class="line">response.setHeader(&quot;Content-Type&quot;,&quot;text/html;charset=UTF-8&quot;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>简化写法<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response.setContentType(&quot;text/html;charset=UTF-8&quot;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>请求重定向的简化写法<br>      <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">response.setStatus(302);</div><div class="line">response.setHeader(&quot;Location&quot;,&quot;/xxx/xxx&quot;);</div><div class="line">//简化写法</div><div class="line">response.setRedirect(&quot;xxx/xxx&quot;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="文件下载时中文乱码处理"><a href="#文件下载时中文乱码处理" class="headerlink" title="文件下载时中文乱码处理"></a>文件下载时中文乱码处理</h2><ol>
+<li>文件下载时，文件名一般是以GET请求方式的参数直接出现在浏览器的地址栏也就是URL中的。所以先通过解决GET请求中文乱码的方式将中文文件名转成正常的中文</li>
+<li><p>不同的浏览器因为特性的不同需要分别设置，如IE等内核的浏览器要求Content-Disposition响应头中的中文文件名需要通过URLEncoder进行编码，而火狐浏览器要求Content-Disposition响应头的中文文件名需要通过Base64进行编码。所以要通过请求头中的User-Agent头信息获取到浏览器类型后分别处理。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//1. 接收参数， 解决GET请求参数中文乱码，目的是将中文文件名转成正常中文</div><div class="line">String filename = new String(request.getParameter(&quot;filename&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);</div><div class="line">//2. 根据浏览器的类型处理中文文件的乱码问题;</div><div class="line">String agent = request.getHeader(&quot;User-Agent&quot;);</div><div class="line">if(agent.contains(&quot;Firefox&quot;))&#123;</div><div class="line">	filename = base64EncodeFileName(filename);</div><div class="line">&#125;else &#123;</div><div class="line">	filename = URLEncoder.encoder(filename,&quot;UTF-8&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//3. 设置Content-Disposition头</div><div class="line">response.setHeader(&quot;Content-Disposition&quot;,&quot;attachment;filename=&quot;+filename);</div></pre></td></tr></table></figure></li>
+</ol>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/09/CORS/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
