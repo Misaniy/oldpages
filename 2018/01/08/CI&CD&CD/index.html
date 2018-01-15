@@ -37,7 +37,7 @@
     
     <title>
         
-            ConcurrentHashMap、HashMap和HashTable | 
+            持续集成、持续交付、持续部署 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ConcurrentHashMap、HashMap和HashTable | Misaniy | Note">
+    <meta property="og:title" content="持续集成、持续交付、持续部署 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Tue Jan 02 2018 10:23:10 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Jan 02 2018 11:16:09 GMT+0800" />
+        <meta property="article:published_time" content="Mon Jan 08 2018 09:50:23 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Jan 15 2018 23:58:31 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="ConcurrentHashMap、HashMap和HashTable | Misaniy | Note">
+    <meta name="twitter:title" content="持续集成、持续交付、持续部署 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2018/01/08/CI&CD&CD/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2018/01/02/concurrenthashmap/index.html",
-    "headline": "ConcurrentHashMap、HashMap和HashTable",
-    "datePublished": "Tue Jan 02 2018 10:23:10 GMT+0800",
-    "dateModified": "Tue Jan 02 2018 11:16:09 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2018/01/08/CI&CD&CD/index.html",
+    "headline": "持续集成、持续交付、持续部署",
+    "datePublished": "Mon Jan 08 2018 09:50:23 GMT+0800",
+    "dateModified": "Mon Jan 15 2018 23:58:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap和HashTable的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">HashMap和HashTable的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们能否让HashMap同步"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">我们能否让HashMap同步</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap和ConcurrentHashMap分享"><span class="post-toc-number">2.</span> <span class="post-toc-text">HashMap和ConcurrentHashMap分享</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#锁分段技术"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">锁分段技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性说明"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">属性说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hash算法和table数组长度"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">hash算法和table数组长度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap的初始化"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">ConcurrentHashMap的初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap的put和get"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">ConcurrentHashMap的put和get</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HashMap和Segment里modCount区别"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">HashMap和Segment里modCount区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么重写了equals方法就必须重写hashCode方法呢？"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">为什么重写了equals方法就必须重写hashCode方法呢？</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#持续集成"><span class="post-toc-number">1.</span> <span class="post-toc-text">持续集成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#持续交付"><span class="post-toc-number">2.</span> <span class="post-toc-text">持续交付</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#持续部署"><span class="post-toc-number">3.</span> <span class="post-toc-text">持续部署</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流程"><span class="post-toc-number">4.</span> <span class="post-toc-text">流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提交"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">提交</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试（第一轮）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">测试（第一轮）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构建"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">构建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试（第二轮）"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">测试（第二轮）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">部署</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回滚"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">回滚</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                ConcurrentHashMap、HashMap和HashTable
+                持续集成、持续交付、持续部署
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>1月 02, 2018</span>
+        <span>1月 08, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ConcurrentHashMap、HashMap和HashTable&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=持续集成、持续交付、持续部署&url=http://misaniy.cc/2018/01/08/CI&amp;CD&amp;CD/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ConcurrentHashMap、HashMap和HashTable&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=持续集成、持续交付、持续部署&url=http://misaniy.cc/2018/01/08/CI&amp;CD&amp;CD/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2018/01/08/CI&amp;CD&amp;CD/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2018/01/08/CI&amp;CD&amp;CD/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=ConcurrentHashMap、HashMap和HashTable&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=持续集成、持续交付、持续部署&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2018/01/08/CI&CD&CD/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,44 +490,42 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>总所周知，HashMap是线程不安全的，速度快，HashTable是线程安全的，速度慢，而ConcurrentHashMap是结合两者优点的一个线程安全且速度快的键值对。那么这是为什么呢</p>
-<h2 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h2><p>这两个的主要区别可以说就是：线程安全性、同步、速度</p>
+        <p>学习jenkins了解到持续集成这个概念，简单学习一下</p>
+<h2 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h2><p>持续集成指的是，频繁地（一天多次）将代码集成到主干<br>它的好处主要有两个</p>
+<ol>
+<li>快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。</li>
+<li>防止分支大幅偏离主干。入uobu是经常集成，主干又在不断更新，会导致以后集成的难度变大，甚至难以集成。</li>
+</ol>
+<p>持续集成强调开发人员提交了新代码之后，立刻进行构建、（单元）测试。根据测试结果，我们可以确定新代码和原有代码能否正确地集成在一起</p>
+<h2 id="持续交付"><a href="#持续交付" class="headerlink" title="持续交付"></a>持续交付</h2><p>持续交付指的是频繁地、自动地将最新的程序部署到测试环境里</p>
+<blockquote>
+<p>它强调的是，不管怎么更新，软件是随时随地可以交付的</p>
+</blockquote>
+<p>持续交付是在持续集成的基础上，将集成后的代码部署到更贴近真实环境的‘类生产环境’中。比如，我们完成单元测试后，可以把代码部署到连接数据库的Staging环境中更多的测试。如果代码没有问题，可以继续手动部署到生产环境中。</p>
+<h2 id="持续部署"><a href="#持续部署" class="headerlink" title="持续部署"></a>持续部署</h2><p>持续部署是持续交付的下一步，指的是代码通过评审以后，自动部署到生产环境。<br>持续部署的目标是，代码在人和时刻都是可部署的，可以进入生产阶段。<br><em>*持续部署的前提是</em>能自动化完成测试、构建、部署等步骤。</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>根据持续集成的设计，代码从提交到生产，整个过程有以下几步</p>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><p>流程的第一步，是开发者向代码仓库提交代码。所有后面的步骤都始于本地代码的一次提交（commit）。</p>
+<h3 id="测试（第一轮）"><a href="#测试（第一轮）" class="headerlink" title="测试（第一轮）"></a>测试（第一轮）</h3><p>代码仓库对commit操作配置了钩子（hook），只要提交代码或者合并进主干，就会跑<strong>自动化测试</strong>。<br>测试有好几种:</p>
+<blockquote>
 <ul>
-<li>HashMap几乎可以等价于HashTable，除了HashMap是非Synchronized，且可接受null的键值对</li>
-<li>这意味着多个线程可以共享一个Hashtable，而HashMap不行</li>
-<li>另一个区别就是HashMap的迭代期（Iterator）是fail-fast迭代器，而Hashtable的enumerator迭代期不是fail-fast。所以当有其他线程改变了HashMap的结构，会抛出ConcurrentModificationException。但迭代器本身的remove()方法不会。这也同样是Ennumeration和Iterator的区别。</li>
+<li>单元测试：针对函数或模块的测试。</li>
+<li>集成测试：针对整体产品的某个功能的测试，又称功能测试<br>端对端测试：从用户界面直达数据库的全链路测试</li>
 </ul>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>sychronized意味着在一次仅有一个线程能够更改Hashtable。就是说人和线程瑶更新Hashtable时瑶首先获得同步锁，其他线程瑶等到同步锁被释放之后才能再次获得同步锁更新Hashtable。</li>
-<li>Fail-safe和Iterator迭代器相关。如果某个结合对象创建了Iterator或者ListIterator，然后其他线程试图结构上更改集合对象，就会抛出ConcurrentModificationException异常。但其他线程可以通过set()方法更改集合对象，因为这并没有从结构上更改集合。但是加入已经从结构上进行了更改，再调用set()方法，就会抛出IllegalArgumentException异常。</li>
-<li>结构上的更改指的是remove或insert一个元素。</li>
-</ul>
-<h3 id="我们能否让HashMap同步"><a href="#我们能否让HashMap同步" class="headerlink" title="我们能否让HashMap同步"></a>我们能否让HashMap同步</h3><p>HashMap可以通过下面的语句进行同步<br>Map m = Collections.synchronizedMap(hashMap);</p>
-<h2 id="HashMap和ConcurrentHashMap分享"><a href="#HashMap和ConcurrentHashMap分享" class="headerlink" title="HashMap和ConcurrentHashMap分享"></a>HashMap和ConcurrentHashMap分享</h2><p><img src="https://i.imgur.com/ICK9MxH.jpg" alt=""><br>从图克制，ConcurrentHashMap比HashMap多了一个Segment类，而Segment是一个可重入锁。<br>ConcurrentHashMap是使用了<strong>锁分段技术</strong>保证线程安全的。</p>
-<h3 id="锁分段技术"><a href="#锁分段技术" class="headerlink" title="锁分段技术"></a>锁分段技术</h3><p>首先将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。</p>
-<h3 id="属性说明"><a href="#属性说明" class="headerlink" title="属性说明"></a>属性说明</h3><p>我们会发现HashMap和Segment里的属性值基本是一样的，因为Segment的本质就是一个加锁的HashMap，下面是每个属性的意义：</p>
+</blockquote>
+<p><strong>第一轮至少要跑单元测试</strong></p>
+<h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><p>通过第一轮测试，代码就可以合并进主干，就算可以交付了。<br>交付后，就先进行构建（build）,再进入<strong>第二轮测试</strong>。所谓<strong>构建</strong>，指的是将源码转换为可以运行的实际代码，比如安装以来，配置各种资源（样式表、JS脚本、图片）等等。<br>常用的构建工具如下：</p>
+<blockquote>
 <ul>
-<li>table: 数据存储区</li>
-<li>size,count: 已存数据的大小</li>
-<li>threshold: table需要扩容的临界值，等于table的大小*loadFactor</li>
-<li>loadFactor: 装载因子</li>
-<li>modCount: table结构别修改的次数</li>
+<li>jenkins</li>
+<li>Travis</li>
+<li>codeship</li>
+<li>strider</li>
 </ul>
-<h3 id="hash算法和table数组长度"><a href="#hash算法和table数组长度" class="headerlink" title="hash算法和table数组长度"></a>hash算法和table数组长度</h3><p>HashMap做了一个操作保证table数组的大小是2的n次方。如果使用new HashMap(10)新建一个HashMap，你会发现这个HashMap中table数组实际的大小是16，并不是10.<br><strong>为什么这样做？</strong>从HashMap的hash和indexFor方法说起<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">static int hash(int h) &#123;</div><div class="line">	h ^= (h &gt;&gt;&gt; 20) ^ (h &gt;&gt;&gt; 12);</div><div class="line">	return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</div><div class="line">&#125;</div><div class="line"></div><div class="line">static int indexFor(int h, int length) &#123;</div><div class="line">	return h &amp; (length-1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int hash = hash(key.hashCode());</div><div class="line">int i = indexFor(hash,table.length);</div></pre></td></tr></table></figure></p>
-<p>HashMap的put和get方法都使用了这两个方法将key散列到table数组上去。<br>indexFor方法是通过hash值和table数组的长度-1进行于操作，来确定具体的位置。<br><strong>为什么要减1？</strong>因为数组的长度是2的n次方，减1一伙就编程低位的二进制码都是1，和hash值做运算的话，就能得到一个小于数组长度的数了。<br><strong>那为什么对hashCode还瑶做一次hash操作呐？</strong>因为如果不做hash操作的话，只有低位的值参与了hash运算，而高位的值没有参加运算。hash方法是让高位的数字也参加hash运算。</p>
-<p>假如：数组的长度是16，我们会发现hashCode为5和53的散列到同一个位置<br>hashcode:53 00000000 00000000 00000000 00110101<br>hashcode: 5 00000000 00000000 00000000 00000101<br>length-1:15 00000000 00000000 00000000 00001111<br>只要hashcode值的最后4位是一样的，那么他们就会散列到同一个位置。<br>hash方法是通过一些位运算符，让高位的树枝也尽可能的参加到运算中，让它尽可能的散列到table数组上，减少hash冲突。</p>
-<h3 id="ConcurrentHashMap的初始化"><a href="#ConcurrentHashMap的初始化" class="headerlink" title="ConcurrentHashMap的初始化"></a>ConcurrentHashMap的初始化</h3><p>ConcurrentHashMap是由initialCapacity,loadFactor,concurrencyLever几个参数来初始化segments数组的<br>segmentShift和segmentMask是在定位segment时的哈希算法里需要使用的，让其能够尽可能的散列开。</p>
-<ul>
-<li>initialCapacity: ConcurrentHashMap的初始化大小</li>
-<li>loadFactor: 装载因子</li>
-<li>concurrencyLevel: 预想的并发级别，为了能够更好的hash，也保证了concurrencyLevel的值是2的n次方</li>
-<li>segements数组的大小为concurrencyLevel,每个Segement内table的大小为initialCapacity/concurrenvyLevel</li>
-</ul>
-<h3 id="ConcurrentHashMap的put和get"><a href="#ConcurrentHashMap的put和get" class="headerlink" title="ConcurrentHashMap的put和get"></a>ConcurrentHashMap的put和get</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int hash = hash(key.hashCode());</div><div class="line">return segmentFor(hash).get(key,hash);</div></pre></td></tr></table></figure>
-<p>可以发现ConcurrentHashMap通过一次hash,两次定位来找到具体的值。<br>先通过segmentFor方法定位到具体的Segment，再在Segment内部定位到具体的HashEntry，而第二次在Segment内部定位的时候是加锁的。<br>ConcurrentHashMap的hash算法比HashMap的hash算法更复杂，应该是想让他能够更好的散列到数组上，减少hash冲突</p>
-<h3 id="HashMap和Segment里modCount区别"><a href="#HashMap和Segment里modCount区别" class="headerlink" title="HashMap和Segment里modCount区别"></a>HashMap和Segment里modCount区别</h3><p>modCount都是记录table结构被修改的次数，但是对这个次数的处理上，HashMap和Segment是不一样的。<br>HashMap在遍历数据的时候，会判断modCount是否被修改了，如果被修改的话会抛出ConcurrentModificationException异常。<br>Segment的modCount在ConcurrentHashMap的containsValue、isEmpty、size方法中用到，ConcurrentHashMap先在不加锁的情况下去做这些计算，如果发现有Segment的modCount被修改了，会再重新获取取锁计算。</p>
-<h3 id="为什么重写了equals方法就必须重写hashCode方法呢？"><a href="#为什么重写了equals方法就必须重写hashCode方法呢？" class="headerlink" title="为什么重写了equals方法就必须重写hashCode方法呢？"></a>为什么重写了equals方法就必须重写hashCode方法呢？</h3><p>绝大多数人都知道如果瑶把一个对象当作key使用的话，就需要重写equals方法。重写了equals方法的话，就必须重写hashCode方法，否则会出现不正确的结果。那么<strong>为什么不重写hashCode方法就会出现不正确结果了呢？</strong>只要阅读一个HashMap的put方法，看看它如何确定一个key是否已存在就明白了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int hash = hash(key.hashCode());</div><div class="line">int i = indexFor(hash,table.length);</div><div class="line">for(Entry&lt;K，V&gt; e = table[i]; e != null; e = e.next) &#123;</div><div class="line">	Object k;</div><div class="line">	if(e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</div><div class="line">		V oldValue = e.value;</div><div class="line">		e.value = value;</div><div class="line">		e.recordAccess(this);</div><div class="line">		return oldValue;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>首先通过key的hashCode来确定具体散列到table的位置，如果这个位置已经有值的话，再通过equals方法判断key是否相等。<br>如果只重写equals方法而不重写hashCode方法的话，即使这两个对象通过equals方法判断是相等的，但是因为没有重写hashCode方法，他们的hashCode是不一样的，这样就会被散列到不同位置去，变成错误的结果了。所以hashCode和equals方法必须一起重写</p>
+</blockquote>
+<p>Jenkins和Strider是开源软件，Travis和Codeship对于开源项目可以免费使用。他们都会将构建和测试，在一次运行中执行完成。</p>
+<h3 id="测试（第二轮）"><a href="#测试（第二轮）" class="headerlink" title="测试（第二轮）"></a>测试（第二轮）</h3><p>构建完成，就要进行第二轮测试。如果第一轮已经涵盖了所有测试内容，第二轮可以省略，当然，这时构建步骤也要移到第一轮测试前面。<br>第二轮是全面测试，单元测试和集成测试都会跑，有条件的话，也瑶对端对端测试。所有测试以自动化为主，少数无法自动化的测试用例，就要人工跑。<br>需要强调的是，新版本的每一个更新点都必须测试到。如果测试的覆盖率不高，进入后面的部署阶段后，很可能会出现严重的问题。</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>通过了第二轮测试，当前代码就是一个可以直接部署的版本(artifact)。将这个版本的所有文件打包（tar filename.tar *）存档，发到生产服务器。<br>生产服务器将打包文件，解包成本地的一个目录，再将运行路径的符号连接（symlink）指向这个目录，然后重新启动应用。这方面的部署工具有Ansible,Chef,Pupper等。</p>
+<h3 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h3><p>一旦当前版本发生问题，就要回滚到上一个版本的构建结果。最简单的做法就是修改一下符号链接，指向上一个版本的目录</p>
 
         
     
@@ -548,7 +546,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/08/CI&CD&CD/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/01/09/jenkins/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -562,7 +560,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/01/01/activeMQ/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/02/concurrenthashmap/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

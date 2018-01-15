@@ -37,7 +37,7 @@
     
     <title>
         
-            ConcurrentHashMap、HashMap和HashTable | 
+            Jenkins之邮件通知 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ConcurrentHashMap、HashMap和HashTable | Misaniy | Note">
+    <meta property="og:title" content="Jenkins之邮件通知 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Tue Jan 02 2018 10:23:10 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Jan 02 2018 11:16:09 GMT+0800" />
+        <meta property="article:published_time" content="Wed Jan 10 2018 16:54:14 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Jan 15 2018 23:58:20 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="ConcurrentHashMap、HashMap和HashTable | Misaniy | Note">
+    <meta name="twitter:title" content="Jenkins之邮件通知 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2018/01/10/jenkinssendemail/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2018/01/02/concurrenthashmap/index.html",
-    "headline": "ConcurrentHashMap、HashMap和HashTable",
-    "datePublished": "Tue Jan 02 2018 10:23:10 GMT+0800",
-    "dateModified": "Tue Jan 02 2018 11:16:09 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2018/01/10/jenkinssendemail/index.html",
+    "headline": "Jenkins之邮件通知",
+    "datePublished": "Wed Jan 10 2018 16:54:14 GMT+0800",
+    "dateModified": "Mon Jan 15 2018 23:58:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap和HashTable的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">HashMap和HashTable的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们能否让HashMap同步"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">我们能否让HashMap同步</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap和ConcurrentHashMap分享"><span class="post-toc-number">2.</span> <span class="post-toc-text">HashMap和ConcurrentHashMap分享</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#锁分段技术"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">锁分段技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性说明"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">属性说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hash算法和table数组长度"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">hash算法和table数组长度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap的初始化"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">ConcurrentHashMap的初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap的put和get"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">ConcurrentHashMap的put和get</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HashMap和Segment里modCount区别"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">HashMap和Segment里modCount区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么重写了equals方法就必须重写hashCode方法呢？"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">为什么重写了equals方法就必须重写hashCode方法呢？</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用</span></a></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                ConcurrentHashMap、HashMap和HashTable
+                Jenkins之邮件通知
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>1月 02, 2018</span>
+        <span>1月 10, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ConcurrentHashMap、HashMap和HashTable&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Jenkins之邮件通知&url=http://misaniy.cc/2018/01/10/jenkinssendemail/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ConcurrentHashMap、HashMap和HashTable&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Jenkins之邮件通知&url=http://misaniy.cc/2018/01/10/jenkinssendemail/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2018/01/10/jenkinssendemail/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2018/01/10/jenkinssendemail/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=ConcurrentHashMap、HashMap和HashTable&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Jenkins之邮件通知&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2018/01/10/jenkinssendemail/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,44 +490,25 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>总所周知，HashMap是线程不安全的，速度快，HashTable是线程安全的，速度慢，而ConcurrentHashMap是结合两者优点的一个线程安全且速度快的键值对。那么这是为什么呢</p>
-<h2 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h2><p>这两个的主要区别可以说就是：线程安全性、同步、速度</p>
+        <p>Jenkins默认有一个邮件通知功能，但功能比较单一，能自定义的东西很少，一般使用Extended E-mail Notification插件来发送邮件，EXT Email插件功能比较多，但设置也比较复杂。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于只是学习Jenkins，所以这里写的不会太多，只会简单的写一下，后续学习到了会更新。这里有几个关键的地方提一下：</p>
+<ol>
+<li>Extended E-mail Notification的发件人邮箱和Jenkins Location系统管理员邮箱相同</li>
+<li>SMTP Authentication的Password 是SMTP的授权码，不是邮箱密码，同时也要确认是否开启SMTP。</li>
+<li>勾选”Enable Debug Mode”可以开启EXT E-mail Notification的调试功能，这样可以在构建日志里增加更多相关日志。</li>
+<li>EXT E-mail插件并没有测试功能，需要在构建后查看Console Output下的日志。</li>
+<li>如果发送邮件失败，要注意SMTP Authentication的User Name要输全邮箱名。</li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Extended E-mail Notification的配置就是在系统管理——系统设置里面。在设置EXT E-mail 之前，我们需要先设置一下Jenkins Location里的系统管理员邮箱。这个邮箱必须保证和下面的发件人相同<br><img src="https://i.imgur.com/5JjeFlN.png" alt=""><br>然后再设置EXT E-mail插件。这里需要注意一下</p>
+<blockquote>
 <ul>
-<li>HashMap几乎可以等价于HashTable，除了HashMap是非Synchronized，且可接受null的键值对</li>
-<li>这意味着多个线程可以共享一个Hashtable，而HashMap不行</li>
-<li>另一个区别就是HashMap的迭代期（Iterator）是fail-fast迭代器，而Hashtable的enumerator迭代期不是fail-fast。所以当有其他线程改变了HashMap的结构，会抛出ConcurrentModificationException。但迭代器本身的remove()方法不会。这也同样是Ennumeration和Iterator的区别。</li>
+<li>Default user E-mail suffix。设置默认的EMAIL后缀名，这里设置后，之后的发件人若不设置后缀，都以这个为后缀。</li>
+<li>勾选Use SMTP Authentication。填入发件人的用户名密码、SMTP的端口号等信息。这里注意用户名要填全，密码要填写SMTP的授权码，这个授权码需要去邮箱里开启SMTP并获取授权码。</li>
+<li>Default Recipients。设置默认收件人，这里就可以不用输@后缀了，以Default suffix为后缀，当然如果不是该后缀输全邮箱名就可以了<br><img src="https://i.imgur.com/zl8CoGs.png" alt=""><br>EXT E-mail的优势就在于可以自定义各种东西，比如这里可以自定义邮箱的标题和内容。<br><img src="https://i.imgur.com/6e00pyO.png" alt=""></li>
 </ul>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>sychronized意味着在一次仅有一个线程能够更改Hashtable。就是说人和线程瑶更新Hashtable时瑶首先获得同步锁，其他线程瑶等到同步锁被释放之后才能再次获得同步锁更新Hashtable。</li>
-<li>Fail-safe和Iterator迭代器相关。如果某个结合对象创建了Iterator或者ListIterator，然后其他线程试图结构上更改集合对象，就会抛出ConcurrentModificationException异常。但其他线程可以通过set()方法更改集合对象，因为这并没有从结构上更改集合。但是加入已经从结构上进行了更改，再调用set()方法，就会抛出IllegalArgumentException异常。</li>
-<li>结构上的更改指的是remove或insert一个元素。</li>
-</ul>
-<h3 id="我们能否让HashMap同步"><a href="#我们能否让HashMap同步" class="headerlink" title="我们能否让HashMap同步"></a>我们能否让HashMap同步</h3><p>HashMap可以通过下面的语句进行同步<br>Map m = Collections.synchronizedMap(hashMap);</p>
-<h2 id="HashMap和ConcurrentHashMap分享"><a href="#HashMap和ConcurrentHashMap分享" class="headerlink" title="HashMap和ConcurrentHashMap分享"></a>HashMap和ConcurrentHashMap分享</h2><p><img src="https://i.imgur.com/ICK9MxH.jpg" alt=""><br>从图克制，ConcurrentHashMap比HashMap多了一个Segment类，而Segment是一个可重入锁。<br>ConcurrentHashMap是使用了<strong>锁分段技术</strong>保证线程安全的。</p>
-<h3 id="锁分段技术"><a href="#锁分段技术" class="headerlink" title="锁分段技术"></a>锁分段技术</h3><p>首先将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。</p>
-<h3 id="属性说明"><a href="#属性说明" class="headerlink" title="属性说明"></a>属性说明</h3><p>我们会发现HashMap和Segment里的属性值基本是一样的，因为Segment的本质就是一个加锁的HashMap，下面是每个属性的意义：</p>
-<ul>
-<li>table: 数据存储区</li>
-<li>size,count: 已存数据的大小</li>
-<li>threshold: table需要扩容的临界值，等于table的大小*loadFactor</li>
-<li>loadFactor: 装载因子</li>
-<li>modCount: table结构别修改的次数</li>
-</ul>
-<h3 id="hash算法和table数组长度"><a href="#hash算法和table数组长度" class="headerlink" title="hash算法和table数组长度"></a>hash算法和table数组长度</h3><p>HashMap做了一个操作保证table数组的大小是2的n次方。如果使用new HashMap(10)新建一个HashMap，你会发现这个HashMap中table数组实际的大小是16，并不是10.<br><strong>为什么这样做？</strong>从HashMap的hash和indexFor方法说起<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">static int hash(int h) &#123;</div><div class="line">	h ^= (h &gt;&gt;&gt; 20) ^ (h &gt;&gt;&gt; 12);</div><div class="line">	return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</div><div class="line">&#125;</div><div class="line"></div><div class="line">static int indexFor(int h, int length) &#123;</div><div class="line">	return h &amp; (length-1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int hash = hash(key.hashCode());</div><div class="line">int i = indexFor(hash,table.length);</div></pre></td></tr></table></figure></p>
-<p>HashMap的put和get方法都使用了这两个方法将key散列到table数组上去。<br>indexFor方法是通过hash值和table数组的长度-1进行于操作，来确定具体的位置。<br><strong>为什么要减1？</strong>因为数组的长度是2的n次方，减1一伙就编程低位的二进制码都是1，和hash值做运算的话，就能得到一个小于数组长度的数了。<br><strong>那为什么对hashCode还瑶做一次hash操作呐？</strong>因为如果不做hash操作的话，只有低位的值参与了hash运算，而高位的值没有参加运算。hash方法是让高位的数字也参加hash运算。</p>
-<p>假如：数组的长度是16，我们会发现hashCode为5和53的散列到同一个位置<br>hashcode:53 00000000 00000000 00000000 00110101<br>hashcode: 5 00000000 00000000 00000000 00000101<br>length-1:15 00000000 00000000 00000000 00001111<br>只要hashcode值的最后4位是一样的，那么他们就会散列到同一个位置。<br>hash方法是通过一些位运算符，让高位的树枝也尽可能的参加到运算中，让它尽可能的散列到table数组上，减少hash冲突。</p>
-<h3 id="ConcurrentHashMap的初始化"><a href="#ConcurrentHashMap的初始化" class="headerlink" title="ConcurrentHashMap的初始化"></a>ConcurrentHashMap的初始化</h3><p>ConcurrentHashMap是由initialCapacity,loadFactor,concurrencyLever几个参数来初始化segments数组的<br>segmentShift和segmentMask是在定位segment时的哈希算法里需要使用的，让其能够尽可能的散列开。</p>
-<ul>
-<li>initialCapacity: ConcurrentHashMap的初始化大小</li>
-<li>loadFactor: 装载因子</li>
-<li>concurrencyLevel: 预想的并发级别，为了能够更好的hash，也保证了concurrencyLevel的值是2的n次方</li>
-<li>segements数组的大小为concurrencyLevel,每个Segement内table的大小为initialCapacity/concurrenvyLevel</li>
-</ul>
-<h3 id="ConcurrentHashMap的put和get"><a href="#ConcurrentHashMap的put和get" class="headerlink" title="ConcurrentHashMap的put和get"></a>ConcurrentHashMap的put和get</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int hash = hash(key.hashCode());</div><div class="line">return segmentFor(hash).get(key,hash);</div></pre></td></tr></table></figure>
-<p>可以发现ConcurrentHashMap通过一次hash,两次定位来找到具体的值。<br>先通过segmentFor方法定位到具体的Segment，再在Segment内部定位到具体的HashEntry，而第二次在Segment内部定位的时候是加锁的。<br>ConcurrentHashMap的hash算法比HashMap的hash算法更复杂，应该是想让他能够更好的散列到数组上，减少hash冲突</p>
-<h3 id="HashMap和Segment里modCount区别"><a href="#HashMap和Segment里modCount区别" class="headerlink" title="HashMap和Segment里modCount区别"></a>HashMap和Segment里modCount区别</h3><p>modCount都是记录table结构被修改的次数，但是对这个次数的处理上，HashMap和Segment是不一样的。<br>HashMap在遍历数据的时候，会判断modCount是否被修改了，如果被修改的话会抛出ConcurrentModificationException异常。<br>Segment的modCount在ConcurrentHashMap的containsValue、isEmpty、size方法中用到，ConcurrentHashMap先在不加锁的情况下去做这些计算，如果发现有Segment的modCount被修改了，会再重新获取取锁计算。</p>
-<h3 id="为什么重写了equals方法就必须重写hashCode方法呢？"><a href="#为什么重写了equals方法就必须重写hashCode方法呢？" class="headerlink" title="为什么重写了equals方法就必须重写hashCode方法呢？"></a>为什么重写了equals方法就必须重写hashCode方法呢？</h3><p>绝大多数人都知道如果瑶把一个对象当作key使用的话，就需要重写equals方法。重写了equals方法的话，就必须重写hashCode方法，否则会出现不正确的结果。那么<strong>为什么不重写hashCode方法就会出现不正确结果了呢？</strong>只要阅读一个HashMap的put方法，看看它如何确定一个key是否已存在就明白了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int hash = hash(key.hashCode());</div><div class="line">int i = indexFor(hash,table.length);</div><div class="line">for(Entry&lt;K，V&gt; e = table[i]; e != null; e = e.next) &#123;</div><div class="line">	Object k;</div><div class="line">	if(e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</div><div class="line">		V oldValue = e.value;</div><div class="line">		e.value = value;</div><div class="line">		e.recordAccess(this);</div><div class="line">		return oldValue;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>首先通过key的hashCode来确定具体散列到table的位置，如果这个位置已经有值的话，再通过equals方法判断key是否相等。<br>如果只重写equals方法而不重写hashCode方法的话，即使这两个对象通过equals方法判断是相等的，但是因为没有重写hashCode方法，他们的hashCode是不一样的，这样就会被散列到不同位置去，变成错误的结果了。所以hashCode和equals方法必须一起重写</p>
+</blockquote>
+<p>这里给出一个Content模版，注意，如果这里是网页格式需要在EXT E-mail的Default Content Type里修改为HTML。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;$&#123;ENV, var=&quot;JOB_NAME&quot;&#125;-第$&#123;BUILD_NUMBER&#125;次构建日志&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body leftmargin=&quot;8&quot; marginwidth=&quot;0&quot; topmargin=&quot;8&quot; marginheight=&quot;4&quot; offset=&quot;0&quot;&gt;</div><div class="line">    &lt;table width=&quot;95%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif&quot;&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;(本邮件由程序自动下发，请勿回复！)&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;h2&gt;&lt;font color=&quot;#FF0000&quot;&gt;构建结果 - $&#123;BUILD_STATUS&#125;&lt;/font&gt;&lt;/h2&gt;</div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;br /&gt;</div><div class="line">                &lt;b&gt;&lt;font color=&quot;#0B610B&quot;&gt;构建信息&lt;/font&gt;&lt;/b&gt;</div><div class="line">                &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;</div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;   SVN_URL</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;ul&gt;</div><div class="line">                    &lt;li&gt;项目名称：$&#123;PROJECT_NAME&#125;&lt;/li&gt;                </div><div class="line">                    &lt;li&gt;构建编号：$&#123;BUILD_NUMBER&#125;&lt;/li&gt;                    </div><div class="line">                    &lt;li&gt;GIT版本：$&#123;GIT_REVISION&#125;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;触发原因：$&#123;CAUSE&#125;&lt;/li&gt;   </div><div class="line">                    &lt;li&gt;构建日志：&lt;a href=&quot;$&#123;BUILD_URL&#125;console&quot;&gt;$&#123;BUILD_URL&#125;console&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;</div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;b&gt;&lt;font color=&quot;#0B610B&quot;&gt;变更信息:&lt;/font&gt;&lt;/b&gt;</div><div class="line">               &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;</div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;ul&gt;</div><div class="line">                    &lt;li&gt;上次构建成功后变化 :  $&#123;CHANGES_SINCE_LAST_SUCCESS&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;    </div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line"> &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;ul&gt;</div><div class="line">                    &lt;li&gt;上次构建不稳定后变化 :  $&#123;CHANGES_SINCE_LAST_UNSTABLE&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;    </div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;ul&gt;</div><div class="line">                    &lt;li&gt;历史变更记录 : &lt;a href=&quot;$&#123;PROJECT_URL&#125;changes&quot;&gt;$&#123;PROJECT_URL&#125;changes&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;    </div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;ul&gt;</div><div class="line">                    &lt;li&gt;变更集:$&#123;JELLY_SCRIPT,template=&quot;html&quot;&#125;&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;    </div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;</div><div class="line">    &lt;/table&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>好了，系统设置里配置完成，只剩下使用里配置一下就可以了。在项目的设置里面，选择”增加构建后操作步骤”，再选择”Editable Email Notification”<br><img src="https://i.imgur.com/evRvUQx.png" alt=""><br>就会出现如图设置，我们这里让它默认<br><img src="https://i.imgur.com/qZef48I.png" alt=""><br>然后点击最下方的Advanced Setting<br><img src="https://i.imgur.com/859OsNV.png" alt=""><br>可以在Triggers里设置更多的触发事件，以及设置，这里点击高级<br><img src="https://i.imgur.com/x8WodDg.png" alt=""><br>然后在Recipient List里输入收件人，如需发送给多个人可以使用,<br><img src="https://i.imgur.com/N4h3tub.png" alt=""><br>然后单击下方的保存，进入到项目里——立即构建。然后再查看构建的Consolo Output。观察是否发送成功。<br>如图表示发送成功，再去收件邮箱看是否收到邮件即可<br><img src="https://i.imgur.com/riKt0Nf.png" alt=""></p>
 
         
     
@@ -548,7 +529,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/08/CI&CD&CD/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/01/11/zipkin/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -562,7 +543,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/01/01/activeMQ/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/09/jenkins/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

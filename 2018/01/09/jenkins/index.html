@@ -37,7 +37,7 @@
     
     <title>
         
-            ConcurrentHashMap、HashMap和HashTable | 
+            Jenkins入门 | 
         
         Misaniy | Note
     </title>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://misaniy.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ConcurrentHashMap、HashMap和HashTable | Misaniy | Note">
+    <meta property="og:title" content="Jenkins入门 | Misaniy | Note">
     <meta property="og:image" content="http://misaniy.cc/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Tue Jan 02 2018 10:23:10 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Jan 02 2018 11:16:09 GMT+0800" />
+        <meta property="article:published_time" content="Tue Jan 09 2018 11:00:10 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Jan 15 2018 23:58:12 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="ConcurrentHashMap、HashMap和HashTable | Misaniy | Note">
+    <meta name="twitter:title" content="Jenkins入门 | Misaniy | Note">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http://misaniy.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" />
+        <link rel="canonical" href="http://misaniy.cc/2018/01/09/jenkins/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://misaniy.cc/2018/01/02/concurrenthashmap/index.html",
-    "headline": "ConcurrentHashMap、HashMap和HashTable",
-    "datePublished": "Tue Jan 02 2018 10:23:10 GMT+0800",
-    "dateModified": "Tue Jan 02 2018 11:16:09 GMT+0800",
+    "mainEntityOfPage": "http://misaniy.cc/2018/01/09/jenkins/index.html",
+    "headline": "Jenkins入门",
+    "datePublished": "Tue Jan 09 2018 11:00:10 GMT+0800",
+    "dateModified": "Mon Jan 15 2018 23:58:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Misaniy Wu",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap和HashTable的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">HashMap和HashTable的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们能否让HashMap同步"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">我们能否让HashMap同步</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HashMap和ConcurrentHashMap分享"><span class="post-toc-number">2.</span> <span class="post-toc-text">HashMap和ConcurrentHashMap分享</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#锁分段技术"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">锁分段技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性说明"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">属性说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hash算法和table数组长度"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">hash算法和table数组长度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap的初始化"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">ConcurrentHashMap的初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ConcurrentHashMap的put和get"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">ConcurrentHashMap的put和get</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HashMap和Segment里modCount区别"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">HashMap和Segment里modCount区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么重写了equals方法就必须重写hashCode方法呢？"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">为什么重写了equals方法就必须重写hashCode方法呢？</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的用处"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Jenkins的用处</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的特性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Jenkins的特性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的由来"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Jenkins的由来</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的目标"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Jenkins的目标</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Jenkins的安装与配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">Jenkins的安装与配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Jenkins的安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的卸载"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Jenkins的卸载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins的配置"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Jenkins的配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#系统设置"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">系统设置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#全局安全设置"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">全局安全设置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#全局工具配置"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">全局工具配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#管理插件"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">管理插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#这里简单写一个测试"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">这里简单写一个测试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构建"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">构建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#源码管理"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">源码管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构建触发器"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">构建触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Build"><span class="post-toc-number">2.4.4.</span> <span class="post-toc-text">Build</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构建后操作"><span class="post-toc-number">2.4.5.</span> <span class="post-toc-text">构建后操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Consolo-output"><span class="post-toc-number">2.4.6.</span> <span class="post-toc-text">Consolo output</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                ConcurrentHashMap、HashMap和HashTable
+                Jenkins入门
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Misaniy Wu</strong>
-        <span>1月 02, 2018</span>
+        <span>1月 09, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ConcurrentHashMap、HashMap和HashTable&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Jenkins入门&url=http://misaniy.cc/2018/01/09/jenkins/index.html&pic=http://misaniy.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ConcurrentHashMap、HashMap和HashTable&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html&via=Misaniy Wu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Jenkins入门&url=http://misaniy.cc/2018/01/09/jenkins/index.html&via=Misaniy Wu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://misaniy.cc/2018/01/09/jenkins/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://misaniy.cc/2018/01/09/jenkins/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=ConcurrentHashMap、HashMap和HashTable&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2018/01/02/concurrenthashmap/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Misaniy | Note&title=Jenkins入门&summary=&pics=http://misaniy.cc/img/favicon.png&url=http://misaniy.cc/2018/01/09/jenkins/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -490,44 +490,90 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>总所周知，HashMap是线程不安全的，速度快，HashTable是线程安全的，速度慢，而ConcurrentHashMap是结合两者优点的一个线程安全且速度快的键值对。那么这是为什么呢</p>
-<h2 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h2><p>这两个的主要区别可以说就是：线程安全性、同步、速度</p>
+        <p>百度百科上说，Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>简单来说，Jenkins是一个可拓展的持续集成引擎。</p>
+<h3 id="Jenkins的用处"><a href="#Jenkins的用处" class="headerlink" title="Jenkins的用处"></a>Jenkins的用处</h3><ul>
+<li>持续、自动地构建、测试软件项目</li>
+<li>监控一些定时执行的任务</li>
+</ul>
+<h3 id="Jenkins的特性"><a href="#Jenkins的特性" class="headerlink" title="Jenkins的特性"></a>Jenkins的特性</h3><ul>
+<li><strong>易于安装</strong>——只要把jenkins.war部署到servlet容器，不需要数据库支持</li>
+<li><strong>易于配置</strong>——所有配置都是通过其提供的web界面实现</li>
+<li><strong>集成RSS/E-Mail</strong>通过RSS发布构建结果或者当构建完成时通过E-Mail通知</li>
+<li><strong>生成JUnit/TestNg测试报告</strong></li>
+<li><strong>分布式构建</strong>支持Jenkins能够让多台计算机一起谷构建、测试</li>
+<li><strong>文件识别</strong>——Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等</li>
+<li><strong>插件支持</strong>——Jenkins支持拓展插件，你可以开发适合自己团队使用的工具</li>
+</ul>
+<h3 id="Jenkins的由来"><a href="#Jenkins的由来" class="headerlink" title="Jenkins的由来"></a>Jenkins的由来</h3><p>目前持续集成（CI）已成为当前许多软件开发团队在整个软件开发生命周期内侧重于<strong>保证代码质量</strong>的常见做法。它是一种时间，旨在<strong>缓和和稳固软件的构建过程</strong>。并且能够帮助您的开发团队应对如下挑战：</p>
+<blockquote>
 <ul>
-<li>HashMap几乎可以等价于HashTable，除了HashMap是非Synchronized，且可接受null的键值对</li>
-<li>这意味着多个线程可以共享一个Hashtable，而HashMap不行</li>
-<li>另一个区别就是HashMap的迭代期（Iterator）是fail-fast迭代器，而Hashtable的enumerator迭代期不是fail-fast。所以当有其他线程改变了HashMap的结构，会抛出ConcurrentModificationException。但迭代器本身的remove()方法不会。这也同样是Ennumeration和Iterator的区别。</li>
+<li><strong>软件构建自动化</strong>：配置完成后，CI系统会依照预先制定的时间表。或者针对某一个特定时间，对目标软件进行构建。</li>
+<li><strong>构建可持续的自动化检查</strong>：CI系统能个持续地获取新增或修改后签入的源代码，也就是说，当软件开发团队需要周期性的检查新增或修改的代码时，CI系统会<strong>不断确认</strong>这些新代码是否破坏了原有软件的成功构建。这减少了开发者们在检查彼此相互依存的代码中变化情况需要话费的时间和经历。</li>
+<li><strong>构建可持续的自动化测试</strong>：构建检查的拓展部分，构建后执行预先制定的一套测试规则，完成后触发通知（Email,RSS等等）给相关的当事人</li>
+<li><strong>生成后后续过程的自动化</strong>：当自动化检查和测试成功完成，软件构建的周期中可能也需要一些额外的任务，诸如乘胜文档、打包软件、部署构建到一个运行环境或者软件仓库。这样，构建才能更迅速地提供给用户使用。</li>
 </ul>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>sychronized意味着在一次仅有一个线程能够更改Hashtable。就是说人和线程瑶更新Hashtable时瑶首先获得同步锁，其他线程瑶等到同步锁被释放之后才能再次获得同步锁更新Hashtable。</li>
-<li>Fail-safe和Iterator迭代器相关。如果某个结合对象创建了Iterator或者ListIterator，然后其他线程试图结构上更改集合对象，就会抛出ConcurrentModificationException异常。但其他线程可以通过set()方法更改集合对象，因为这并没有从结构上更改集合。但是加入已经从结构上进行了更改，再调用set()方法，就会抛出IllegalArgumentException异常。</li>
-<li>结构上的更改指的是remove或insert一个元素。</li>
-</ul>
-<h3 id="我们能否让HashMap同步"><a href="#我们能否让HashMap同步" class="headerlink" title="我们能否让HashMap同步"></a>我们能否让HashMap同步</h3><p>HashMap可以通过下面的语句进行同步<br>Map m = Collections.synchronizedMap(hashMap);</p>
-<h2 id="HashMap和ConcurrentHashMap分享"><a href="#HashMap和ConcurrentHashMap分享" class="headerlink" title="HashMap和ConcurrentHashMap分享"></a>HashMap和ConcurrentHashMap分享</h2><p><img src="https://i.imgur.com/ICK9MxH.jpg" alt=""><br>从图克制，ConcurrentHashMap比HashMap多了一个Segment类，而Segment是一个可重入锁。<br>ConcurrentHashMap是使用了<strong>锁分段技术</strong>保证线程安全的。</p>
-<h3 id="锁分段技术"><a href="#锁分段技术" class="headerlink" title="锁分段技术"></a>锁分段技术</h3><p>首先将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。</p>
-<h3 id="属性说明"><a href="#属性说明" class="headerlink" title="属性说明"></a>属性说明</h3><p>我们会发现HashMap和Segment里的属性值基本是一样的，因为Segment的本质就是一个加锁的HashMap，下面是每个属性的意义：</p>
+</blockquote>
+<p>部署一个CI系统需要的<strong>最低要求</strong>是：</p>
+<blockquote>
 <ul>
-<li>table: 数据存储区</li>
-<li>size,count: 已存数据的大小</li>
-<li>threshold: table需要扩容的临界值，等于table的大小*loadFactor</li>
-<li>loadFactor: 装载因子</li>
-<li>modCount: table结构别修改的次数</li>
+<li><strong>一个可获取的源代码的仓库</strong></li>
+<li><strong>一个包含构建脚本的项目</strong></li>
 </ul>
-<h3 id="hash算法和table数组长度"><a href="#hash算法和table数组长度" class="headerlink" title="hash算法和table数组长度"></a>hash算法和table数组长度</h3><p>HashMap做了一个操作保证table数组的大小是2的n次方。如果使用new HashMap(10)新建一个HashMap，你会发现这个HashMap中table数组实际的大小是16，并不是10.<br><strong>为什么这样做？</strong>从HashMap的hash和indexFor方法说起<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">static int hash(int h) &#123;</div><div class="line">	h ^= (h &gt;&gt;&gt; 20) ^ (h &gt;&gt;&gt; 12);</div><div class="line">	return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</div><div class="line">&#125;</div><div class="line"></div><div class="line">static int indexFor(int h, int length) &#123;</div><div class="line">	return h &amp; (length-1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int hash = hash(key.hashCode());</div><div class="line">int i = indexFor(hash,table.length);</div></pre></td></tr></table></figure></p>
-<p>HashMap的put和get方法都使用了这两个方法将key散列到table数组上去。<br>indexFor方法是通过hash值和table数组的长度-1进行于操作，来确定具体的位置。<br><strong>为什么要减1？</strong>因为数组的长度是2的n次方，减1一伙就编程低位的二进制码都是1，和hash值做运算的话，就能得到一个小于数组长度的数了。<br><strong>那为什么对hashCode还瑶做一次hash操作呐？</strong>因为如果不做hash操作的话，只有低位的值参与了hash运算，而高位的值没有参加运算。hash方法是让高位的数字也参加hash运算。</p>
-<p>假如：数组的长度是16，我们会发现hashCode为5和53的散列到同一个位置<br>hashcode:53 00000000 00000000 00000000 00110101<br>hashcode: 5 00000000 00000000 00000000 00000101<br>length-1:15 00000000 00000000 00000000 00001111<br>只要hashcode值的最后4位是一样的，那么他们就会散列到同一个位置。<br>hash方法是通过一些位运算符，让高位的树枝也尽可能的参加到运算中，让它尽可能的散列到table数组上，减少hash冲突。</p>
-<h3 id="ConcurrentHashMap的初始化"><a href="#ConcurrentHashMap的初始化" class="headerlink" title="ConcurrentHashMap的初始化"></a>ConcurrentHashMap的初始化</h3><p>ConcurrentHashMap是由initialCapacity,loadFactor,concurrencyLever几个参数来初始化segments数组的<br>segmentShift和segmentMask是在定位segment时的哈希算法里需要使用的，让其能够尽可能的散列开。</p>
+</blockquote>
+<p>下图概括了CI系统的基本结构<br><img src="https://i.imgur.com/R8ar9qq.jpg" alt=""></p>
+<ol>
+<li>开发者检入代码到源代码仓库。</li>
+<li>CI系统会为每一个项目创建了一个<strong>单独的工作区</strong>。当预设或请求一次新的构建时，它将源代码的源码存放到对应的工作区。</li>
+<li>CI系统会在对应的工作区内<strong>执行构建过程</strong>。</li>
+<li>（配置如果存在）构建完成后，CI系统会在一个新的构建中<strong>执行定义的一套测试</strong>。完成后<strong>触发通知</strong>（Email,RSS等等）给相关的当事人。</li>
+<li>（配置如果存在）如果构建成功，这个构建会被<strong>打包并转义到一个部署目标</strong>（如应用服务器）或<strong>存储为软件仓库中的一个新版本</strong>。软件仓库可以是CI系统的一部分，也可以是一个外部的仓库，诸如一个文件服务器或者像Java.net、SourceForge之类的网站。</li>
+<li>CI系统通常会<strong>根据请求发起相应的操作</strong>，诸如即时构建、生成报告，或者检索一些构建好的构件。</li>
+</ol>
+<blockquote>
+<p>Jenkins之前叫做Hudson.</p>
+</blockquote>
+<p>以下是使用Jenkins的一些理由：</p>
 <ul>
-<li>initialCapacity: ConcurrentHashMap的初始化大小</li>
-<li>loadFactor: 装载因子</li>
-<li>concurrencyLevel: 预想的并发级别，为了能够更好的hash，也保证了concurrencyLevel的值是2的n次方</li>
-<li>segements数组的大小为concurrencyLevel,每个Segement内table的大小为initialCapacity/concurrenvyLevel</li>
+<li>是所有CI产品中在安装和配置上最<strong>简单</strong>的。</li>
+<li><strong>基于Web访问</strong>，用户及诶面友好、直观和灵活，在许多情况下，还提供了AJAX的<strong>即时反馈</strong>。</li>
+<li>Jenkins是<strong>基于JAVA开发</strong>的。但它不仅限于构建基于Java的软件。</li>
+<li>Jenkins拥有<strong>大量的插件</strong>。这些插件极大地扩展了Jenkins的功能；他们都是开源的，而且它们可以直接通过web界面来进行安装与管理。</li>
 </ul>
-<h3 id="ConcurrentHashMap的put和get"><a href="#ConcurrentHashMap的put和get" class="headerlink" title="ConcurrentHashMap的put和get"></a>ConcurrentHashMap的put和get</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int hash = hash(key.hashCode());</div><div class="line">return segmentFor(hash).get(key,hash);</div></pre></td></tr></table></figure>
-<p>可以发现ConcurrentHashMap通过一次hash,两次定位来找到具体的值。<br>先通过segmentFor方法定位到具体的Segment，再在Segment内部定位到具体的HashEntry，而第二次在Segment内部定位的时候是加锁的。<br>ConcurrentHashMap的hash算法比HashMap的hash算法更复杂，应该是想让他能够更好的散列到数组上，减少hash冲突</p>
-<h3 id="HashMap和Segment里modCount区别"><a href="#HashMap和Segment里modCount区别" class="headerlink" title="HashMap和Segment里modCount区别"></a>HashMap和Segment里modCount区别</h3><p>modCount都是记录table结构被修改的次数，但是对这个次数的处理上，HashMap和Segment是不一样的。<br>HashMap在遍历数据的时候，会判断modCount是否被修改了，如果被修改的话会抛出ConcurrentModificationException异常。<br>Segment的modCount在ConcurrentHashMap的containsValue、isEmpty、size方法中用到，ConcurrentHashMap先在不加锁的情况下去做这些计算，如果发现有Segment的modCount被修改了，会再重新获取取锁计算。</p>
-<h3 id="为什么重写了equals方法就必须重写hashCode方法呢？"><a href="#为什么重写了equals方法就必须重写hashCode方法呢？" class="headerlink" title="为什么重写了equals方法就必须重写hashCode方法呢？"></a>为什么重写了equals方法就必须重写hashCode方法呢？</h3><p>绝大多数人都知道如果瑶把一个对象当作key使用的话，就需要重写equals方法。重写了equals方法的话，就必须重写hashCode方法，否则会出现不正确的结果。那么<strong>为什么不重写hashCode方法就会出现不正确结果了呢？</strong>只要阅读一个HashMap的put方法，看看它如何确定一个key是否已存在就明白了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int hash = hash(key.hashCode());</div><div class="line">int i = indexFor(hash,table.length);</div><div class="line">for(Entry&lt;K，V&gt; e = table[i]; e != null; e = e.next) &#123;</div><div class="line">	Object k;</div><div class="line">	if(e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</div><div class="line">		V oldValue = e.value;</div><div class="line">		e.value = value;</div><div class="line">		e.recordAccess(this);</div><div class="line">		return oldValue;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>首先通过key的hashCode来确定具体散列到table的位置，如果这个位置已经有值的话，再通过equals方法判断key是否相等。<br>如果只重写equals方法而不重写hashCode方法的话，即使这两个对象通过equals方法判断是相等的，但是因为没有重写hashCode方法，他们的hashCode是不一样的，这样就会被散列到不同位置去，变成错误的结果了。所以hashCode和equals方法必须一起重写</p>
+<h3 id="Jenkins的目标"><a href="#Jenkins的目标" class="headerlink" title="Jenkins的目标"></a>Jenkins的目标</h3><p>Jenkins的主要目标是<strong>监控软件开发流程，快速显示问题</strong>。所以能保证开发人员以及相关人员省时省力提高开发效率。<br>CI系统在整个开发过程中的主要作用是控制：当系统在代码存储库中探测到修改时，它将运行构建的任务委托给构建过程本身。如果构建失败了，那么CI系统将通知相关人员，然后继续监视存储库。它的角色看起来是被动的，但它确实能快速反馈问题。</p>
+<p>特别是它具有以下优点：</p>
+<ul>
+<li>Jenkins一切配置都可以在Web界面上完成。某些配置入MAVEN_HOME/JAVA_HOME和Email，只需配置一次，所有的项目都能用。当然也可以通过修改xml进行配置。</li>
+<li><strong>支持Maven的模块（Module）</strong>,Jenkins对Maven做了优化，因此它能自动识别Module,每个Module可以配置成一个job,相当灵活。</li>
+<li>测试报告聚合，所有模块的测试报告被聚合在一起，结果一目了然，使用其他CI，这几乎是件不可能完成的任务。</li>
+<li><strong>构建指纹</strong>（Artifact Fingerprint），每次build的结果构件都被很好的自动管理，无需人和配置就可以方便的浏览下载。</li>
+</ul>
+<h2 id="Jenkins的安装与配置"><a href="#Jenkins的安装与配置" class="headerlink" title="Jenkins的安装与配置"></a>Jenkins的安装与配置</h2><h3 id="Jenkins的安装"><a href="#Jenkins的安装" class="headerlink" title="Jenkins的安装"></a>Jenkins的安装</h3><p>Jenkins安装方法有多种，这里以war包部署到tomcat上作阐述</p>
+<ol>
+<li>首先，需要在虚拟机安装jdk和maven，这里不作阐述。</li>
+<li>然后，到官网下载一个最新的版本的war包,<a href="https://jenkins.io/" target="_blank" rel="external">Jenkins官网</a>。复制到<code>tomcat/webapps</code>下，<code>./tomcat/bin/shutdown.sh</code>和<code>./tomcat/bin/startup.sh</code>重启tomcat即可自动解压，访问类似于<a href="http://localhost:8080/jenkins" target="_blank" rel="external">http://localhost:8080/jenkins</a> 的网址即可进入到Jenkins。 </li>
+<li>首次进入需要输入密钥<img src="https://i.imgur.com/lCAJeRQ.png" alt=""></li>
+<li>它会让你选择插件是自动还是手动安装，这里选择自动安装<img src="https://i.imgur.com/p75j1LM.png" alt=""><blockquote>
+<p>如果安装插件失败，有可能是版本的问题，因为代码使用JDK7，之前尝试安装旧版本Jenkins，却不能安装很多插件，也没有找到安装旧插件的方法，如果以后找到会更新。这里发现在里面可以配置其他的JDK版本，所以这里就用JDK8安装了最新的2.89版本Jenkins。</p>
+</blockquote>
+</li>
+<li>安装完插件后创建用户<img src="https://i.imgur.com/mNGPID2.png" alt=""></li>
+<li>用户创建后进入首页，这就算成功的安装了<a href="https://i.imgur.com/i66OWfz.png" target="_blank" rel="external"></a></li>
+</ol>
+<h3 id="Jenkins的卸载"><a href="#Jenkins的卸载" class="headerlink" title="Jenkins的卸载"></a>Jenkins的卸载</h3><ol>
+<li>Jenkins的卸载有多种方式，首先，如果选择这种Servlet容器启动war包的形式，需要删除<code>rm /root/.jenkins - r</code> 这个文件夹，然后把tomcat里的jenkins.war删除即可</li>
+<li>如果使用的是Jenkins内置的Jetty启动或官方推荐方法，需要用以下命令删除</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//服务</div><div class="line">sudo apt-get remove jenkins</div><div class="line"></div><div class="line">//安装包</div><div class="line">sudo apt-get remove --auto-remove jenkins</div><div class="line"></div><div class="line">//配置和数据</div><div class="line">sudo apt-get purge jenkins</div><div class="line"></div><div class="line">sudo apt-get purge --auto-remove jenkins</div></pre></td></tr></table></figure>
+<h3 id="Jenkins的配置"><a href="#Jenkins的配置" class="headerlink" title="Jenkins的配置"></a>Jenkins的配置</h3><p>由于是第一次使用，我们先选择系统管理，进入到管理Jenkins页面<img src="https://i.imgur.com/WTDAeqz.png" alt=""></p>
+<h4 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h4><p>系统设置里面可以设置一些全局属性、Maven、Git、SVN、发送邮件等。<img src="https://i.imgur.com/TZWJtsF.jpg" alt=""><img src="https://i.imgur.com/6MBx87H.jpg" alt=""><img src="https://i.imgur.com/ZqBGbzx.jpg" alt=""></p>
+<h4 id="全局安全设置"><a href="#全局安全设置" class="headerlink" title="全局安全设置"></a>全局安全设置</h4><p>全局安全设置里面可以定义谁可以访问，是否可以注册等。<img src="https://i.imgur.com/8K3dMbe.jpg" alt=""><img src="https://i.imgur.com/aEuJFb1.jpg" alt=""></p>
+<h4 id="全局工具配置"><a href="#全局工具配置" class="headerlink" title="全局工具配置"></a>全局工具配置</h4><p>全局工具配置里面可以配置JDK、GIT、ANT、MAVEN等，我在这里配置一下GIT路径就可以，一会儿需要用到<br><img src="https://i.imgur.com/TC42hmi.jpg" alt=""></p>
+<h4 id="管理插件"><a href="#管理插件" class="headerlink" title="管理插件"></a>管理插件</h4><h3 id="这里简单写一个测试"><a href="#这里简单写一个测试" class="headerlink" title="这里简单写一个测试"></a>这里简单写一个测试</h3><h4 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h4><p>这里选择一个maven项目，如果没有这个选项，需要去下载Maven Intefration plugin<br><img src="https://i.imgur.com/28YQCD6.png" alt=""></p>
+<h4 id="源码管理"><a href="#源码管理" class="headerlink" title="源码管理"></a>源码管理</h4><p>这里选择Git的形式，在Repository URL里输入你的git地址，这个地址就是你clone用的那一个<br><img src="https://i.imgur.com/ofYdvCN.png" alt=""></p>
+<h4 id="构建触发器"><a href="#构建触发器" class="headerlink" title="构建触发器"></a>构建触发器</h4><p>构建触发器指定了触发一次构建的条件。这里使用最简单的配置”Poll SCM”，它的意思是，定时检查版本库，如果有新的提交就触发构建。这种方式对Git、SVN都是通用的。<br>这里写入：<code>* * * * *</code>代表每分钟检查一次。如果你觉得太频繁，可以改成”每3分钟检查一次”:<code>*/3 * * * *</code></p>
+<h4 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h4><p>在Build中，默认的Root POM是pom.xml,这个pom.xml就你是git里存放的项目的pom.xml,如果该文件不在根目录下，就填入子目录，例如：<code>properties/pom.xml</code><br>在Goats and options中，填入需要执行的mvn命令；<code>clean package</code>,Jenkins会执行<code>mvn clean package</code></p>
+<h4 id="构建后操作"><a href="#构建后操作" class="headerlink" title="构建后操作"></a>构建后操作</h4><h4 id="Consolo-output"><a href="#Consolo-output" class="headerlink" title="Consolo output"></a>Consolo output</h4><p>构建完后就可以在这里查看控制台的输出日志<br><img src="https://i.imgur.com/8cnJcaJ.png" alt=""><br><img src="https://i.imgur.com/rrxLPtN.png" alt=""></p>
 
         
     
@@ -548,7 +594,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/08/CI&CD&CD/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/01/10/jenkinssendemail/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -562,7 +608,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/01/01/activeMQ/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/08/CI&CD&CD/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
